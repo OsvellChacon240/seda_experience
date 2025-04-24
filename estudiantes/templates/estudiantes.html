@@ -1,0 +1,123 @@
+{% extends 'Base/head.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block Osvell %}
+    <div class="main-content">
+        <section class="section">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <a href="{% url 'lista_estudiantes' %}" style="text-decoration: none;">
+              <div class="card card-statistic-1">
+                <div class="card-icon bg-primary">
+                  <i class="fa fa-user-circle fa-3x" style="color: white;"></i> <!-- Ícono cambiado y pintado de blanco -->
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>{% trans "Students" %}</h4> <!-- "Estudiantes" a "Students" -->
+                  </div>
+                  <div class="card-body">
+                    {{estudiantes}}
+                  </div>
+                </div>
+              </div>
+            </a>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <a href="{% url 'documentos_pendientes' %}" style="text-decoration: none;">
+              <div class="card card-statistic-1">
+                <div class="card-icon bg-warning">
+                  <i class="fa fa-clock fa-3x" style="color: white;"></i> <!-- Ícono cambiado y pintado de blanco -->
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>{% trans "Pending Processes" %}</h4> <!-- "Procesos Pendientes" a "Pending Processes" -->
+                  </div>
+                  <div class="card-body">
+                    {{pendientes}}
+                  </div>
+                </div>
+              </div>
+            </a>
+            </div>  
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <a href="{% url 'documentos_aprobados' %}" style="text-decoration: none;">
+              <div class="card card-statistic-1">
+                <div class="card-icon bg-success">
+                  <i class="fa fa-check fa-3x" style="color: white;"></i> <!-- Ícono cambiado y pintado de blanco -->
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>{% trans "Approved Processes" %}</h4> <!-- "Procesos Aprobados" a "Approved Processes" -->
+                  </div>
+                  <div class="card-body">
+                    {{aprobados}}
+                  </div>
+                </div>
+              </div>
+            </a>
+            </div>  
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <a href="{% url 'documentos_rechazados' %}" style="text-decoration: none;">
+              <div class="card card-statistic-1">
+                <div class="card-icon bg-danger">
+                  <i class="fa fa-ban fa-3x" style="color: white;"></i> <!-- Ícono cambiado y pintado de blanco -->
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>{% trans "Rejected Processes" %}</h4> <!-- "Procesos Rechazados" a "Rejected Processes" -->
+                  </div>
+                  <div class="card-body">
+                    {{rechazados}}
+                  </div>
+                </div>
+              </div>
+            </a>
+            </div>               
+
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>{% trans "Latest Registrations" %}</h4> <!-- "Últimos Registrados" a "Latest Registrations" -->
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped mb-0">
+                      <thead>
+                        <tr>
+                          <th>{% trans "Student" %}</th> <!-- "Estudiante" a "Student" -->
+                          <th>{% trans "Date Added" %}</th> <!-- "Fecha Adición" a "Date Added" -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% if Culona %}
+                        {% for c in Culona %}
+                        <tr>
+                          <td>
+                            <a href="{% url 'verEstudiante' c.id %}" class="font-weight-600"><img src="{{c.foto_perfil.url}}" alt="{{c.nombre}}" width="30" class="rounded-circle mr-1"> {{c.nombre}} {{c.apellido}}</a>
+                          </td>
+                          <td>
+                            {{c.fecha_creacion}}
+                          </td>
+                        </tr>
+                        {% endfor %}
+                        {% else %}
+                        <tr>
+                          <td colspan="3" style="text-align: center;">{% trans "No records found" %}</td> <!-- "No hay registros" a "No records found" -->
+                        </tr>
+                        {% endif %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+{% endblock %}

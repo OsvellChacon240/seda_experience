@@ -1,0 +1,127 @@
+{% extends 'Base/head.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block Osvell %}
+
+<div class="content-body">
+
+    <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>{% trans "Users" %}</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item"><a href="{% url 'usuarios' %}" style="text-decoration: none;">{% trans "Management" %}</a></div>
+              <div class="breadcrumb-item"><a href="{% url 'empleados' %}" style="text-decoration: none;">{% trans "Users" %}</a></div>
+            </div>
+          </div>
+          {% if messages %}
+          <div class="alert alert-success">
+              {% for message in messages %}
+              <p>{{ message }}</p>
+              {% endfor %}
+          </div>
+          {% endif %}
+          <div class="section-body">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h4>{% trans "Users" %}</h4>
+                            <div class="d-flex">
+                                <form action="" method="get">
+                                    <input type="text" id="searchInput" class="form-control mr-2" name="q" placeholder="{% trans 'Search user...' %}">
+                                </form>
+                                {% if perms.usuarios.add_customuser %}
+                                <a href="{% url 'addUsers' %}"><button class="btn btn-outline-primary"><i class="fa fa-user-plus"></i> {% trans "Add Users" %}</button></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="userTable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">{% trans "User" %}</th>
+                                            <th scope="col">{% trans "Passport" %}</th>
+                                            <th scope="col">{% trans "Email" %}</th>
+                                            <th scope="col">{% trans "Position" %}</th>
+                                            <th scope="col">{% trans "Status" %}</th>
+                                            {% if perms.usuarios.view_customuser or perms.usuarios.change_customuser or perms.usuarios.delete_customuser %}
+                                            <th scope="col">{% trans "Actions" %}</th>
+                                            {% endif %}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% if Reze %}
+                                        {% for r in Reze %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td class="font-weight-600"><img src="{{r.foto_perfil.url}}" alt="{{c.nombre}}" width="30" class="rounded-circle mr-1"> {{r.nombre}} {{r.apellido}}</td>
+                                            <td>{{ r.pasaporte }}</td>
+                                            <td>{{ r.email }}</td>
+                                            <td>{{ r.cargo }}</td>
+                                            {% if r.status == True %}
+                                                <td><span class="badge badge-success">{% trans "Active" %}</span></td>
+                                            {% else %}
+                                                <td><span class="badge badge-danger">{% trans "Inactive" %}</span></td>
+                                            {% endif %}
+                                            <td>
+                                                <div>
+                                                    {% if perms.usuarios.change_customuser %}
+                                                    <a href="{% url 'actUsers' r.id %}" style="text-decoration: none;">
+                                                        <button class="btn btn-outline-warning"><i class="fa fa-undo"></i></button>
+                                                    </a>
+                                                    {% endif %}
+                                                    {% if perms.usuarios.view_customuser %}
+                                                    <a href="{% url 'viewUser' r.id %}" style="text-decoration: none;">
+                                                        <button class="btn btn-outline-success"><i class="fa fa-eye"></i></button>
+                                                    </a>
+                                                    {% endif %}
+                                                    {% if perms.usuarios.delete_customuser %}
+                                                    <a href="{% url 'dltUsers' r.id %}" style="text-decoration: none;">
+                                                        <button class="btn btn-outline-danger btnEliminacion"><i class="fa fa-trash"></i></button>
+                                                    </a>
+                                                    {% endif %}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% else %}
+                                        <tr>
+                                            <td colspan="7">{% trans "No data registered" %}</td>
+                                        </tr>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% include 'paginator.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+      </div>
+</div>
+
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+        let filter = this.value.toLowerCase();
+        let rows = document.querySelectorAll("#userTable tbody tr");
+        
+        rows.forEach(row => {
+            let username = row.cells[1].textContent.toLowerCase(); // Name column
+            let email = row.cells[3].textContent.toLowerCase(); // Email column
+            
+            // Show the row if it matches the filter in name or email
+            if (username.includes(filter) || email.includes(filter)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+</script>
+{% endblock %}

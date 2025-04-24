@@ -1,0 +1,154 @@
+{% extends 'Base/head2.html' %}
+{% load i18n %}
+{% block Osvell %}
+<div class="main-content">
+  <section class="section">
+    {% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="section-header">
+      {% if user.is_authenticated %}
+        <h1>{% trans "Greetings" %}: {{user.nombre}} {{user.apellido}}</h1>
+      {% endif %}
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+        {% if documentos %}
+        <a href="{% url 'actualizar_documentos' documentos.id %}" style="text-decoration: none;">
+          <div class="card card-statistic-1">
+              <div class="card-icon bg-warning">
+                  <i class="fas fa-edit"></i>
+              </div>
+              <div class="card-wrap">
+                  <div class="card-header">
+                      <h4>{% trans "Update Documents" %}</h4>
+                  </div>
+                  <div class="card-body">
+                    {% trans "Click here" %}
+                  </div>
+              </div>
+          </div>
+      </a>
+        {% else %}
+            <a href="{% url 'subir_documentos' %}" style="text-decoration: none;">
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-primary">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>{% trans "Upload Documents" %}</h4>
+                        </div>
+                        <div class="card-body">
+                          {% trans "Click here" %}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+    </div>
+    
+      <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1 shadow" style="border-radius: 10px; overflow: hidden; background-color: {% if progreso == 100 %}#28a745{% elif progreso >= 50 %}#ffc107{% else %}#dc3545{% endif %};">
+          <div class="card-icon d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; margin: 15px auto;">
+            <i class="fas fa-tasks text-white" style="font-size: 30px;"></i>
+          </div>
+          <div class="card-wrap text-center">
+            <div class="card-header">
+              <h4 class="text-white" style="font-weight: bold;">{% trans "Enrollment Progress" %}</h4>
+            </div>
+            <div class="card-body">
+              <span class="text-white" style="font-size: 24px; font-weight: bold;">{{ progreso }}%</span>
+              <p class="text-white" style="margin: 0; font-size: 14px;">{% trans "Completed" %}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+        {% if user.status == True %}
+          <div class="card card-statistic-1">
+          <div class="card-icon bg-success">
+            <i class="fas fa-circle"></i>
+          </div>
+          <div class="card-wrap">
+            <div class="card-header">
+              <h4>{% trans "Account Status" %}</h4>
+            </div>
+            <div class="card-body">
+              {% trans "Active" %}
+            </div>
+          </div>
+          </div>
+        {% else %}
+          <div class="card card-statistic-1">
+          <div class="card-icon bg-danger">
+            <i class="fas fa-circle"></i>
+          </div>
+          <div class="card-wrap">
+            <div class="card-header">
+              <h4>{% trans "Account Status" %}</h4>
+            </div>
+            <div class="card-body">
+              {% trans "Inactive" %}
+            </div>
+          </div>
+          </div>
+        {% endif %}
+      </div>                  
+    </div>
+  </section>
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>{% trans "Documents" %}</h4>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <th>{% trans "Name" %}</th>
+                  <th>{% trans "Date" %}</th>
+                  <th>{% trans "Status" %}</th>
+                  <th>{% trans "Reference Code" %}</th>
+                </tr>
+                {% for documento in Zenin %}
+                  <tr>
+                    <td>{{ documento.estudiante.nombre }} {{ documento.estudiante.apellido }}</td>
+                    <td>{{ documento.fecha_subida }}</td>
+                    <td>
+                      {% if documento.estado_inscripcion == "En Revisión" %}
+                          <span class="badge badge-warning">{% trans "Under Review" %}</span>
+                      {% elif documento.estado_inscripcion == "Aprobado" %}
+                          <span class="badge badge-success">{% trans "Approved" %}</span>
+                      {% else %}
+                          <span class="badge badge-danger">{% trans "Rejected" %}</span>
+                      {% endif %}
+                  </td>                  
+                    <td>{{documento.codigo_inscripcion}}</td>
+                  </tr>
+                  <tr>
+                    {% if documento.mensaje_rechazo %}
+                      <th>{% trans "Cancellation Message" %}</th>
+                      <td colspan="4" class="alert alert-danger">{{documento.mensaje_rechazo}}</td>
+                    {% endif %}
+                  </tr>
+                {% empty %}
+                  <tr>
+                    <td colspan="4">{% trans "No documents uploaded" %}.</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

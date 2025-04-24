@@ -1,0 +1,146 @@
+{% extends 'Base/head2.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block Osvell %}
+
+<div class="main-content">
+    <section class="section">
+        <div class="section-header">
+            <h1>{% trans "Update Documents" %}</h1>
+        </div>
+        <div class="section-body">
+            <div class="row">
+                <!-- Left column: Form -->
+                <div class="col-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>{% trans "Update Documents" %}</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" enctype="multipart/form-data" action="">
+                                {% csrf_token %}
+                                
+                                {# Renderizamos todos los campos NO relacionados al patrocinador #}
+                                <div class="form-group">
+                                    {{ form.pasaporte|as_crispy_field }}
+                                    {{ form.documento_identidad|as_crispy_field }}
+                                    {{ form.antecedentes_penales|as_crispy_field }}
+                                    {{ form.seguro_medico|as_crispy_field }}
+                                    {{ form.carta_inscripcion|as_crispy_field }}
+                                    {{ form.recibo_pago|as_crispy_field }}
+                                    {{ form.diploma_traducido|as_crispy_field }}
+                                    {{ form.transcripcion_traducida|as_crispy_field }}
+                                    {{ form.carta_intencion|as_crispy_field }}
+                                    {{ form.resumen_financiero|as_crispy_field }}
+                                    {{ form.extracto_bancario|as_crispy_field }}
+                                    {# Campo de patrocinio que controla la visibilidad #}
+                                    {{ form.necesita_patrocinio|as_crispy_field }}
+                                </div>
+                                
+                                {# Contenedor para los campos del patrocinador, los cuales solo se mostrarán si el usuario selecciona "Sí" #}
+                                <div id="sponsorshipFields" style="display: none;">
+                                    <div class="form-group">
+                                        {{ form.id_patrocinador|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.carta_patrocinio|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.prueba_relacion|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.estados_bancarios_patrocinador|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.prueba_ingresos|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.detalles_empresa|as_crispy_field }}
+                                    </div>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <center>
+                                    <button type="submit" id="btn-enviar" class="btn btn-outline-primary btn-lg">
+                                        {% trans "Update Documents" %}
+                                    </button>
+                                </center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Script para validaciones de inputs y mostrar/ocultar los campos de patrocinio -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      // Mantenemos el script original que muestra el icono cuando se carga un archivo
+      document.querySelectorAll(".file-input").forEach(input => {
+        input.addEventListener("change", function(event) {
+          let fileName = event.target.value.split("\\").pop();
+          let checkIcon = document.createElement("span");
+          checkIcon.classList.add("text-success", "ml-2");
+          checkIcon.innerHTML = "✔ File uploaded";
+
+          let parent = event.target.parentElement;
+          if (!parent.querySelector(".text-success")) {
+            parent.appendChild(checkIcon);
+          }
+        });
+      });
+
+      // Función modificada para validar solo inputs visibles o que tengan data-uploaded='true'
+      function checkUploads() {
+        let inputs = document.querySelectorAll(".file-input");
+        let submitButton = document.getElementById("btn-enviar");
+        let allUploaded = true;
+
+        inputs.forEach(input => {
+          // Solo se considera el input si es visible.
+          if (input.offsetParent === null) return;
+          // Si el input tiene atributo data-uploaded igual a "true", lo consideramos subido.
+          if (input.getAttribute("data-uploaded") === "true") return;
+          if (!input.value) {
+            allUploaded = false;
+          }
+        });
+
+        submitButton.disabled = !allUploaded;
+      }
+
+      document.querySelectorAll(".file-input").forEach(input => {
+        input.addEventListener("change", checkUploads);
+      });
+
+      checkUploads();
+
+      // --- Lógica para mostrar/ocultar los campos del patrocinador ---
+      const sponsorshipSelect = document.getElementById("id_necesita_patrocinio");
+      const sponsorshipFields = document.getElementById("sponsorshipFields");
+
+      sponsorshipSelect.addEventListener("change", function() {
+        // Se asume que el valor "True" (como cadena) indica que sí se necesita patrocinio
+        if (this.value === "True") {
+          sponsorshipFields.style.display = "block";
+        } else {
+          sponsorshipFields.style.display = "none";
+          // Limpiar los inputs de patrocinador cuando se ocultan
+          const sponsorshipInputs = sponsorshipFields.querySelectorAll("input[type='file']");
+          sponsorshipInputs.forEach(input => {
+            input.value = '';
+            // Quitar el atributo data-uploaded para que se revalide
+            input.removeAttribute("data-uploaded");
+          });
+        }
+        checkUploads(); // Recheck file uploads
+      });
+      // --- Fin lógica para patrocinador ---
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SEDA | Account Blocked</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'modules/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center vh-100 bg-light">
+    <div class="container text-center">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h1 class="text-danger"><i class="fa fa-lock"></i> {% trans "Account Blocked" %}</h1>
+                <h4 class="mt-3">{% trans "Restricted Access" %}</h4>
+                <p class="mt-3">{% trans "Your account has been blocked. You will be redirected to the login page in" %} <span id="contador">5</span> {% trans "seconds." %}</p>
+
+                
+                <a href="{% url 'login' %}" class="btn btn-primary mt-3">{% trans "Go to Login" %}</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'modules/jquery.min.js' %}"></script>
+    <script src="{% static 'modules/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Custom JS -->
+    <script>
+        let contador = 5; // Time in seconds
+        function actualizarContador() {
+            const elemento = document.getElementById('contador');
+            if (contador > 0) {
+                elemento.textContent = contador;
+                contador--;
+            } else {
+                window.location.href = "{% url 'login' %}"; // Redirect to login
+            }
+        }
+        setInterval(actualizarContador, 1000);
+
+        // Show alert with SweetAlert2
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                icon: 'warning',
+                title: '{% trans "Account Suspended" %}',
+                text: '{% trans "Your account is blocked. Contact the administrator" %}.',
+                confirmButtonText: 'Accept',
+                background: '#fff',
+                color: '#444',
+                customClass: {
+                    confirmButton: 'btn-primary'
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

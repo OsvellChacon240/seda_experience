@@ -1,0 +1,101 @@
+{% extends 'Base/head.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block Osvell %}
+
+<div class="main-content">
+    {% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <section class="section">
+        <div class="section-header">
+            <h1>{% trans "Positions" %}</h1>
+            <div class="section-header-breadcrumb">
+                <div class="breadcrumb-item"><a href="{% url 'usuarios' %}" style="text-decoration: none;">{% trans "Management" %}</a></div>
+                <div class="breadcrumb-item"><a href="{% url 'cargos' %}" style="text-decoration: none;">{% trans "Positions" %}</a></div>
+            </div>
+        </div>
+
+        <div class="section-body">
+            <div class="row">
+                <!-- Left column: Form -->
+                {% if perms.users.add_position %}
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>{% trans "Add Position" %}</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="nombre">{% trans "Position Name" %}</label>
+                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="{% trans 'Enter position name' %}" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">{% trans "Save" %}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Right column: Table -->
+                <div class="col-12 col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>{% trans "Position List" %}</h4>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">{% trans "Position" %}</th>
+                                        {% if perms.users.change_position or perms.users.delete_position %}
+                                        <th scope="col">{% trans "Actions" %}</th>
+                                        {% endif %}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if Goku %}
+                                    {% for g in Goku %}
+                                    <tr>
+                                        <th scope="row">{{ forloop.counter }}</th>
+                                        <td>{{ g.nombre }}</td>
+                                        <td>
+                                            <div>
+                                                {% if perms.users.change_position %}
+                                                <a href="{% url 'actCargos' g.id %}" style="text-decoration: none;">
+                                                    <button class="btn btn-outline-warning"><i class="fa fa-undo"></i></button>
+                                                </a>
+                                                {% endif %}
+                                                {% if perms.users.delete_position %}
+                                                <a href="{% url 'dltCargos' g.id %}" style="text-decoration: none;">
+                                                    <button class="btn btn-outline-danger btnEliminacion"><i class="fa fa-trash"></i></button>
+                                                </a>
+                                                {% endif %}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="3">{% trans "No data available" %}</td>
+                                    </tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                            {% include 'paginator.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

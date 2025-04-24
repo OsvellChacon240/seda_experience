@@ -1,0 +1,226 @@
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>{{page_title}}</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="{% static 'modules/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'modules/fontawesome/css/all.min.css' %}">
+  <link rel="shortcut icon" href="{% static 'img/LogoP.png' %}" type="image/x-icon">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="{% static 'modules/bootstrap-social/bootstrap-social.css' %}">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components.css' %}">
+
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<!-- Start GA -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-94034622-3');
+</script>
+<!-- /END GA --></head>
+
+<body data-login-error="{{ login_error|yesno:'True,False' }}" data-inactive-error="{{ inactive_error|yesno:'True,False' }}">
+  <div id="app">
+    <section class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+            <div class="login-brand">
+              <img src="{% static 'img/LogoG.png' %}" alt="logo" width="100" class="shadow-light rounded-circle">
+            </div>
+
+            <div class="card card-primary">
+              <div class="card-header"><h4>{% trans "Login" %}</h4></div>
+
+              {% if messages %}
+              <div class="alert alert-success">
+                  {% for message in messages %}
+                  <p>{{ message }}</p>
+                  {% endfor %}
+              </div>
+              {% endif %}
+
+              <div class="card-body">
+                <form method="POST" action="#" class="needs-validation" novalidate="">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label for="username_or_email">{% trans "Email Address" %}</label>
+                    <input type="text" name="username_or_email" class="form-control" required>
+                    <div class="invalid-feedback">
+                      {% trans "Please enter your email" %}
+                    </div>
+                </div>                
+                  <div class="form-group">
+                    <div class="d-block">
+                      <div class="float-right">
+                        <a href="#" class="text-small">
+                          {% trans "Forgot your password?" %}
+                        </a>
+                      </div>
+                    </div>
+                    {{ form.password|as_crispy_field }}
+                    <div class="invalid-feedback">
+                      {% trans "Please enter your password" %}
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                      {% trans "Login" %}
+                    </button>
+                  </div>
+                </form>
+
+                <div class="dropdown text-center mt-3">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {% if request.LANGUAGE_CODE == 'ar' %}
+                      <i class="fas fa-flag"></i> 🇸🇦
+                    {% elif request.LANGUAGE_CODE == 'en' %}
+                      <i class="fas fa-flag"></i> 🇬🇧
+                    {% elif request.LANGUAGE_CODE == 'es' %}
+                      <i class="fas fa-flag"></i> 🇪🇸
+                    {% elif request.LANGUAGE_CODE == 'fr' %}
+                      <i class="fas fa-flag"></i> 🇫🇷
+                    {% else %}
+                      <i class="fas fa-globe"></i>
+                    {% endif %}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <a class="dropdown-item" href="{% url 'change_language' 'ar' %}">
+                      🇸🇦 {% trans "Arabic" %}
+                    </a>
+                    <a class="dropdown-item" href="{% url 'change_language' 'en' %}">
+                      🇬🇧 {% trans "English" %}
+                    </a>
+                    <a class="dropdown-item" href="{% url 'change_language' 'es' %}">
+                      🇪🇸 {% trans "Spanish" %}
+                    </a>
+                    <a class="dropdown-item" href="{% url 'change_language' 'fr' %}">
+                      🇫🇷 {% trans "French" %}
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="mt-5 text-muted text-center">
+              {% trans "Don't have an account?" %} <a href="{% url 'registrar_estudiante' %}">{% trans "Create Account" %}</a>
+            </div>
+            <div class="simple-footer">
+              Copyright &copy; <span id="year"></span> <div class="bullet"></div> {% trans "All rights reserved" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obtener los valores de los atributos data-* del cuerpo
+        const body = document.body;
+        const loginError = body.getAttribute("data-login-error") === "True";
+        const inactiveError = body.getAttribute("data-inactive-error") === "True";
+
+        // Mostrar los mensajes de error con SweetAlert2
+        if (loginError) {
+            Swal.fire({
+                icon: 'error',
+                title: '{% trans "Login Error" %}',
+                text: '{% trans "Incorrect email and/or password" %}.',
+                confirmButtonText: '{% trans "Accept" %}',
+                background: '#fff',
+                color: '#444',
+                customClass: {
+                    confirmButton: 'btn-primary'
+                }
+            });
+        }
+
+        if (inactiveError) {
+            Swal.fire({
+                icon: 'warning',
+                title: '{% trans "Account Suspended" %}',
+                text: '{% trans "Your account is suspended. Contact the administrator" %}.',
+                confirmButtonText: '{% trans "Accept" %}',
+                background: '#fff',
+                color: '#444',
+                customClass: {
+                    confirmButton: 'btn-primary'
+                }
+            });
+        }
+    });
+  </script>
+
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- General JS Scripts -->
+  <script src="{% static 'modules/jquery.min.js' %}"></script>
+  <script src="{% static 'modules/popper.js' %}"></script>
+  <script src="{% static 'modules/tooltip.js' %}"></script>
+  <script src="{% static 'modules/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'modules/nicescroll/jquery.nicescroll.min.js' %}"></script>
+  <script src="{% static 'modules/moment.min.js' %}"></script>
+  <script src="{% static 'js/stisla.js' %}"></script>
+  
+  <!-- JS Libraies -->
+
+  <!-- Page Specific JS File -->
+  
+  <!-- Template JS File -->
+  <script src="{% static 'js/scripts.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+  <script>
+    // Tiempo de inactividad en milisegundos (por ejemplo, 10 minutos = 600000 ms)
+    const INACTIVITY_LIMIT = 600000; // 10 minutos
+  
+    let inactivityTimer;
+  
+    // Función para redirigir al usuario a la ruta de cierre de sesión
+    function logoutDueToInactivity() {
+      window.location.href = "{% url 'logout' %}";
+    }
+  
+    // Reiniciar el temporizador de inactividad
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(logoutDueToInactivity, INACTIVITY_LIMIT);
+    }
+  
+    // Escuchar eventos de actividad del usuario
+    document.addEventListener("mousemove", resetInactivityTimer);
+    document.addEventListener("keydown", resetInactivityTimer);
+    document.addEventListener("click", resetInactivityTimer);
+    document.addEventListener("scroll", resetInactivityTimer);
+  
+    // Iniciar el temporizador al cargar la página
+    resetInactivityTimer();
+  </script>
+
+</body>
+</html>

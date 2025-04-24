@@ -1,0 +1,169 @@
+{% extends 'Base/head.html' %}
+{% load i18n %}
+{% block Osvell %}
+  <div class="main-content">
+    <section class="section">
+      {% if messages %}
+      <div class="alert alert-success">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="row">
+        <!-- Student Card -->
+        {% if perms.estudiantes.view_estudiantes %}
+        <div class="col-lg-6 col-md-4 col-sm-12">
+          <div class="card card-statistic-2">
+            <a href="{% url 'estudiantes' %}" style="text-decoration: none; color: black;">
+              <div class="card-stats">
+                <div class="card-stats-title">{% trans "Students" %}</div>
+                <div class="card-stats-items">
+                  <div class="card-stats-item">
+                    <div class="card-stats-item-count">{{ rechazados }}</div>
+                    <div class="card-stats-item-label">{% trans "Rejected" %}</div>
+                  </div>
+                  <div class="card-stats-item">
+                    <div class="card-stats-item-count">{{ pendientes }}</div>
+                    <div class="card-stats-item-label">{% trans "Pending" %}</div>
+                  </div>
+                  <div class="card-stats-item">
+                    <div class="card-stats-item-count">{{ aprobados }}</div>
+                    <div class="card-stats-item-label">{% trans "Approved" %}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-icon shadow-primary bg-primary">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="card-wrap">
+                <div class="card-header">
+                  <h4>{% trans "Students" %}</h4>
+                </div>
+                <div class="card-body">
+                  {{ estudiantes }}
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- User Card -->
+        {% if perms.usuarios.view_customuser %}
+        <div class="col-lg-6 col-md-4 col-sm-12">
+          <div class="card card-statistic-2">
+            <a href="{% url 'usuarios' %}" style="text-decoration: none; color: black;">
+              <div class="card-chart">
+                <canvas id="balance-chart" height="80"></canvas>
+              </div>
+              <div class="card-icon shadow-primary bg-primary">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div class="card-wrap">
+                <div class="card-header">
+                  <h4>{% trans "System Users" %}</h4>
+                </div>
+                <div class="card-body">
+                  {{ usuarios }}
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Last Registered Students Table -->
+      {% if perms.estudiantes.view_estudiantes %}
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h4>{% trans "Latest Registered Students" %}</h4>
+              <div class="card-header-action">
+                <a href="{% url 'lista_estudiantes' %}" class="btn btn-outline-danger">{% trans "See More" %} <i class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive table-invoice">
+                <table class="table table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th>{% trans "Students" %}</th>
+                      <th>{% trans "Addition Date" %}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if Zenin %}
+                    {% for c in Zenin %}
+                    <tr>
+                      <td>
+                        <a href="{% url 'verEstudiante' c.id %}" class="font-weight-600">
+                          <img src="{{ c.foto_perfil.url }}" alt="{{ c.nombre }}" width="30" class="rounded-circle mr-1">
+                          {{ c.nombre }} {{ c.apellido }}
+                        </a>
+                      </td>
+                      <td>
+                        {{ c.fecha_creacion }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                      <td colspan="3" style="text-align: center;">{% trans "No records" %}</td>
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Processes Card -->
+        <div class="col-md-4">
+          <div class="card card-hero">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="far fa-question-circle"></i>
+              </div>
+              <h4>{{ pendientes }}</h4>
+              <div class="card-description">{% trans "Processes to Approve" %}</div>
+            </div>
+            <div class="card-body p-0">
+              <div class="tickets-list">
+                {% for d in documentos_pendientes_lista %}
+                <a href="{% url 'visualizarDocumento' d.id %}" class="ticket-item">
+                  <div class="ticket-title">
+                    <h4>{{ d.estudiante.nombre }} {{ d.estudiante.apellido }}</h4>
+                  </div>
+                  <div class="ticket-info">
+                    <div>{{ d.codigo_inscripcion }}</div>
+                    <div class="bullet"></div>
+                    <div class="text-primary">
+                      {% with d.fecha_subida|timesince as tiempo %}
+                        {{ tiempo }} waiting
+                      {% endwith %}
+                    </div>
+                  </div>
+                </a>
+                {% empty %}
+                <div class="ticket-item">
+                  <div class="ticket-title">
+                    <h4>{% trans "No pending processes" %}</h4>
+                  </div>
+                </div>
+                {% endfor %}
+                <a href="{% url 'documentos_pendientes' %}" class="ticket-item ticket-more">
+                  See all <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </section>
+  </div>
+{% endblock %}

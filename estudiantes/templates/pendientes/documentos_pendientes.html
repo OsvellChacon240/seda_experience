@@ -1,0 +1,112 @@
+{% extends 'Base/head.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block Osvell %}
+
+<div class="content-body">
+
+    <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>{% trans "Student Documentation" %}</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item"><a href="{% url 'estudiantes' %}" style="text-decoration: none;">{% trans "Management" %}</a></div>
+              <div class="breadcrumb-item"><a href="{% url 'documentos_pendientes' %}" style="text-decoration: none;">{% trans "Pending Processes" %}</a></div>
+            </div>
+          </div>
+          {% if messages %}
+          <div class="alert alert-success">
+              {% for message in messages %}
+              <p>{{ message }}</p>
+              {% endfor %}
+          </div>
+          {% endif %}
+          <div class="section-body">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h4>{% trans "Pending Processes" %}</h4>
+                            <div class="d-flex">
+                                <form action="" method="get">
+                                    <input type="text" id="searchInput" class="form-control mr-2" name="q" placeholder="{% trans 'Search student or document...' %}">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">{% trans "Users" %}</th>
+                                            <th scope="col">{% trans "Enrollment Code" %}</th>
+                                            <th scope="col">{% trans "Nationality" %}</th>
+                                            <th scope="col">{% trans "Status" %}</th>
+                                            <th scope="col">{% trans "Actions" %}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% if Zenin %}
+                                        {% for r in Zenin %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td class="font-weight-600"><img src="{{r.estudiante.foto_perfil.url}}" alt="{{c.nombre}}" width="30" class="rounded-circle mr-1"> {{r.estudiante.nombre}} {{r.estudiante.apellido}}</td>
+                                            <td>{{ r.codigo_inscripcion }}</td>
+                                            <td>{{ r.estudiante.nacionalidad }}</td>
+                                            {% if r.estado_inscripcion == "En Revisión" %}
+                                                <td><span class="badge badge-warning">{% trans "Under Review" %}</span></td>
+                                            {% elif r.estado_inscripcion == "Aprobado" %}
+                                                <td><span class="badge badge-success">{% trans "Approved" %}</span></td>
+                                            {% else %}
+                                                <td><span class="badge badge-danger">{% trans "Rejected" %}</span></td>
+                                            {% endif %}
+                                            <td>
+                                                <div>
+                                                    <a href="{% url 'visualizarDocumento' r.id %}" style="text-decoration: none;">
+                                                        <button class="btn btn-outline-success"><i class="fa fa-eye"></i></button>
+                                                    </a>
+                                                    <a href="{% url 'eliminarDocumentos' r.id %}" style="text-decoration: none;">
+                                                        <button class="btn btn-outline-danger btnEliminacion"><i class="fa fa-trash"></i></button>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% else %}
+                                        <tr>
+                                            <td colspan="6">{% trans "No data recorded" %}</td>
+                                        </tr>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% include 'paginator.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+      </div>
+</div>
+
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+        let filter = this.value.toLowerCase();
+        let rows = document.querySelectorAll("table tbody tr");
+        
+        rows.forEach(row => {
+            let username = row.cells[1].textContent.toLowerCase();
+            let code = row.cells[2].textContent.toLowerCase();
+            if (username.includes(filter) || code.includes(filter) || email.includes(filter)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,163 @@
+{% extends 'Base/head.html' %}
+{% load i18n %}
+
+{% block Osvell %}
+<div class="main-content">
+    <section class="section">
+        <div class="section-header">
+            <h1>{% trans "Profile" %}</h1>
+            <div class="section-header-breadcrumb">
+                <div class="breadcrumb-item active"><a href="{% url 'empleados' %}">{% trans "Users" %}</a></div>
+                <div class="breadcrumb-item">{{maki.nombre}} {{maki.apellido}}</div>
+            </div>
+        </div>
+        {% if messages %}
+        <div class="alert alert-success">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="section-body">
+            <h2 class="section-title">{{maki.nombre}} {{maki.apellido}}</h2>
+            <p class="section-lead">
+                {% trans "View detailed information of the user" %}
+            </p>
+
+            <div class="row mt-sm-4">
+                <div class="col-12">
+                    <div class="card profile-widget">
+                        <div class="profile-widget-header">
+                            <img alt="{{maki.nombre}} {{maki.apellido}}" src="{{maki.foto_perfil.url}}" class="rounded-circle profile-widget-picture">
+                            <div class="profile-widget-items">
+                                {% if perms.auth.view_permission %}
+                                <div class="profile-widget-item">
+                                    <div class="profile-widget-item-label">{% trans "Permissions" %}</div>
+                                    <div class="profile-widget-item-value">
+                                        <a href="#" data-toggle="modal" data-target="#permisosModal" style="text-decoration: none; color: inherit;">
+                                            {{ user_permissions_count }}
+                                        </a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <div class="profile-widget-item">
+                                    <div class="profile-widget-item-label">{% trans "Role" %}</div>
+                                    <div class="profile-widget-item-value">{{maki.cargo}}</div>
+                                </div>
+                                <div class="profile-widget-item">
+                                    <div class="profile-widget-item-label">{% trans "Status" %}</div>
+                                    {% if maki.status == True %}
+                                        <td><span class="badge badge-success px-2">{% trans "Active" %}</span></td>
+                                    {% else %}
+                                        <td><span class="badge badge-danger px-2">{% trans "Inactive" %}</span></td>
+                                    {% endif %}
+                                    <div class="profile-widget-item-value">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-widget-description">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <th><i class="fas fa-user"></i> {% trans "Full Name" %}:</th>
+                                                    <td>{{ maki.nombre }} {{ maki.apellido }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-id-card"></i> {% trans "Passport" %}:</th>
+                                                    <td>{{ maki.pasaporte }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-phone"></i> {% trans "Phone" %}:</th>
+                                                    <td>
+                                                        <a href="https://wa.me/{{ maki.telefono }}" target="_blank" class="btn btn-success btn-lg d-flex align-items-center justify-content-center" style="gap: 8px;">
+                                                            <i class="fab fa-whatsapp"></i> {{ maki.telefono }}
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-envelope"></i> {% trans "Email" %}:</th>
+                                                    <td>{{ maki.email }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-venus-mars"></i> {% trans "Gender" %}:</th>
+                                                    {% if maki.genero == 'M' %}
+                                                        <td><span class="badge badge-success px-2">{% trans "Male" %}</span></td>
+                                                    {% else %}
+                                                        <td><span class="badge badge-danger px-2">{% trans "Female" %}</span></td>
+                                                    {% endif %}
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-calendar-plus"></i> {% trans "Date of Addition" %}:</th>
+                                                    <td>{{ maki.fecha_creacion|date:"D, d M Y H:i" }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-map-marker-alt"></i> {% trans "Address" %}:</th>
+                                                    <td>{{ maki.direccion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-birthday-cake"></i> {% trans "Date of Birth" %}:</th>
+                                                    <td>{{ maki.fecha_nacimiento }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Modal to select permissions -->
+<div class="modal fade" id="permisosModal" tabindex="-1" role="dialog" aria-labelledby="permisosModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="permisosModalLabel">{% trans "Select Permissions" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="row">
+                        {% for permiso in all_permissions %}
+                        <div class="col-md-6 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="permiso{{ permiso.id }}" name="permisos" value="{{ permiso.id }}" 
+                                {% if permiso in user_permissions %}checked{% endif %}>
+                                <label class="form-check-label" for="permiso{{ permiso.id }}">
+                                    {{ permiso.name }}
+                                </label>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-secondary" onclick="toggleCheckboxes()">{% trans "Select/Deselect All" %}</button>
+                        <button type="submit" class="btn btn-primary">{% trans "Save Permissions" %}</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Close" %}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to toggle all checkboxes
+    function toggleCheckboxes() {
+        const checkboxes = document.querySelectorAll('.form-check-input');
+        const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+        checkboxes.forEach(checkbox => checkbox.checked = !allChecked);
+    }
+</script>
+{% endblock %}

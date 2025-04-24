@@ -1,0 +1,40 @@
+{% extends 'Base/head.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block Osvell %}
+
+<div class="main-content">
+    <section class="section">
+        <div class="section-header">
+            <h1>{% trans "Update User" %}</h1>
+            <div class="section-header-breadcrumb">
+                <div class="breadcrumb-item"><a href="{% url 'employees' %}" style="text-decoration: none;">{% trans "Users" %}</a></div>
+                <div class="breadcrumb-item"><a href="#" style="text-decoration: none;">{{Konan.nombre}} {{Konan.apellido}}</a></div>
+            </div>
+        </div>
+
+        <div class="section-body">
+            <div class="row">
+                <!-- Left column: Form -->
+                <div class="col-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>{% trans "Update" %}: ({{Konan.nombre}} {{Konan.apellido}})</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {{Mikasa | crispy}}
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">{% trans "Save" %}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
