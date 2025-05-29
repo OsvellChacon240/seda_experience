@@ -40,24 +40,24 @@ class EstudiantesRegistroForm(UserCreationForm):
     def clean_fecha_nacimiento(self):
         fecha_nacimiento = self.cleaned_data.get('fecha_nacimiento')
         if not fecha_nacimiento:
-            raise ValidationError("La fecha de nacimiento es obligatoria.")
+            raise ValidationError(_("La fecha de nacimiento es obligatoria."))
         hoy = date.today()
         edad = hoy.year - fecha_nacimiento.year - ((hoy.month, hoy.day) < (fecha_nacimiento.month, fecha_nacimiento.day))
         if edad < 16:
-            raise ValidationError("El estudiante debe tener al menos 16 años.")
+            raise ValidationError(_("El estudiante debe tener al menos 16 años."))
         return fecha_nacimiento
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if CustomUser.objects.filter(email=email).exists():
-            raise forms.ValidationError("Este correo electrónico ya está registrado.")
+            raise forms.ValidationError(_("Este correo electrónico ya está registrado."))
         return email
     
     # Validación personalizada para el pasaporte
     def clean_pasaporte(self):
         pasaporte = self.cleaned_data.get('pasaporte')
         if Estudiantes.objects.filter(pasaporte=pasaporte).exists():
-            raise ValidationError("Ya existe un estudiante con este pasaporte.")
+            raise ValidationError(_("Ya existe un estudiante con este pasaporte."))
         return pasaporte
 
     # Validación personalizada para el teléfono
@@ -66,9 +66,9 @@ class EstudiantesRegistroForm(UserCreationForm):
         if telefono:
             # Validar formato internacional con prefijo de país, sin espacios, guiones o paréntesis
             if not re.match(r'^\+\d{1,4}\d{7,15}$', telefono):
-                raise ValidationError(
+                raise ValidationError(_(
                     "El número de teléfono debe estar en formato internacional, comenzando con '+' seguido del prefijo del país y el número, sin espacios, guiones o paréntesis. Ejemplo: +584147080725 o +14155552671."
-                )
+                ))
         return telefono
 
     # Guardar usuario con contraseña encriptada
@@ -119,7 +119,7 @@ class EstudiantesActualizacionForm(forms.ModelForm):
     def clean_pasaporte(self):
         pasaporte = self.cleaned_data.get('pasaporte')
         if Estudiantes.objects.filter(pasaporte=pasaporte).exclude(id=self.instance.id).exists():
-            raise ValidationError("Ya existe un estudiante con este pasaporte.")
+            raise ValidationError(_("Ya existe un estudiante con este pasaporte."))
         return pasaporte
 
     # Validación personalizada para el teléfono
@@ -128,9 +128,9 @@ class EstudiantesActualizacionForm(forms.ModelForm):
         if telefono:
             # Validar formato internacional con prefijo de país, sin espacios, guiones o paréntesis
             if not re.match(r'^\+\d{1,4}\d{7,15}$', telefono):
-                raise ValidationError(
+                raise ValidationError(_(
                     "El número de teléfono debe estar en formato internacional, comenzando con '+' seguido del prefijo del país y el número, sin espacios, guiones o paréntesis. Ejemplo: +584147080725 o +14155552671."
-                )
+                ))
         return telefono
 
     def save(self, commit=True):
@@ -144,21 +144,29 @@ class DocumentosEstudianteForm(forms.ModelForm):
     class Meta:
         model = DocumentosEstudiante
         fields = [
-            'pasaporte', 'documento_identidad', 'antecedentes_penales', 'seguro_medico',
-            'carta_inscripcion', 'recibo_pago', 'diploma_traducido', 'transcripcion_traducida',
-            'carta_intencion', 'resumen_financiero', 'extracto_bancario',
+            'passport_copy', 'previous_visa_refusal_letters', 'national_id_copy', 'biometric_photos',
+            'police_clearance_certificates', 'travel_health_insurance', 'enrollment_letter', 'booking_letter',
+            'payment_receipt', 'diploma_translated', 'transcript_translated', 'student_letter',
+            'payslips_last_3_months', 'Applicants_translated_work_history', 'supportive_certificate', 'intention_letter',
+            'reason_for_return', 'financial_summary_form', 'visa_application_form', 'bank_statement',
             'necesita_patrocinio', 'id_patrocinador', 'carta_patrocinio', 'prueba_relacion',
-            'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa',
+            'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa', 'sponsorship_letter',
         ]
 
         widgets = {
-            field: forms.ClearableFileInput(attrs={'class': 'form-control file-input'})
+            field: forms.ClearableFileInput(attrs={
+                'class': 'form-control file-input',
+                'data-browse-text': _("Seleccionar archivo"),  # Texto para el botón de selección
+                'data-no-file-text': _("Ningún archivo seleccionado")  # Texto cuando no hay archivo seleccionado
+            })
             for field in [
-                'pasaporte', 'documento_identidad', 'antecedentes_penales', 'seguro_medico',
-                'carta_inscripcion', 'recibo_pago', 'diploma_traducido', 'transcripcion_traducida',
-                'carta_intencion', 'resumen_financiero', 'extracto_bancario',
+                'passport_copy', 'previous_visa_refusal_letters', 'national_id_copy', 'biometric_photos',
+                'police_clearance_certificates', 'travel_health_insurance', 'enrollment_letter', 'booking_letter',
+                'payment_receipt', 'diploma_translated', 'transcript_translated', 'student_letter',
+                'payslips_last_3_months', 'Applicants_translated_work_history', 'supportive_certificate', 'intention_letter',
+                'reason_for_return', 'financial_summary_form', 'visa_application_form', 'bank_statement',
                 'id_patrocinador', 'carta_patrocinio', 'prueba_relacion',
-                'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa',
+                'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa', 'sponsorship_letter',
             ]
         }
 
@@ -169,17 +177,26 @@ class DocumentosEstudianteForm(forms.ModelForm):
         ], attrs={'class': 'form-control'})
 
         labels = {
-            'pasaporte': _("Pasaporte"),
-            'documento_identidad': _("Documento de Identidad"),
-            'antecedentes_penales': _("Antecedentes Penales"),
-            'seguro_medico': _("Seguro Médico"),
-            'carta_inscripcion': _("Carta de Inscripción"),
-            'recibo_pago': _("Recibo de Pago"),
-            'diploma_traducido': _("Diploma Traducido"),
-            'transcripcion_traducida': _("Transcripción Traducida"),
-            'carta_intencion': _("Carta de Intención"),
-            'resumen_financiero': _("Resumen Financiero"),
-            'extracto_bancario': _("Extracto Bancario"),
+            'passport_copy': _("Passport Copy (Data Page and all signed/stamped/visa pages)"),
+            'previous_visa_refusal_letters': _("Previous Visa Refusal Letters (if applicable)"),
+            'national_id_copy': _("National ID Copy"),
+            'biometric_photos': _("2 Biometric Photos (35x45 size)"),
+            'police_clearance_certificates': _("Police Clearance Certificates"),
+            'travel_health_insurance': _("Travel Health Insurance"),
+            'enrollment_letter': _("Enrollment Letter from SEDA"),
+            'booking_letter': _("Booking Letter from SEDA"),
+            'payment_receipt': _("Payment Receipt from SEDA"),
+            'diploma_translated': _("Recent Diploma Translated into English"),
+            'transcript_translated': _("Recent Transcript Translated into English"),
+            'student_letter': _("Student Letter from College (if applicable)"),
+            'payslips_last_3_months': _("Payslips for Last 3 Months (if employed)"),
+            'Applicants_translated_work_history': _("Applicant's Translated Work History"),
+            'supportive_certificate': _("Supportive Certificate or Reasons to Study English Abroad"),
+            'intention_letter': _("Intention Letter"),
+            'reason_for_return': _("Reason for Return to Home Country"),
+            'financial_summary_form': _("Financial Summary Form"),
+            'visa_application_form': _("Online Visa Application Form and Its Summary"),
+            'bank_statement': _("6 Months Bank Statement (Proof of 10,000 Euros)"),
             'necesita_patrocinio': _("¿Necesita patrocinio?"),
             'id_patrocinador': _("ID o Pasaporte del Patrocinador"),
             'carta_patrocinio': _("Carta de Patrocinio"),
@@ -187,6 +204,7 @@ class DocumentosEstudianteForm(forms.ModelForm):
             'estados_bancarios_patrocinador': _("Estado Bancario del Patrocinador (6 meses)"),
             'prueba_ingresos': _("Prueba de Ingresos del Patrocinador"),
             'detalles_empresa': _("Documentos de Empresa del Patrocinador"),
+            'sponsorship_letter': _("Carta de Patrocinio Adicional"),
         }
 
     def __init__(self, *args, **kwargs):
@@ -194,11 +212,13 @@ class DocumentosEstudianteForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         if instance:
             file_fields = [
-                'pasaporte', 'documento_identidad', 'antecedentes_penales', 'seguro_medico',
-                'carta_inscripcion', 'recibo_pago', 'diploma_traducido', 'transcripcion_traducida',
-                'carta_intencion', 'resumen_financiero', 'extracto_bancario',
+                'passport_copy', 'previous_visa_refusal_letters', 'national_id_copy', 'biometric_photos',
+                'police_clearance_certificates', 'travel_health_insurance', 'enrollment_letter', 'booking_letter',
+                'payment_receipt', 'diploma_translated', 'transcript_translated', 'student_letter',
+                'payslips_last_3_months', 'Applicants_translated_work_history', 'supportive_certificate', 'intention_letter',
+                'financial_summary_form', 'visa_application_form', 'bank_statement',
                 'id_patrocinador', 'carta_patrocinio', 'prueba_relacion',
-                'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa',
+                'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa', 'sponsorship_letter',
             ]
             for field in file_fields:
                 val = getattr(instance, field)
@@ -225,8 +245,20 @@ class DocumentosEstudianteForm(forms.ModelForm):
                 'estados_bancarios_patrocinador',
                 'prueba_ingresos',
                 'detalles_empresa',
+                'sponsorship_letter',
             ]
             for campo in campos_requeridos:
                 if not cleaned_data.get(campo):
                     self.add_error(campo, _("Este campo es obligatorio si necesita patrocinio."))
         return cleaned_data
+
+    def mostrar_info_patrocinio(self):
+        """
+        Devuelve una tupla (tiene_patrocinio, detalles) para mostrar en la plantilla.
+        """
+        instance = getattr(self, 'instance', None)
+        if not instance or not hasattr(instance, 'tiene_patrocinio'):
+            return (False, None)
+        if not instance.tiene_patrocinio:
+            return (False, None)
+        return (True, instance.detalles_patrocinio())

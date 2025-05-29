@@ -5,12 +5,17 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Profile</h1>
+            <h1>{% trans 'Profile' %}</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="{% url 'lista_estudiantes' %}">{% trans "Students" %}</a></div>
-                <div class="breadcrumb-item">{{Suguru.estudiante.nombre}} {{Suguru.estudiante.apellido}}</div>
+                <div class="breadcrumb-item active">
+                    <a href="{% url 'lista_estudiantes' %}">{% trans "Students" %}</a>
+                </div>
+                <div class="breadcrumb-item">
+                    {{Suguru.estudiante.nombre}} {{Suguru.estudiante.apellido}}
+                </div>
             </div>
         </div>
+
         {% if messages %}
         <div class="alert alert-success">
             {% for message in messages %}
@@ -18,6 +23,7 @@
             {% endfor %}
         </div>
         {% endif %}
+
         <div class="section-body">
             <h2 class="section-title">{{Suguru.estudiante.nombre}} {{Suguru.estudiante.apellido}}</h2>
             <p class="section-lead">
@@ -55,11 +61,12 @@
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <tbody>
+                                                <!-- Passport -->
                                                 <tr>
                                                     <th><i class="fas fa-passport"></i> {% trans "Passport" %}:</th>
                                                     <td>
-                                                        {% if Suguru.pasaporte %}
-                                                            <a href="{{ Suguru.pasaporte.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                        {% if Suguru.passport_copy %}
+                                                            <a href="{{ Suguru.passport_copy.url }}" target="_blank" class="btn btn-sm btn-primary">
                                                                 <i class="fas fa-eye"></i> {% trans "Preview" %}
                                                             </a>
                                                         {% else %}
@@ -67,11 +74,12 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
+                                                <!-- ID Card -->
                                                 <tr>
                                                     <th><i class="fas fa-id-card"></i> {% trans "ID Card" %}:</th>
                                                     <td>
-                                                        {% if Suguru.documento_identidad %}
-                                                            <a href="{{ Suguru.documento_identidad.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                        {% if Suguru.national_id_copy %}
+                                                            <a href="{{ Suguru.national_id_copy.url }}" target="_blank" class="btn btn-sm btn-primary">
                                                                 <i class="fas fa-eye"></i> {% trans "Preview" %}
                                                             </a>
                                                         {% else %}
@@ -79,11 +87,12 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
+                                                <!-- Criminal Records -->
                                                 <tr>
                                                     <th><i class="fas fa-file-alt"></i> {% trans "Criminal Records" %}:</th>
                                                     <td>
-                                                        {% if Suguru.antecedentes_penales %}
-                                                            <a href="{{ Suguru.antecedentes_penales.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                        {% if Suguru.police_clearance_certificates %}
+                                                            <a href="{{ Suguru.police_clearance_certificates.url }}" target="_blank" class="btn btn-sm btn-primary">
                                                                 <i class="fas fa-eye"></i> {% trans "Preview" %}
                                                             </a>
                                                         {% else %}
@@ -91,11 +100,12 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
+                                                <!-- Health Insurance -->
                                                 <tr>
                                                     <th><i class="fas fa-file-medical"></i> {% trans "Health Insurance" %}:</th>
                                                     <td>
-                                                        {% if Suguru.seguro_medico %}
-                                                            <a href="{{ Suguru.seguro_medico.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                        {% if Suguru.travel_health_insurance %}
+                                                            <a href="{{ Suguru.travel_health_insurance.url }}" target="_blank" class="btn btn-sm btn-primary">
                                                                 <i class="fas fa-eye"></i> {% trans "Preview" %}
                                                             </a>
                                                         {% else %}
@@ -103,11 +113,12 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
+                                                <!-- Enrollment Letter -->
                                                 <tr>
                                                     <th><i class="fas fa-envelope"></i> {% trans "Enrollment Letter" %}:</th>
                                                     <td>
-                                                        {% if Suguru.carta_inscripcion %}
-                                                            <a href="{{ Suguru.carta_inscripcion.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                        {% if Suguru.enrollment_letter %}
+                                                            <a href="{{ Suguru.enrollment_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
                                                                 <i class="fas fa-eye"></i> {% trans "Preview" %}
                                                             </a>
                                                         {% else %}
@@ -115,11 +126,12 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
+                                                <!-- Payment Receipt -->
                                                 <tr>
                                                     <th><i class="fas fa-receipt"></i> {% trans "Payment Receipt" %}:</th>
                                                     <td>
-                                                        {% if Suguru.recibo_pago %}
-                                                            <a href="{{ Suguru.recibo_pago.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                        {% if Suguru.payment_receipt %}
+                                                            <a href="{{ Suguru.payment_receipt.url }}" target="_blank" class="btn btn-sm btn-primary">
                                                                 <i class="fas fa-eye"></i> {% trans "Preview" %}
                                                             </a>
                                                         {% else %}
@@ -127,20 +139,86 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
+                                                <!-- Upload Date -->
                                                 <tr>
                                                     <th><i class="fas fa-clock"></i> {% trans "Upload Date" %}:</th>
                                                     <td>
                                                         <span class="text-muted">{{ Suguru.fecha_subida }}</span>
                                                     </td>
                                                 </tr>
+                                                <!-- Rejection Reason -->
                                                 {% if Suguru.mensaje_rechazo %}
                                                 <tr>
-                                                    <th><i class="fas fa-clock"></i> {% trans "Rejection Reason" %}:</th>
+                                                    <th><i class="fas fa-times-circle"></i> {% trans "Rejection Reason" %}:</th>
                                                     <td>
                                                         <span class="text-muted">{{ Suguru.mensaje_rechazo }}</span>
                                                     </td>
                                                 </tr>
                                                 {% endif %}
+                                                <!-- Sponsorship Section -->
+                                                <tr>
+                                                    <th colspan="2">
+                                                        {% if Suguru.necesita_patrocinio == True %}
+                                                            <div class="alert alert-warning mb-0">
+                                                                <strong>{% trans "Sponsorship Details" %}:</strong>
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th><i class="fas fa-id-badge"></i> {% trans 'ID Sponsorship' %}:</th>
+                                                                            <td>
+                                                                                <a href="{{ Suguru.id_patrocinador.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th><i class="fas fa-file-signature"></i> {% trans 'Sponsorship Letter' %}:</th>
+                                                                            <td>
+                                                                                <a href="{{ Suguru.carta_patrocinio.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th><i class="fas fa-users"></i> {% trans 'Relationship Proof' %}:</th>
+                                                                            <td>
+                                                                                <a href="{{ Suguru.prueba_relacion.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th><i class="fas fa-university"></i> {% trans 'Sponsor Bank Statement' %}:</th>
+                                                                            <td>
+                                                                                <a href="{{ Suguru.estados_bancarios_patrocinador.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th><i class="fas fa-money-check-alt"></i> {% trans 'Income Proof' %}:</th>
+                                                                            <td>
+                                                                                <a href="{{ Suguru.prueba_ingresos.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th><i class="fas fa-building"></i> {% trans 'Company Details' %}:</th>
+                                                                            <td>
+                                                                                <a href="{{ Suguru.detalles_empresa.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        {% else %}
+                                                            <div class="alert alert-info mb-0">{% trans 'No sponsorship available' %}</div>
+                                                        {% endif %}
+                                                    </th>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -159,7 +237,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="estadoInscripcionModalLabel">Change Enrollment Status</h5>
+                <h5 class="modal-title" id="estadoInscripcionModalLabel">{% trans 'Change Enrollment Status' %}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -168,22 +246,22 @@
                 {% csrf_token %}
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="estado_inscripcion">Select new status:</label>
+                        <label for="estado_inscripcion">{% trans 'Select new status' %}:</label>
                         <select class="form-control" id="estado_inscripcion" name="estado_inscripcion" onchange="toggleRejectionMessage()">
-                            <option value="En Revisión" {% if Suguru.estado_inscripcion == "En Revisión" %}selected{% endif %}>Under Review</option>
-                            <option value="Aprobado" {% if Suguru.estado_inscripcion == "Aprobado" %}selected{% endif %}>Approved</option>
-                            <option value="Rechazado" {% if Suguru.estado_inscripcion == "Rechazado" %}selected{% endif %}>Rejected</option>
+                            <option value="En Revisión" {% if Suguru.estado_inscripcion == "En Revisión" %}selected{% endif %}>{% trans 'Under Review' %}</option>
+                            <option value="Aprobado" {% if Suguru.estado_inscripcion == "Aprobado" %}selected{% endif %}>{% trans 'Approved' %}</option>
+                            <option value="Rechazado" {% if Suguru.estado_inscripcion == "Rechazado" %}selected{% endif %}>{% trans 'Rejected' %}</option>
                         </select>
                     </div>
                     <!-- Field for rejection message -->
                     <div class="form-group" id="mensajeRechazoGroup" style="display: none;">
-                        <label for="mensaje_rechazo">Rejection Reason:</label>
-                        <textarea class="form-control" id="mensaje_rechazo" name="mensaje_rechazo" rows="3" placeholder="Write the rejection reason..."></textarea>
+                        <label for="mensaje_rechazo">{% trans 'Rejection Reason' %}:</label>
+                        <textarea class="form-control" id="mensaje_rechazo" name="mensaje_rechazo" rows="3" placeholder="{% trans 'Write the rejection reason...' %}"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Cancel' %}</button>
+                    <button type="submit" class="btn btn-primary">{% trans 'Save Changes' %}</button>
                 </div>
             </form>
         </div>

@@ -1,7 +1,8 @@
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -11,7 +12,7 @@
   <link rel="stylesheet" href="{% static 'modules/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'modules/fontawesome/css/all.min.css' %}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{% static 'modules/jqvmap/dist/jqvmap.min.css' %}">
   <link rel="stylesheet" href="{% static 'modules/summernote/summernote-bs4.css' %}">
@@ -96,18 +97,6 @@
             <li class="dropdown active">
               <a href="{% url 'estudiante_dashboard' %}" class="nav-link"><i class="fas fa-fire"></i><span>{% trans "Dashboard" %}</span></a>
             </li>
-            <hr>
-            <li class="menu-header">{% trans "Downloads" %}</li>
-            <li class="dropdown">
-              <a href="{% static 'docs/Financial Summary Form.docx' %}" class="nav-link"><i class="fas fa-file-word"></i><span>{% trans "Financial Summary Form" %}</span></a>
-            </li>
-            <li class="dropdown">
-              <a href="{% static 'docs/Sponsorhip Letter.docx' %}" target="_blank" class="nav-link"><i class="fas fa-file-word"></i><span>{% trans "Sponsorship Letter" %}</span></a>
-            </li>
-            <hr>
-            <li class="dropdown">
-              <a href="{% static 'docs/Sponsorhip Letter.docx' %}" target="_blank" class="nav-link"><i class="fas fa-upload"></i><span>{% trans "Upload Financial Documents" %}</span></a>
-            </li>
           </ul>
         </aside>
       </div>
@@ -117,7 +106,7 @@
 
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; <span id="year"></span> <div class="bullet"></div> {% trans "All rights reserved to" %} <a href="https://www.instagram.com/zenithinnovate/" target="_blank">GrupoZenith</a>
+          Copyright &copy; <span id="year"></span> <div class="bullet"></div> {% trans "All rights reserved to" %} <a href="https://www.instagram.com/_grupozenith_/" target="_blank">GrupoZenith</a>
         </div>
         <div class="footer-right"></div>
       </footer>

@@ -66,7 +66,7 @@ class EmpleadosFrm(forms.ModelForm):
     def clean_pasaporte(self):
         pasaporte = self.cleaned_data.get('pasaporte')
         if CustomUser.objects.filter(pasaporte=pasaporte).exclude(id=self.instance.id).exists():
-            raise ValidationError("Ya existe una persona con este pasaporte.")
+            raise ValidationError(_("Ya existe una persona con este pasaporte."))
         return pasaporte
 
     # Validación personalizada para teléfono
@@ -75,20 +75,20 @@ class EmpleadosFrm(forms.ModelForm):
         if telefono:
             # Validar formato internacional con prefijo de país, permitiendo espacios, guiones y paréntesis
             if not re.match(r'^\+\d{1,4}[\s\d\-\(\)]{7,20}$', telefono):
-                raise ValidationError(
+                raise ValidationError(_(
                     "El número de teléfono debe estar en formato internacional, comenzando con '+' seguido del prefijo del país y el número. Ejemplo: +56 9 5027 1381 o +1 (123) 456-7890."
-                )
+                ))
         return telefono
 
     # Validación personalizada para fecha de nacimiento
     def clean_fecha_nacimiento(self):
         fecha_nacimiento = self.cleaned_data.get('fecha_nacimiento')
         if not fecha_nacimiento:
-            raise ValidationError("La fecha de nacimiento es obligatoria.")
+            raise ValidationError(_("La fecha de nacimiento es obligatoria."))
         hoy = date.today()
         edad = hoy.year - fecha_nacimiento.year - ((hoy.month, hoy.day) < (fecha_nacimiento.month, fecha_nacimiento.day))
         if edad < 18:
-            raise ValidationError("El empleado debe tener al menos 18 años.")
+            raise ValidationError(_("El empleado debe tener al menos 18 años."))
         
         # Convertir la fecha a un formato adecuado si llega como cadena
         if isinstance(fecha_nacimiento, str):

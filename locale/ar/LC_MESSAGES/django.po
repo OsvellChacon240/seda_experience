@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-10 16:15-0400\n"
+"POT-Creation-Date: 2025-05-24 10:52-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,137 +21,138 @@ msgstr ""
 
 #: .\auditoria\templates\auditoria.html:12
 #: .\auditoria\templates\auditoria.html:15
-#: .\dashboard\templates\Base\head.html:105
+#: .\dashboard\templates\Base\head.html:107
 msgid "Audit Log"
-msgstr ""
+msgstr "سجل التدقيق"
 
 #: .\auditoria\templates\auditoria.html:14
-#: .\dashboard\templates\Base\head.html:98
 #: .\dashboard\templates\Base\head.html:100
-#: .\dashboard\templates\Base\head2.html:95
-#: .\dashboard\templates\Base\head2.html:97
+#: .\dashboard\templates\Base\head.html:102
+#: .\dashboard\templates\Base\head2.html:96
+#: .\dashboard\templates\Base\head2.html:98
 msgid "Dashboard"
-msgstr ""
+msgstr "لوحة التحكم"
 
-#: .\auditoria\templates\auditoria.html:33
-#: .\estudiantes\templates\estudiantes\estudiantes.html:45
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:42
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:42
-#: .\usuarios\templates\empleados\verEmpleados.html:45
+#: .\auditoria\templates\auditoria.html:34
+#: .\estudiantes\templates\estudiantes\estudiantes.html:46
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:43
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:43
+#: .\usuarios\templates\empleados\verEmpleados.html:46
 #: .\usuarios\templates\usuarios.html:60
 #: .\venv\Lib\site-packages\auditlog\mixins.py:30
 msgid "User"
-msgstr ""
-
-#: .\auditoria\templates\auditoria.html:34
-msgid "Date and Time"
-msgstr ""
+msgstr "المستخدم"
 
 #: .\auditoria\templates\auditoria.html:35
-msgid "Module"
-msgstr ""
+msgid "Date and Time"
+msgstr "التاريخ والوقت"
 
 #: .\auditoria\templates\auditoria.html:36
-msgid "Object"
-msgstr ""
+msgid "Module"
+msgstr "الوحدة النمطية"
 
 #: .\auditoria\templates\auditoria.html:37
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:46
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:46
-msgid "Action"
-msgstr ""
+msgid "Object"
+msgstr "الكائن"
 
-#: .\auditoria\templates\auditoria.html:50
+#: .\auditoria\templates\auditoria.html:38
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:47
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:47
+msgid "Action"
+msgstr "الإجراء"
+
+#: .\auditoria\templates\auditoria.html:51
 #: .\venv\Lib\site-packages\auditlog\mixins.py:24
 msgid "Created"
-msgstr ""
+msgstr "تم إنشاؤها"
 
-#: .\auditoria\templates\auditoria.html:52
+#: .\auditoria\templates\auditoria.html:53
 msgid "Updated"
-msgstr ""
+msgstr "محدثة"
 
-#: .\auditoria\templates\auditoria.html:54
+#: .\auditoria\templates\auditoria.html:55
 msgid "Deleted"
-msgstr ""
+msgstr "محذوف"
 
-#: .\auditoria\templates\auditoria.html:61
+#: .\auditoria\templates\auditoria.html:62
 msgid "No audit records found"
-msgstr ""
+msgstr "لم يتم العثور على سجلات مراجعة الحسابات"
 
-#: .\dashboard\templates\Base\head.html:46
+#: .\dashboard\templates\Base\head.html:48
 #: .\dashboard\templates\error-404.html:58
 msgid "Search"
-msgstr ""
-
-#: .\dashboard\templates\Base\head.html:57
-#: .\dashboard\templates\Base\head2.html:52
-msgid "Language"
-msgstr ""
+msgstr "بحث"
 
 #: .\dashboard\templates\Base\head.html:59
-#: .\dashboard\templates\Base\head2.html:55
-#: .\seda_inscripciones\templates\registration\login.html:107
-msgid "Arabic"
-msgstr ""
-
-#: .\dashboard\templates\Base\head.html:60
-#: .\dashboard\templates\Base\head2.html:58
-#: .\seda_inscripciones\templates\registration\login.html:110
-msgid "English"
-msgstr ""
+#: .\dashboard\templates\Base\head2.html:53
+msgid "Language"
+msgstr "اللغة"
 
 #: .\dashboard\templates\Base\head.html:61
-#: .\dashboard\templates\Base\head2.html:61
-#: .\seda_inscripciones\templates\registration\login.html:113
-msgid "Spanish"
-msgstr ""
+#: .\dashboard\templates\Base\head2.html:56
+#: .\seda_inscripciones\templates\registration\login.html:107
+msgid "Arabic"
+msgstr "اللغة العربية"
 
 #: .\dashboard\templates\Base\head.html:62
-#: .\dashboard\templates\Base\head2.html:64
+#: .\dashboard\templates\Base\head2.html:59
+#: .\seda_inscripciones\templates\registration\login.html:110
+msgid "English"
+msgstr "اللغة الإنجليزية"
+
+#: .\dashboard\templates\Base\head.html:63
+#: .\dashboard\templates\Base\head2.html:62
+#: .\seda_inscripciones\templates\registration\login.html:113
+msgid "Spanish"
+msgstr "الإسبانية"
+
+#: .\dashboard\templates\Base\head.html:64
+#: .\dashboard\templates\Base\head2.html:65
 #: .\seda_inscripciones\templates\registration\login.html:116
 msgid "French"
-msgstr ""
+msgstr "الفرنسية"
 
-#: .\dashboard\templates\Base\head.html:77
-#: .\dashboard\templates\Base\head2.html:76
+#: .\dashboard\templates\Base\head.html:79
+#: .\dashboard\templates\Base\head2.html:77
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:7
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:8
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:8
 msgid "Profile"
-msgstr ""
+msgstr "الملف الشخصي"
 
-#: .\dashboard\templates\Base\head.html:81
-#: .\dashboard\templates\Base\head2.html:80
+#: .\dashboard\templates\Base\head.html:83
+#: .\dashboard\templates\Base\head2.html:81
 msgid "Log out"
-msgstr ""
+msgstr "تسجيل الخروج"
 
-#: .\dashboard\templates\Base\head.html:102
+#: .\dashboard\templates\Base\head.html:104
 msgid "Menu"
-msgstr ""
+msgstr "قائمة الطعام"
 
-#: .\dashboard\templates\Base\head.html:110
+#: .\dashboard\templates\Base\head.html:112
 #: .\dashboard\templates\dashboard.html:20
 #: .\dashboard\templates\dashboard.html:41
 #: .\dashboard\templates\dashboard.html:93
-#: .\estudiantes\templates\estudiantes.html:17
+#: .\estudiantes\templates\estudiantes.html:24
 #: .\estudiantes\templates\estudiantes\actualizarEstudiante.html:12
 #: .\estudiantes\templates\estudiantes\agregarEstudiante.html:12
 #: .\estudiantes\templates\estudiantes\estudiantes.html:12
 #: .\estudiantes\templates\estudiantes\estudiantes.html:15
 #: .\estudiantes\templates\estudiantes\estudiantes.html:30
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:9
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:10
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:11
 msgid "Students"
-msgstr ""
+msgstr "الطلاب"
 
-#: .\dashboard\templates\Base\head.html:113
-#: .\estudiantes\templates\estudiantes.html:35
+#: .\dashboard\templates\Base\head.html:115
+#: .\estudiantes\templates\estudiantes.html:42
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:15
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:30
 msgid "Pending Processes"
-msgstr ""
+msgstr "العمليات المعلقة"
 
-#: .\dashboard\templates\Base\head.html:118
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:42
+#: .\dashboard\templates\Base\head.html:120
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:43
 #: .\usuarios\templates\empleados\actEmpleados.html:12
 #: .\usuarios\templates\empleados\addEmpleados.html:12
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:10
@@ -160,422 +161,592 @@ msgstr ""
 #: .\usuarios\templates\empleados\verEmpleados.html:30
 #: .\usuarios\templates\usuarios.html:18
 msgid "Users"
-msgstr ""
+msgstr "المستخدمون"
 
-#: .\dashboard\templates\Base\head.html:131
+#: .\dashboard\templates\Base\head.html:133
 msgid "All rights reserved for"
-msgstr ""
+msgstr "جميع الحقوق محفوظة ل"
 
-#: .\dashboard\templates\Base\head2.html:108
+#: .\dashboard\templates\Base\head2.html:109
 msgid "All rights reserved to"
-msgstr ""
+msgstr "جميع الحقوق محفوظة ل"
 
 #: .\dashboard\templates\dashboard.html:24
-#: .\dashboard\templates\dashboardEstudiantes.html:130
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:62
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:62
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:62
+#: .\dashboard\templates\dashboardEstudiantes.html:134
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:63
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:63
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:63
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:253
 msgid "Rejected"
-msgstr ""
+msgstr "مرفوض"
 
 #: .\dashboard\templates\dashboard.html:28
 msgid "Pending"
-msgstr ""
+msgstr "قيد الانتظار"
 
 #: .\dashboard\templates\dashboard.html:32
-#: .\dashboard\templates\dashboardEstudiantes.html:128
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:60
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:60
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:60
+#: .\dashboard\templates\dashboardEstudiantes.html:132
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:61
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:61
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:61
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:252
 msgid "Approved"
-msgstr ""
+msgstr "معتمد"
 
 #: .\dashboard\templates\dashboard.html:65
 msgid "System Users"
-msgstr ""
+msgstr "مستخدمو النظام"
 
 #: .\dashboard\templates\dashboard.html:83
 msgid "Latest Registered Students"
-msgstr ""
+msgstr "أحدث الطلاب المسجلين"
 
 #: .\dashboard\templates\dashboard.html:85
 msgid "See More"
-msgstr ""
+msgstr "شاهد المزيد"
 
 #: .\dashboard\templates\dashboard.html:94
 msgid "Addition Date"
-msgstr ""
+msgstr "تاريخ الإضافة"
 
 #: .\dashboard\templates\dashboard.html:114
 #: .\usuarios\templates\usuarios.html:82
 msgid "No records"
-msgstr ""
+msgstr "لا توجد سجلات"
 
 #: .\dashboard\templates\dashboard.html:132
 msgid "Processes to Approve"
-msgstr ""
+msgstr "عمليات الموافقة على العمليات"
+
+#: .\dashboard\templates\dashboard.html:146
+msgid "waiting"
+msgstr "الانتظار"
 
 #: .\dashboard\templates\dashboard.html:154
 msgid "No pending processes"
-msgstr ""
+msgstr "لا توجد عمليات معلقة"
+
+#: .\dashboard\templates\dashboard.html:159
+msgid "See all"
+msgstr "شاهد الكل"
 
 #: .\dashboard\templates\dashboardEstudiantes.html:15
 msgid "Greetings"
-msgstr ""
+msgstr "تحياتنا"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:28
-#: .\estudiantes\templates\documentos\actualizar_documentos.html:10
-#: .\estudiantes\templates\documentos\actualizar_documentos.html:19
-#: .\estudiantes\templates\documentos\actualizar_documentos.html:27
-#: .\estudiantes\templates\documentos\subir_documentos.html:10
-msgid "Update Documents"
-msgstr ""
+#: .\dashboard\templates\dashboardEstudiantes.html:18
+#| msgid "Management"
+msgid "Make Payment"
+msgstr "قم بالدفع"
 
 #: .\dashboard\templates\dashboardEstudiantes.html:31
-#: .\dashboard\templates\dashboardEstudiantes.html:47
+#: .\estudiantes\templates\documentos\actualizar_documentos.html:10
+msgid "Update Documents"
+msgstr "تحديث المستندات"
+
+#: .\dashboard\templates\dashboardEstudiantes.html:34
+#: .\dashboard\templates\dashboardEstudiantes.html:50
 msgid "Click here"
-msgstr ""
+msgstr "انقر هنا"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:44
+#: .\dashboard\templates\dashboardEstudiantes.html:47
+#: .\estudiantes\templates\documentos\actualizar_documentos.html:80
+#: .\estudiantes\templates\documentos\subir_documentos.html:10
+#: .\estudiantes\templates\documentos\subir_documentos.html:80
 msgid "Upload Documents"
-msgstr ""
+msgstr "تحميل المستندات"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:62
+#: .\dashboard\templates\dashboardEstudiantes.html:65
 msgid "Enrollment Progress"
-msgstr ""
+msgstr "تقدم التسجيل"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:66
+#: .\dashboard\templates\dashboardEstudiantes.html:69
 msgid "Completed"
+msgstr "مكتمل"
+
+#: .\dashboard\templates\dashboardEstudiantes.html:70
+msgid "Realizar Pago"
 msgstr ""
 
-#: .\dashboard\templates\dashboardEstudiantes.html:79
-#: .\dashboard\templates\dashboardEstudiantes.html:93
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:65
+#: .\dashboard\templates\dashboardEstudiantes.html:83
+#: .\dashboard\templates\dashboardEstudiantes.html:97
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:69
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:41
-#: .\usuarios\templates\empleados\actualizarPerfil.html:60
+#: .\usuarios\templates\empleados\actualizarPerfil.html:64
 msgid "Account Status"
-msgstr ""
+msgstr "حالة الحساب"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:82
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:68
-#: .\estudiantes\templates\estudiantes\estudiantes.html:63
+#: .\dashboard\templates\dashboardEstudiantes.html:86
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:72
+#: .\estudiantes\templates\estudiantes\estudiantes.html:64
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:43
-#: .\usuarios\templates\empleados\actualizarPerfil.html:63
+#: .\usuarios\templates\empleados\actualizarPerfil.html:67
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:50
-#: .\usuarios\templates\empleados\verEmpleados.html:65
+#: .\usuarios\templates\empleados\verEmpleados.html:66
 msgid "Active"
-msgstr ""
+msgstr "نشط"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:96
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:70
-#: .\estudiantes\templates\estudiantes\estudiantes.html:65
+#: .\dashboard\templates\dashboardEstudiantes.html:100
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:74
+#: .\estudiantes\templates\estudiantes\estudiantes.html:66
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:45
-#: .\usuarios\templates\empleados\actualizarPerfil.html:65
+#: .\usuarios\templates\empleados\actualizarPerfil.html:69
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:52
-#: .\usuarios\templates\empleados\verEmpleados.html:67
+#: .\usuarios\templates\empleados\verEmpleados.html:68
 msgid "Inactive"
-msgstr ""
+msgstr "غير نشط"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:108
+#: .\dashboard\templates\dashboardEstudiantes.html:112
 msgid "Documents"
-msgstr ""
+msgstr "المستندات"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:115
+#: .\dashboard\templates\dashboardEstudiantes.html:119
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:116
+#: .\dashboard\templates\dashboardEstudiantes.html:120
 msgid "Date"
-msgstr ""
+msgstr "التاريخ"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:117
-#: .\estudiantes\templates\estudiantes\estudiantes.html:48
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:45
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:45
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:45
+#: .\dashboard\templates\dashboardEstudiantes.html:121
+#: .\estudiantes\templates\estudiantes\estudiantes.html:49
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:46
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:46
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:46
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:48
-#: .\usuarios\templates\empleados\verEmpleados.html:49
+#: .\usuarios\templates\empleados\verEmpleados.html:50
 msgid "Status"
-msgstr ""
+msgstr "الحالة"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:118
+#: .\dashboard\templates\dashboardEstudiantes.html:122
 msgid "Reference Code"
-msgstr ""
+msgstr "رمز المرجع"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:126
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:58
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:58
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:58
+#: .\dashboard\templates\dashboardEstudiantes.html:130
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:59
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:59
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:59
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:251
 msgid "Under Review"
-msgstr ""
+msgstr "قيد المراجعة"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:137
+#: .\dashboard\templates\dashboardEstudiantes.html:141
 msgid "Cancellation Message"
-msgstr ""
+msgstr "رسالة الإلغاء"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:143
+#: .\dashboard\templates\dashboardEstudiantes.html:147
 msgid "No documents uploaded"
-msgstr ""
+msgstr "لم يتم تحميل أي مستندات"
 
 #: .\dashboard\templates\error-404.html:43
 msgid "Unfortunately, I couldn't find what you were looking for, "
-msgstr ""
+msgstr "للأسف، لم أتمكن من العثور على ما كنت تبحث عنه،"
 
 #: .\dashboard\templates\error-404.html:44
 msgid "try another method or make sure you made the request correctly"
-msgstr ""
+msgstr "حاول طريقة أخرى أو تأكد من أنك قدمت الطلب بشكل صحيح"
 
 #: .\dashboard\templates\error-404.html:55
 msgid "Try again..."
-msgstr ""
+msgstr "حاول مرة أخرى..."
 
 #: .\dashboard\templates\error-404.html:65
 msgid "Return to dashboard"
-msgstr ""
+msgstr "العودة إلى لوحة التحكم"
 
 #: .\estudiantes\forms.py:27 .\estudiantes\forms.py:100 .\usuarios\forms.py:47
 #: .\usuarios\forms.py:163
 msgid "Nombre"
-msgstr ""
+msgstr "الاسم"
 
 #: .\estudiantes\forms.py:28 .\estudiantes\forms.py:101 .\usuarios\forms.py:48
 #: .\usuarios\forms.py:164
 msgid "Apellido"
-msgstr ""
+msgstr "أبيليدو"
 
 #: .\estudiantes\forms.py:29 .\estudiantes\forms.py:102 .\usuarios\forms.py:49
 #: .\usuarios\forms.py:165
 msgid "Correo Electrónico"
-msgstr ""
+msgstr "عنوان البريد الإلكتروني"
 
 #: .\estudiantes\forms.py:30 .\estudiantes\forms.py:103 .\usuarios\forms.py:51
 #: .\usuarios\forms.py:166
 msgid "Número de Pasaporte"
-msgstr ""
+msgstr "عنوان البريد الإلكتروني"
 
 #: .\estudiantes\forms.py:31 .\estudiantes\forms.py:104 .\usuarios\forms.py:54
 #: .\usuarios\forms.py:169 .\usuarios\models.py:75
 msgid "Género"
-msgstr ""
+msgstr "الجنس"
 
 #: .\estudiantes\forms.py:32 .\estudiantes\forms.py:105 .\usuarios\forms.py:52
 #: .\usuarios\forms.py:167 .\usuarios\models.py:69
 msgid "Teléfono"
-msgstr ""
+msgstr "الهاتف"
 
 #: .\estudiantes\forms.py:33 .\estudiantes\forms.py:106 .\usuarios\forms.py:53
 #: .\usuarios\forms.py:168 .\usuarios\models.py:78
 msgid "Dirección"
-msgstr ""
+msgstr "العنوان"
 
 #: .\estudiantes\forms.py:34 .\usuarios\forms.py:56
 msgid "Fecha de Nacimiento"
-msgstr ""
+msgstr "تاريخ الميلاد"
 
 #: .\estudiantes\forms.py:35 .\estudiantes\forms.py:108 .\usuarios\forms.py:58
 #: .\usuarios\forms.py:172
 msgid "Foto de Perfil"
-msgstr ""
+msgstr "صورة الملف الشخصي"
 
 #: .\estudiantes\forms.py:36 .\estudiantes\forms.py:109
 msgid "Nacionalidad"
+msgstr "الجنسية"
+
+#: .\estudiantes\forms.py:43 .\usuarios\forms.py:87
+msgid "La fecha de nacimiento es obligatoria."
+msgstr "تاريخ الميلاد"
+
+#: .\estudiantes\forms.py:47
+msgid "El estudiante debe tener al menos 16 años."
+msgstr "يجب ألا يقل عمر الطالب عن 16 عاماً"
+
+#: .\estudiantes\forms.py:53
+msgid "Este correo electrónico ya está registrado."
+msgstr "جواز السفر هذا مسجل بالفعل"
+
+#: .\estudiantes\forms.py:60 .\estudiantes\forms.py:122
+msgid "Ya existe un estudiante con este pasaporte."
+msgstr "يوجد بالفعل طالب واحد يحمل جواز السفر هذا."
+
+#: .\estudiantes\forms.py:70 .\estudiantes\forms.py:132
+msgid ""
+"El número de teléfono debe estar en formato internacional, comenzando con "
+"'+' seguido del prefijo del país y el número, sin espacios, guiones o "
+"paréntesis. Ejemplo: +584147080725 o +14155552671."
 msgstr ""
+"يجب أن يكون رقم الهاتف بالصيغة الدولية، بدءًا من '+' متبوعًا ببادئة البلد "
+"والرقم، بدون مسافات أو واصلات أو بين قوسين. مثال: +584147080725 أو "
+"+14155552671."
 
 #: .\estudiantes\forms.py:107 .\usuarios\forms.py:57 .\usuarios\forms.py:171
 msgid "Estado"
-msgstr ""
+msgstr "الولاية"
 
-#: .\estudiantes\forms.py:165 .\usuarios\models.py:61
-msgid "Pasaporte"
-msgstr ""
+#: .\estudiantes\forms.py:159
+msgid "Seleccionar archivo"
+msgstr "حدد الملف"
 
-#: .\estudiantes\forms.py:166
-msgid "Documento de Identidad"
-msgstr ""
-
-#: .\estudiantes\forms.py:167
-msgid "Antecedentes Penales"
-msgstr ""
-
-#: .\estudiantes\forms.py:168
-msgid "Seguro Médico"
-msgstr ""
-
-#: .\estudiantes\forms.py:169
-msgid "Carta de Inscripción"
-msgstr ""
-
-#: .\estudiantes\forms.py:170
-msgid "Recibo de Pago"
-msgstr ""
-
-#: .\estudiantes\forms.py:171
-msgid "Diploma Traducido"
-msgstr ""
-
-#: .\estudiantes\forms.py:172
-msgid "Transcripción Traducida"
-msgstr ""
-
-#: .\estudiantes\forms.py:173
-msgid "Carta de Intención"
-msgstr ""
-
-#: .\estudiantes\forms.py:174
-msgid "Resumen Financiero"
-msgstr ""
+#: .\estudiantes\forms.py:160
+msgid "Ningún archivo seleccionado"
+msgstr "لم يتم تحديد أي ملف"
 
 #: .\estudiantes\forms.py:175
-msgid "Extracto Bancario"
-msgstr ""
+msgid "Sí"
+msgstr "نعم"
 
-#: .\estudiantes\templates\documentos\subir_documentos.html:19
-msgid "Add Document"
-msgstr ""
+#: .\estudiantes\forms.py:176
+#: .\venv\Lib\site-packages\django\forms\widgets.py:802
+msgid "No"
+msgstr "لا يوجد"
 
-#: .\estudiantes\templates\documentos\subir_documentos.html:27
-msgid "Submit Documents"
+#: .\estudiantes\forms.py:180
+msgid "Passport Copy (Data Page and all signed/stamped/visa pages)"
 msgstr ""
+"نسخة من جواز السفر (صفحة البيانات وجميع الصفحات الموقعة/المختومة/التأشيرة)"
 
-#: .\estudiantes\templates\estudiantes.html:53
+#: .\estudiantes\forms.py:181
+msgid "Previous Visa Refusal Letters (if applicable)"
+msgstr "خطابات رفض التأشيرة السابقة (إن وجدت)"
+
+#: .\estudiantes\forms.py:182
+msgid "National ID Copy"
+msgstr "نسخة الهوية الوطنية"
+
+#: .\estudiantes\forms.py:183
+msgid "2 Biometric Photos (35x45 size)"
+msgstr "2 صورة بيومترية (مقاس 35 × 45)"
+
+#: .\estudiantes\forms.py:184
+msgid "Police Clearance Certificates"
+msgstr "شهادات براءة الذمة الشرطية"
+
+#: .\estudiantes\forms.py:185
+msgid "Travel Health Insurance"
+msgstr "التأمين الصحي أثناء السفر"
+
+#: .\estudiantes\forms.py:186
+msgid "Enrollment Letter from SEDA"
+msgstr "خطاب التسجيل من SEDA"
+
+#: .\estudiantes\forms.py:187
+msgid "Booking Letter from SEDA"
+msgstr "خطاب الحجز من SEDA"
+
+#: .\estudiantes\forms.py:188
+msgid "Payment Receipt from SEDA"
+msgstr "إيصال السداد من SEDA"
+
+#: .\estudiantes\forms.py:189
+msgid "Recent Diploma Translated into English"
+msgstr "دبلوم حديث مترجم إلى الإنجليزية"
+
+#: .\estudiantes\forms.py:190
+msgid "Recent Transcript Translated into English"
+msgstr "أحدث نسخة مترجمة إلى الإنجليزية"
+
+#: .\estudiantes\forms.py:191
+msgid "Student Letter from College (if applicable)"
+msgstr "رسالة الطالب من الكلية (إن وجدت)"
+
+#: .\estudiantes\forms.py:192
+msgid "Payslips for Last 3 Months (if employed)"
+msgstr "كشوف الرواتب لآخر 3 أشهر (إذا كنت موظفًا)"
+
+#: .\estudiantes\forms.py:193
+msgid "Applicant's Translated Work History"
+msgstr "السجل الوظيفي المترجم للمتقدم"
+
+#: .\estudiantes\forms.py:194
+msgid "Supportive Certificate or Reasons to Study English Abroad"
+msgstr "الشهادة أو الأسباب الداعمة لدراسة اللغة الإنجليزية في الخارج"
+
+#: .\estudiantes\forms.py:195
+msgid "Intention Letter"
+msgstr "خطاب النوايا"
+
+#: .\estudiantes\forms.py:196
+msgid "Reason for Return to Home Country"
+msgstr "سبب العودة إلى الوطن الأم"
+
+#: .\estudiantes\forms.py:197
+msgid "Financial Summary Form"
+msgstr "نموذج الملخص المالي"
+
+#: .\estudiantes\forms.py:198
+msgid "Online Visa Application Form and Its Summary"
+msgstr "نموذج طلب التأشيرة عبر الإنترنت وملخصه"
+
+#: .\estudiantes\forms.py:199
+msgid "6 Months Bank Statement (Proof of 10,000 Euros)"
+msgstr "كشف حساب بنكي لمدة 6 أشهر (إثبات 10,000 يورو)"
+
+#: .\estudiantes\forms.py:200
+msgid "¿Necesita patrocinio?"
+msgstr "هل تحتاج إلى رعاية؟"
+
+#: .\estudiantes\forms.py:201
+msgid "ID o Pasaporte del Patrocinador"
+msgstr "بطاقة الكفيل أو جواز السفر"
+
+#: .\estudiantes\forms.py:202
+msgid "Carta de Patrocinio"
+msgstr "خطاب الرعاية"
+
+#: .\estudiantes\forms.py:203
+msgid "Prueba de Relación"
+msgstr "اختبار العلاقة"
+
+#: .\estudiantes\forms.py:204
+msgid "Estado Bancario del Patrocinador (6 meses)"
+msgstr "كشف الحساب البنكي للكفيل (6 أشهر)"
+
+#: .\estudiantes\forms.py:205
+msgid "Prueba de Ingresos del Patrocinador"
+msgstr "إثبات دخل الكفيل"
+
+#: .\estudiantes\forms.py:206
+msgid "Documentos de Empresa del Patrocinador"
+msgstr "مستندات الشركة الراعية"
+
+#: .\estudiantes\forms.py:207
+msgid "Carta de Patrocinio Adicional"
+msgstr "خطاب رعاية إضافي"
+
+#: .\estudiantes\forms.py:252 .\estudiantes\models.py:269
+#: .\estudiantes\views.py:212 .\estudiantes\views.py:270
+msgid "Este campo es obligatorio si necesita patrocinio."
+msgstr "هذا الحقل إلزامي إذا كنت بحاجة إلى كفالة"
+
+#: .\estudiantes\models.py:26
+msgid "Estudiante"
+msgstr "طالب"
+
+#: .\estudiantes\models.py:33
+msgid "En Revisión"
+msgstr "قيد المراجعة"
+
+#: .\estudiantes\models.py:34
+msgid "Aprobado"
+msgstr "معتمد"
+
+#: .\estudiantes\models.py:35
+msgid "Rechazado"
+msgstr "مرفوض"
+
+#: .\estudiantes\templates\documentos\actualizar_documentos.html:17
+msgid "Update Document"
+msgstr "تحديث المستندات"
+
+#: .\estudiantes\templates\documentos\actualizar_documentos.html:48
+#: .\estudiantes\templates\documentos\subir_documentos.html:48
+msgid "Download Financial Summary"
+msgstr "تنزيل الملخص المالي"
+
+#: .\estudiantes\templates\documentos\actualizar_documentos.html:50
+#: .\estudiantes\templates\documentos\subir_documentos.html:50
+msgid "Download Sponsorship Letter"
+msgstr "تنزيل رسالة الرعاية"
+
+#: .\estudiantes\templates\documentos\actualizar_documentos.html:226
+#: .\estudiantes\templates\documentos\subir_documentos.html:182
+#: .\estudiantes\templates\documentos\subir_documentos.html:194
+msgid "No file selected"
+msgstr "لم يتم تحديد أي ملف"
+
+#: .\estudiantes\templates\documentos\subir_documentos.html:17
+msgid "Upload Document"
+msgstr "تحميل المستندات"
+
+#: .\estudiantes\templates\estudiantes.html:60
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:15
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:30
 msgid "Approved Processes"
-msgstr ""
+msgstr "العمليات المعتمدة"
 
-#: .\estudiantes\templates\estudiantes.html:71
+#: .\estudiantes\templates\estudiantes.html:78
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:15
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:30
 msgid "Rejected Processes"
-msgstr ""
-
-#: .\estudiantes\templates\estudiantes.html:86
-msgid "Latest Registrations"
-msgstr ""
+msgstr "العمليات المرفوضة"
 
 #: .\estudiantes\templates\estudiantes.html:93
-msgid "Student"
-msgstr ""
+msgid "Latest Registrations"
+msgstr "أحدث التسجيلات"
 
-#: .\estudiantes\templates\estudiantes.html:94
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:45
+#: .\estudiantes\templates\estudiantes.html:100
+msgid "Student"
+msgstr "طالب"
+
+#: .\estudiantes\templates\estudiantes.html:101
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:49
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:87
-#: .\usuarios\templates\empleados\actualizarPerfil.html:44
+#: .\usuarios\templates\empleados\actualizarPerfil.html:48
 #: .\usuarios\templates\usuarios.html:62
 msgid "Date Added"
-msgstr ""
+msgstr "تاريخ الإضافة"
 
-#: .\estudiantes\templates\estudiantes.html:111
+#: .\estudiantes\templates\estudiantes.html:118
 msgid "No records found"
-msgstr ""
+msgstr "لم يتم العثور على سجلات"
 
 #: .\estudiantes\templates\estudiantes\actualizarEstudiante.html:10
 #: .\estudiantes\templates\estudiantes\actualizarEstudiante.html:23
 msgid "Update Student"
-msgstr ""
+msgstr "تحديث الطالب"
 
 #: .\estudiantes\templates\estudiantes\actualizarEstudiante.html:31
 #: .\usuarios\templates\cargos\actCargos.html:32
 #: .\usuarios\templates\empleados\actEmpleados.html:23
 msgid "Update"
-msgstr ""
+msgstr "تحديث"
 
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:10
 msgid "Student Profile"
-msgstr ""
-
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:27
-#: .\estudiantes\templates\estudiantes\estudiantes.html:46
-#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:63
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:59
-#: .\usuarios\templates\empleados\actualizarPerfil.html:26
-#: .\usuarios\templates\empleados\tarjetaEmpleado.html:70
-#: .\usuarios\templates\empleados\verEmpleados.html:46
-msgid "Passport"
-msgstr ""
+msgstr "الملف الشخصي للطالب"
 
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:31
-#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:67
+#: .\estudiantes\templates\estudiantes\estudiantes.html:47
+#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:63
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:66
 #: .\usuarios\templates\empleados\actualizarPerfil.html:30
-#: .\usuarios\templates\empleados\tarjetaEmpleado.html:74
-msgid "Phone"
-msgstr ""
+#: .\usuarios\templates\empleados\tarjetaEmpleado.html:70
+#: .\usuarios\templates\empleados\verEmpleados.html:47
+msgid "Passport"
+msgstr "جواز السفر"
 
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:35
-#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:79
+#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:67
 #: .\usuarios\templates\empleados\actualizarPerfil.html:34
+#: .\usuarios\templates\empleados\tarjetaEmpleado.html:74
+msgid "Phone"
+msgstr "الهاتف"
+
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:39
+#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:79
+#: .\usuarios\templates\empleados\actualizarPerfil.html:38
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:86
 msgid "Gender"
-msgstr ""
+msgstr "الجنس"
 
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:38
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:42
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:81
-#: .\usuarios\templates\empleados\actualizarPerfil.html:37
+#: .\usuarios\templates\empleados\actualizarPerfil.html:41
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:88
 msgid "Male"
-msgstr ""
+msgstr "الذكور"
 
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:40
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:44
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:83
-#: .\usuarios\templates\empleados\actualizarPerfil.html:39
+#: .\usuarios\templates\empleados\actualizarPerfil.html:43
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:90
 msgid "Female"
-msgstr ""
-
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:49
-#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:91
-#: .\usuarios\templates\empleados\actualizarPerfil.html:48
-#: .\usuarios\templates\empleados\tarjetaEmpleado.html:98
-msgid "Address"
-msgstr ""
+msgstr "أنثى"
 
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:53
-#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:95
+#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:91
 #: .\usuarios\templates\empleados\actualizarPerfil.html:52
-#: .\usuarios\templates\empleados\tarjetaEmpleado.html:102
-msgid "Date of Birth"
-msgstr ""
+#: .\usuarios\templates\empleados\tarjetaEmpleado.html:98
+msgid "Address"
+msgstr "العنوان"
 
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:57
-#: .\estudiantes\templates\estudiantes\estudiantes.html:47
-#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:37
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:44
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:44
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:44
-msgid "Nationality"
-msgstr ""
+#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:95
+#: .\usuarios\templates\empleados\actualizarPerfil.html:56
+#: .\usuarios\templates\empleados\tarjetaEmpleado.html:102
+msgid "Date of Birth"
+msgstr "تاريخ الميلاد"
 
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:61
+#: .\estudiantes\templates\estudiantes\estudiantes.html:48
+#: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:37
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:45
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:45
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:45
+msgid "Nationality"
+msgstr "تاريخ الميلاد"
+
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:65
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:33
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:34
-#: .\usuarios\templates\empleados\actualizarPerfil.html:56
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:40
+#: .\usuarios\templates\empleados\actualizarPerfil.html:60
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:44
 msgid "Role"
-msgstr ""
+msgstr "الدور"
 
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:85
-#: .\usuarios\templates\empleados\actualizarPerfil.html:80
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:89
+#: .\usuarios\templates\empleados\actualizarPerfil.html:84
 msgid "Update Information"
-msgstr ""
+msgstr "تحديث المعلومات"
 
-#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:91
-#: .\usuarios\templates\empleados\actualizarPerfil.html:86
+#: .\estudiantes\templates\estudiantes\actualizarPerfil.html:95
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:264
+#: .\usuarios\templates\empleados\actualizarPerfil.html:90
 msgid "Save Changes"
-msgstr ""
+msgstr "حفظ التغييرات"
 
 #: .\estudiantes\templates\estudiantes\agregarEstudiante.html:10
 #: .\estudiantes\templates\estudiantes\agregarEstudiante.html:13
 #: .\estudiantes\templates\estudiantes\agregarEstudiante.html:23
 #: .\estudiantes\templates\estudiantes\estudiantes.html:36
 msgid "Add Student"
-msgstr ""
+msgstr "إضافة طالب"
 
 #: .\estudiantes\templates\estudiantes\agregarEstudiante.html:31
 #: .\usuarios\templates\cargos\cargos.html:40
 #: .\usuarios\templates\empleados\actEmpleados.html:31
 #: .\usuarios\templates\empleados\addEmpleados.html:31
 msgid "Save"
-msgstr ""
+msgstr "الحفظ"
 
 #: .\estudiantes\templates\estudiantes\estudiantes.html:14
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:14
@@ -584,244 +755,530 @@ msgstr ""
 #: .\usuarios\templates\cargos\cargos.html:19
 #: .\usuarios\templates\empleados\verEmpleados.html:14
 msgid "Management"
-msgstr ""
+msgstr "الإدارة"
 
 #: .\estudiantes\templates\estudiantes\estudiantes.html:33
 msgid "Search student..."
-msgstr ""
+msgstr "ابحث عن طالب..."
 
-#: .\estudiantes\templates\estudiantes\estudiantes.html:50
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:46
+#: .\estudiantes\templates\estudiantes\estudiantes.html:51
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:47
 #: .\usuarios\templates\cargos\cargos.html:60
-#: .\usuarios\templates\empleados\verEmpleados.html:51
+#: .\usuarios\templates\empleados\verEmpleados.html:52
 msgid "Actions"
-msgstr ""
+msgstr "الإجراءات"
 
-#: .\estudiantes\templates\estudiantes\estudiantes.html:90
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:78
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:78
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:78
+#: .\estudiantes\templates\estudiantes\estudiantes.html:91
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:79
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:79
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:79
 msgid "No data recorded"
-msgstr ""
+msgstr "لم يتم تسجيل أي بيانات"
 
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:23
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:24
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:30
 msgid "View detailed information about the user"
-msgstr ""
+msgstr "عرض معلومات مفصلة عن المستخدم"
 
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:59
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:66
 msgid "Full Name"
-msgstr ""
+msgstr "الاسم الكامل"
 
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:75
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:82
-#: .\usuarios\templates\empleados\verEmpleados.html:47
+#: .\usuarios\templates\empleados\verEmpleados.html:48
 msgid "Email"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:116
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:123
 msgid "Select Permissions"
-msgstr ""
+msgstr "تحديد الأذونات"
 
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:138
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:145
 msgid "Select/Deselect All"
-msgstr ""
+msgstr "تحديد/إلغاء تحديد الكل"
 
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:139
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:146
 msgid "Save Permissions"
-msgstr ""
+msgstr "حفظ الأذونات"
 
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:140
+#: .\seda_inscripciones\templates\registration\register.html:90
+#: .\seda_inscripciones\templates\registration\register.html:156
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:147
 msgid "Close"
-msgstr ""
+msgstr "إغلاق"
 
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:12
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:12
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:12
 msgid "Student Documentation"
-msgstr ""
+msgstr "وثائق الطلاب"
 
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:33
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:33
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:33
 msgid "Search student or document..."
-msgstr ""
+msgstr "ابحث عن طالب أو مستند..."
 
-#: .\estudiantes\templates\pendientes\documentos_pendientes.html:43
-#: .\estudiantes\templates\pendientes\procesos_aprobados.html:43
-#: .\estudiantes\templates\pendientes\procesos_rechazados.html:43
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:38
+#: .\estudiantes\templates\pendientes\documentos_pendientes.html:44
+#: .\estudiantes\templates\pendientes\procesos_aprobados.html:44
+#: .\estudiantes\templates\pendientes\procesos_rechazados.html:44
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:44
 msgid "Enrollment Code"
-msgstr ""
+msgstr "رمز التسجيل"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:42
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:48
 msgid "Enrollment Status"
-msgstr ""
+msgstr "حالة التسجيل"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:63
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:75
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:87
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:99
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:111
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:123
-msgid "Preview"
-msgstr ""
-
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:66
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:78
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:90
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:102
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:114
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:126
-msgid "Not available"
-msgstr ""
-
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:71
-msgid "ID Card"
-msgstr ""
-
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:70
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:83
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:96
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:109
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:122
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:135
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:170
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:178
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:186
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:194
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:202
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:210
+msgid "Preview"
+msgstr "معاينة"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:73
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:86
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:99
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:112
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:125
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:138
+msgid "Not available"
+msgstr "غير متوفر"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:79
+msgid "ID Card"
+msgstr "بطاقة الهوية"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:92
 msgid "Criminal Records"
-msgstr ""
+msgstr "السجلات الجنائية"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:95
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:105
 msgid "Health Insurance"
-msgstr ""
+msgstr "التأمين الصحي"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:107
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:118
 msgid "Enrollment Letter"
-msgstr ""
-
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:119
-msgid "Payment Receipt"
-msgstr ""
+msgstr "رسالة التسجيل"
 
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:131
-msgid "Upload Date"
-msgstr ""
+msgid "Payment Receipt"
+msgstr "إيصال الدفع"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:138
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:144
+msgid "Upload Date"
+msgstr "تاريخ التحميل"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:152
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:258
 msgid "Rejection Reason"
-msgstr ""
+msgstr "سبب الرفض"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:163
+msgid "Sponsorship Details"
+msgstr "تنزيل رسالة الرعاية"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:167
+msgid "ID Sponsorship"
+msgstr "رعاية الهوية"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:175
+msgid "Sponsorship Letter"
+msgstr "خطاب الرعاية"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:183
+msgid "Relationship Proof"
+msgstr "إثبات العلاقة"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:191
+msgid "Sponsor Bank Statement"
+msgstr "كشف الحساب المصرفي للجهة الراعية"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:199
+msgid "Income Proof"
+msgstr "إثبات الدخل"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:207
+msgid "Company Details"
+msgstr "تفاصيل الشركة"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:218
+msgid "No sponsorship available"
+msgstr "لا توجد رعاية متاحة"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:240
+msgid "Change Enrollment Status"
+msgstr "تغيير حالة التسجيل"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:249
+msgid "Select new status"
+msgstr "تحديد حالة جديدة"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:259
+msgid "Write the rejection reason..."
+msgstr "اكتب سبب الرفض..."
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:263
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: .\estudiantes\views.py:213
+msgid "Por favor, complete todos los campos requeridos de patrocinio."
+msgstr "يرجى استكمال جميع حقول الرعاية المطلوبة."
+
+#: .\estudiantes\views.py:216 .\estudiantes\views.py:220
+msgid "Documentos subidos exitosamente."
+msgstr "تم تحميل المستندات بنجاح"
+
+#: .\estudiantes\views.py:223
+msgid "Por favor, corrija los errores en el formulario."
+msgstr "يرجى تصحيح أي أخطاء في النموذج."
+
+#: .\estudiantes\views.py:271
+msgid "Por favor, completa todos los campos requeridos para el patrocinio."
+msgstr "يرجى استكمال جميع الحقول المطلوبة للرعاية."
+
+#: .\estudiantes\views.py:274 .\estudiantes\views.py:278
+msgid "Documentos actualizados exitosamente."
+msgstr "تم تحديث المستندات بنجاح."
+
+#: .\estudiantes\views.py:281
+msgid "Por favor, corrige los errores en el formulario."
+msgstr "يرجى تصحيح أي أخطاء في النموذج."
 
 #: .\seda_inscripciones\templates\registration\login.html:50
 #: .\seda_inscripciones\templates\registration\login.html:86
 msgid "Login"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: .\seda_inscripciones\templates\registration\login.html:64
 msgid "Email Address"
-msgstr ""
+msgstr "عنوان البريد الإلكتروني"
 
 #: .\seda_inscripciones\templates\registration\login.html:67
 msgid "Please enter your email"
-msgstr ""
+msgstr "الرجاء إدخال بريدك الإلكتروني"
 
 #: .\seda_inscripciones\templates\registration\login.html:74
 msgid "Forgot your password?"
-msgstr ""
+msgstr "هل نسيت كلمة المرور الخاصة بك؟"
 
 #: .\seda_inscripciones\templates\registration\login.html:80
 msgid "Please enter your password"
-msgstr ""
+msgstr "الرجاء إدخال كلمة المرور الخاصة بك"
 
 #: .\seda_inscripciones\templates\registration\login.html:124
 msgid "Don't have an account?"
-msgstr ""
+msgstr "ليس لديك حساب؟"
 
 #: .\seda_inscripciones\templates\registration\login.html:124
-#: .\seda_inscripciones\templates\registration\register.html:60
+#: .\seda_inscripciones\templates\registration\register.html:67
 msgid "Create Account"
-msgstr ""
+msgstr "إنشاء حساب"
 
 #: .\seda_inscripciones\templates\registration\login.html:127
-#: .\seda_inscripciones\templates\registration\register.html:68
+#: .\seda_inscripciones\templates\registration\register.html:75
 msgid "All rights reserved"
-msgstr ""
+msgstr "جميع الحقوق محفوظة"
 
 #: .\seda_inscripciones\templates\registration\login.html:151
-#: .\seda_inscripciones\templates\registration\register.html:92
+#: .\seda_inscripciones\templates\registration\register.html:197
 msgid "Login Error"
-msgstr ""
+msgstr "خطأ في تسجيل الدخول"
 
 #: .\seda_inscripciones\templates\registration\login.html:152
-#: .\seda_inscripciones\templates\registration\register.html:93
+#: .\seda_inscripciones\templates\registration\register.html:198
 msgid "Incorrect email and/or password"
-msgstr ""
+msgstr "بريد إلكتروني و/أو كلمة مرور غير صحيحة"
 
 #: .\seda_inscripciones\templates\registration\login.html:153
 #: .\seda_inscripciones\templates\registration\login.html:167
-#: .\seda_inscripciones\templates\registration\register.html:94
-#: .\seda_inscripciones\templates\registration\register.html:108
+#: .\seda_inscripciones\templates\registration\register.html:199
+#: .\seda_inscripciones\templates\registration\register.html:213
 msgid "Accept"
-msgstr ""
+msgstr "قبول"
 
 #: .\seda_inscripciones\templates\registration\login.html:165
-#: .\seda_inscripciones\templates\registration\register.html:106
+#: .\seda_inscripciones\templates\registration\register.html:211
 #: .\usuarios\templates\cuenta_bloqueada.html:58
 msgid "Account Suspended"
-msgstr ""
+msgstr "الحساب موقوف عن العمل"
 
 #: .\seda_inscripciones\templates\registration\login.html:166
 msgid "Your account is suspended. Contact the administrator"
+msgstr "تم إيقاف حسابك. اتصل بالمسؤول"
+
+#: .\seda_inscripciones\templates\registration\register.html:54
+msgid "Register Student"
+msgstr "تسجيل الطالب"
+
+#: .\seda_inscripciones\templates\registration\register.html:62
+msgid "Read Terms and Conditions"
+msgstr "قراءة الشروط والأحكام"
+
+#: .\seda_inscripciones\templates\registration\register.html:89
+msgid "Terms and Conditions"
+msgstr "الشروط والأحكام"
+
+#: .\seda_inscripciones\templates\registration\register.html:93
+msgid ""
+"At SEDA we are committed to the security of your personal information. We "
+"understand the importance of privacy and strive to protect the information "
+"you share with us. We encourage you to read this policy carefully to "
+"understand how we handle your information."
 msgstr ""
 
-#: .\seda_inscripciones\templates\registration\register.html:50
-msgid "Register Student"
+#: .\seda_inscripciones\templates\registration\register.html:95
+msgid "1. Information We Collect"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:97
+msgid ""
+"Personally Identifiable Information (PII): name, email, phone number, "
+"address, etc."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:98
+msgid ""
+"Usage Information: pages visited, time spent, IP address, location, etc."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:99
+msgid ""
+"Cookies and similar technologies: see the 'Use of Cookies' section below."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:102
+msgid "2. How We Use Your Information"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:104
+msgid "Improve our website and services."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:105
+msgid "Communicate with you."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:106
+msgid "Personalize the user experience."
 msgstr ""
 
 #: .\seda_inscripciones\templates\registration\register.html:107
-msgid "Your profile is suspended. Contact the administrator"
+msgid "Conduct internal analysis and research."
 msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:108
+msgid "Ensure security and prevent fraud."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:111
+msgid "3. Use of Cookies"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:112
+msgid "We use cookies to improve your experience. These include:"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:114
+msgid "Essential cookies: required for the website to function."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:115
+msgid "Performance and analytics cookies: help us understand site usage."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:116
+msgid "Functionality cookies: remember your preferences."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:117
+msgid "Advertising and tracking cookies: used to show personalized ads."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:119
+msgid "You can manage cookies via your browser or third-party tools."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:121
+msgid "4. Sharing Your Information"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:123
+msgid "With service providers under strict confidentiality."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:124
+msgid "To comply with the law or legal processes."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:125
+msgid "To protect rights and security."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:128
+msgid "5. Security of Your Data"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:129
+msgid ""
+"We implement reasonable measures to protect your data, but cannot guarantee "
+"absolute security."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:131
+msgid "6. Your Rights"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:133
+msgid "Right of access"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:134
+msgid "Right of rectification"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:135
+msgid "Right to erasure (right to be forgotten)"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:136
+msgid "Right to restrict processing"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:137
+msgid "Right to object"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:138
+msgid "Right to data portability"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:140
+msgid "To exercise these rights, contact us at"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:142
+msgid "7. Links to Other Websites"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:143
+msgid ""
+"We are not responsible for the privacy practices of other websites linked "
+"from ours."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:145
+msgid "8. Changes to this Privacy Policy"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:146
+msgid ""
+"We may update this policy at any time. Changes take effect immediately upon "
+"publication."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:148
+msgid "9. Contact"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:149
+msgid "If you have questions or concerns, please contact us at"
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:152
+msgid ""
+"By using our Website, you agree to the terms of this Privacy and Cookie "
+"Policy."
+msgstr ""
+
+#: .\seda_inscripciones\templates\registration\register.html:157
+msgid "I Accept the Terms"
+msgstr "أوافق على الشروط"
+
+#: .\seda_inscripciones\templates\registration\register.html:212
+msgid "Your profile is suspended. Contact the administrator"
+msgstr "تم تعليق ملفك الشخصي. اتصل بالمسؤول"
 
 #: .\usuarios\forms.py:15
 msgid "Nombre del Cargo"
-msgstr ""
+msgstr "اسم الوظيفة"
 
 #: .\usuarios\forms.py:16
 msgid "Descripción"
-msgstr ""
+msgstr "الوصف"
 
 #: .\usuarios\forms.py:46 .\usuarios\forms.py:162
 msgid "Nombre de Usuario"
-msgstr ""
+msgstr "أوسيرنا"
 
 #: .\usuarios\forms.py:50
 msgid "Contraseña"
-msgstr ""
+msgstr "كلمة المرور"
 
 #: .\usuarios\forms.py:55 .\usuarios\forms.py:170 .\usuarios\models.py:129
 msgid "Cargo"
-msgstr ""
+msgstr "كلمة المرور"
 
 #: .\usuarios\forms.py:61 .\usuarios\forms.py:175
 msgid "Este pasaporte ya está registrado."
-msgstr ""
+msgstr "جواز السفر هذا مسجل بالفعل"
 
 #: .\usuarios\forms.py:62 .\usuarios\forms.py:176
 msgid "Introduce un correo electrónico válido."
+msgstr "أدخل عنوان بريد إلكتروني صالح"
+
+#: .\usuarios\forms.py:69
+msgid "Ya existe una persona con este pasaporte."
+msgstr "شخص يحمل جواز السفر هذا موجود بالفعل"
+
+#: .\usuarios\forms.py:79
+msgid ""
+"El número de teléfono debe estar en formato internacional, comenzando con "
+"'+' seguido del prefijo del país y el número. Ejemplo: +56 9 5027 1381 o +1 "
+"(123) 456-7890."
 msgstr ""
+"يجب أن يكون رقم الهاتف بصيغة دولية، تبدأ بـ '+' متبوعاً برمز البلد والرقم. "
+"مثال: +56 9 5027 5027 1381 أو +1 (123) 456-7890."
+
+#: .\usuarios\forms.py:91
+msgid "El empleado debe tener al menos 18 años."
+msgstr "يجب ألا يقل عمر الموظف عن 18 عاماً."
 
 #: .\usuarios\models.py:20
 msgid "Masculino"
-msgstr ""
+msgstr "الذكور"
 
 #: .\usuarios\models.py:21
 msgid "Femenino"
-msgstr ""
+msgstr "أنثى"
+
+#: .\usuarios\models.py:61
+msgid "Pasaporte"
+msgstr "جواز السفر"
 
 #: .\usuarios\models.py:80
 msgid "Fecha de nacimiento"
-msgstr ""
+msgstr "تاريخ الميلاد"
 
 #: .\usuarios\models.py:92
 msgid "Estado de Cuenta"
-msgstr ""
+msgstr "كشف حساب"
 
 #: .\usuarios\templates\cargos\actCargos.html:10
 #: .\usuarios\templates\cargos\actCargos.html:12
@@ -829,105 +1286,105 @@ msgstr ""
 #: .\usuarios\templates\cargos\cargos.html:20
 #: .\usuarios\templates\usuarios.html:37
 msgid "Positions"
-msgstr ""
+msgstr "المناصب"
 
 #: .\usuarios\templates\cargos\actCargos.html:23
 msgid "Update Position"
-msgstr ""
+msgstr "تحديث الموقف"
 
 #: .\usuarios\templates\cargos\actCargos.html:29
 #: .\usuarios\templates\cargos\cargos.html:37
 msgid "Position Name"
-msgstr ""
+msgstr "اسم المنصب"
 
 #: .\usuarios\templates\cargos\cargos.html:31
 msgid "Add Position"
-msgstr ""
+msgstr "إضافة موضع"
 
 #: .\usuarios\templates\cargos\cargos.html:38
 msgid "Enter position name"
-msgstr ""
+msgstr "أدخل اسم الوظيفة"
 
 #: .\usuarios\templates\cargos\cargos.html:51
 msgid "Position List"
-msgstr ""
+msgstr "قائمة المناصب"
 
 #: .\usuarios\templates\cargos\cargos.html:58
-#: .\usuarios\templates\empleados\verEmpleados.html:48
+#: .\usuarios\templates\empleados\verEmpleados.html:49
 #: .\usuarios\templates\usuarios.html:61
 msgid "Position"
-msgstr ""
+msgstr "المنصب"
 
 #: .\usuarios\templates\cargos\cargos.html:88
 msgid "No data available"
-msgstr ""
+msgstr "لا توجد بيانات متاحة"
 
 #: .\usuarios\templates\cuenta_bloqueada.html:25
 msgid "Account Blocked"
-msgstr ""
+msgstr "تم حظر الحساب"
 
 #: .\usuarios\templates\cuenta_bloqueada.html:26
 msgid "Restricted Access"
-msgstr ""
+msgstr "الوصول المقيد"
 
 #: .\usuarios\templates\cuenta_bloqueada.html:27
 msgid ""
 "Your account has been blocked. You will be redirected to the login page in"
-msgstr ""
+msgstr "تم حظر حسابك. ستتم إعادة توجيهك إلى صفحة تسجيل الدخول في"
 
 #: .\usuarios\templates\cuenta_bloqueada.html:27
 msgid "seconds."
-msgstr ""
+msgstr "ثوانٍ"
 
 #: .\usuarios\templates\cuenta_bloqueada.html:30
 msgid "Go to Login"
-msgstr ""
+msgstr "الانتقال إلى تسجيل الدخول"
 
 #: .\usuarios\templates\cuenta_bloqueada.html:59
 msgid "Your account is blocked. Contact the administrator"
-msgstr ""
+msgstr "حسابك محظور. اتصل بالمسؤول"
 
 #: .\usuarios\templates\empleados\actEmpleados.html:10
 msgid "Update User"
-msgstr ""
+msgstr "تحديث المستخدم"
 
 #: .\usuarios\templates\empleados\actualizarPerfil.html:10
 msgid "User Profile"
-msgstr ""
+msgstr "ملف تعريف المستخدم"
 
 #: .\usuarios\templates\empleados\addEmpleados.html:10
 #: .\usuarios\templates\empleados\addEmpleados.html:13
 #: .\usuarios\templates\empleados\addEmpleados.html:23
 msgid "Add User"
-msgstr ""
+msgstr "إضافة مستخدم"
 
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:24
 msgid "View detailed information of the user"
-msgstr ""
+msgstr "عرض المعلومات التفصيلية للمستخدم"
 
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:35
 msgid "Permissions"
-msgstr ""
+msgstr "الأذونات"
 
 #: .\usuarios\templates\empleados\tarjetaEmpleado.html:94
 msgid "Date of Addition"
-msgstr ""
+msgstr "تاريخ الإضافة"
 
 #: .\usuarios\templates\empleados\verEmpleados.html:33
 msgid "Search user..."
-msgstr ""
+msgstr "بحث المستخدم..."
 
 #: .\usuarios\templates\empleados\verEmpleados.html:36
 msgid "Add Users"
-msgstr ""
+msgstr "إضافة مستخدمين"
 
-#: .\usuarios\templates\empleados\verEmpleados.html:92
+#: .\usuarios\templates\empleados\verEmpleados.html:93
 msgid "No data registered"
-msgstr ""
+msgstr "لا توجد بيانات مسجلة"
 
 #: .\usuarios\templates\usuarios.html:53
 msgid "Recently Registered"
-msgstr ""
+msgstr "مسجل حديثاً"
 
 #: .\venv\Lib\site-packages\auditlog\admin.py:35
 #: .\venv\Lib\site-packages\auditlog\mixins.py:57
@@ -1974,10 +2431,6 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\forms\widgets.py:802
-msgid "No"
-msgstr ""
-
 #. Translators: Please do not add spaces around commas.
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:873
 msgid "yes,no,maybe"
@@ -2587,3 +3040,19 @@ msgstr ""
 #, python-format
 msgid "Bases: %s"
 msgstr ""
+
+#~ msgid "Browse"
+#~ msgstr "تصفح"
+
+#~| msgid "Update Documents"
+#~ msgid "تحديث المستندات"
+#~ msgstr "تحديث المستندات"
+
+#~ msgid "Add Documents"
+#~ msgstr "إضافة مستندات"
+
+#~ msgid "Add Document"
+#~ msgstr "إضافة مستندات"
+
+#~ msgid "Submit Documents"
+#~ msgstr "تقديم المستندات"

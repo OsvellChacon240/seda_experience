@@ -1,146 +1,245 @@
 {% extends 'Base/head2.html' %}
 {% load i18n %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block Osvell %}
-
 <div class="main-content">
-    <section class="section">
-        <div class="section-header">
-            <h1>{% trans "Update Documents" %}</h1>
-        </div>
-        <div class="section-body">
-            <div class="row">
-                <!-- Left column: Form -->
-                <div class="col-12 col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>{% trans "Update Documents" %}</h4>
-                        </div>
-                        <div class="card-body">
-                            <form method="POST" enctype="multipart/form-data" action="">
-                                {% csrf_token %}
-                                
-                                {# Renderizamos todos los campos NO relacionados al patrocinador #}
-                                <div class="form-group">
-                                    {{ form.pasaporte|as_crispy_field }}
-                                    {{ form.documento_identidad|as_crispy_field }}
-                                    {{ form.antecedentes_penales|as_crispy_field }}
-                                    {{ form.seguro_medico|as_crispy_field }}
-                                    {{ form.carta_inscripcion|as_crispy_field }}
-                                    {{ form.recibo_pago|as_crispy_field }}
-                                    {{ form.diploma_traducido|as_crispy_field }}
-                                    {{ form.transcripcion_traducida|as_crispy_field }}
-                                    {{ form.carta_intencion|as_crispy_field }}
-                                    {{ form.resumen_financiero|as_crispy_field }}
-                                    {{ form.extracto_bancario|as_crispy_field }}
-                                    {# Campo de patrocinio que controla la visibilidad #}
-                                    {{ form.necesita_patrocinio|as_crispy_field }}
-                                </div>
-                                
-                                {# Contenedor para los campos del patrocinador, los cuales solo se mostrarán si el usuario selecciona "Sí" #}
-                                <div id="sponsorshipFields" style="display: none;">
-                                    <div class="form-group">
-                                        {{ form.id_patrocinador|as_crispy_field }}
-                                    </div>
-                                    <div class="form-group">
-                                        {{ form.carta_patrocinio|as_crispy_field }}
-                                    </div>
-                                    <div class="form-group">
-                                        {{ form.prueba_relacion|as_crispy_field }}
-                                    </div>
-                                    <div class="form-group">
-                                        {{ form.estados_bancarios_patrocinador|as_crispy_field }}
-                                    </div>
-                                    <div class="form-group">
-                                        {{ form.prueba_ingresos|as_crispy_field }}
-                                    </div>
-                                    <div class="form-group">
-                                        {{ form.detalles_empresa|as_crispy_field }}
-                                    </div>
-                                </div>
-                                
-                                <!-- Submit Button -->
-                                <center>
-                                    <button type="submit" id="btn-enviar" class="btn btn-outline-primary btn-lg">
-                                        {% trans "Update Documents" %}
-                                    </button>
-                                </center>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+  <section class="section">
+    <div class="section-header">
+      <h1>{% trans "Update Documents" %}</h1>
+    </div>
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>{% trans "Update Document" %}</h4>
             </div>
+            <div class="card-body">
+              <form method="POST" enctype="multipart/form-data" action="">
+                {% csrf_token %}
+                <div class="row">
+                  <!-- Columna izquierda -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.passport_copy|as_crispy_field }}
+                      {{ form.previous_visa_refusal_letters|as_crispy_field }}
+                      {{ form.national_id_copy|as_crispy_field }}
+                      {{ form.biometric_photos|as_crispy_field }}
+                      {{ form.police_clearance_certificates|as_crispy_field }}
+                      {{ form.travel_health_insurance|as_crispy_field }}
+                      {{ form.enrollment_letter|as_crispy_field }}
+                      {{ form.booking_letter|as_crispy_field }}
+                      {{ form.payment_receipt|as_crispy_field }}
+                      {{ form.diploma_translated|as_crispy_field }}
+                      {{ form.transcript_translated|as_crispy_field }}
+                      {{ form.student_letter|as_crispy_field }}
+                    </div>
+                  </div>
+                  <!-- Columna derecha -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.payslips_last_3_months|as_crispy_field }}
+                      {{ form.Applicants_translated_work_history|as_crispy_field }}
+                      {{ form.supportive_certificate|as_crispy_field }}
+                      {{ form.intention_letter|as_crispy_field }}
+                      {{ form.reason_for_return|as_crispy_field }}
+                      <a href="{% static 'docs/Financial Summary Form.docx' %}" target="_blank" style="text-decoration: underline; color: green;">{% trans 'Download Financial Summary' %}</a>
+                      {{ form.financial_summary_form|as_crispy_field }}
+                      <a href="{% static 'docs/Sponsorhip Letter.docx' %}" target="_blank" style="text-decoration: underline; color: green;">{% trans 'Download Sponsorship Letter' %}</a>
+                      {{ form.sponsorship_letter|as_crispy_field }}
+                      {{ form.visa_application_form|as_crispy_field }}
+                      {{ form.bank_statement|as_crispy_field }}
+                      {{ form.necesita_patrocinio|as_crispy_field }} <!-- Campo movido aquí -->
+                    </div>
+                  </div>
+                </div>
+                <!-- Contenedor para los campos del patrocinador -->
+                <div id="sponsorshipFields" style="display: none;">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        {{ form.id_patrocinador|as_crispy_field }}
+                        {{ form.carta_patrocinio|as_crispy_field }}
+                        {{ form.prueba_relacion|as_crispy_field }}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        {{ form.estados_bancarios_patrocinador|as_crispy_field }}
+                        {{ form.prueba_ingresos|as_crispy_field }}
+                        {{ form.detalles_empresa|as_crispy_field }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Botón de envío -->
+                <center>
+                  <button type="submit" id="btn-enviar" class="btn btn-outline-primary btn-lg">
+                    {% trans "Upload Documents" %}
+                  </button>
+                </center>
+              </form>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </div>
 
-<!-- Script para validaciones de inputs y mostrar/ocultar los campos de patrocinio -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-
-      // Mantenemos el script original que muestra el icono cuando se carga un archivo
+  
+      // Mantenemos el script original que deshabilita el botón hasta que se carguen los archivos
       document.querySelectorAll(".file-input").forEach(input => {
         input.addEventListener("change", function(event) {
           let fileName = event.target.value.split("\\").pop();
           let checkIcon = document.createElement("span");
           checkIcon.classList.add("text-success", "ml-2");
           checkIcon.innerHTML = "✔ File uploaded";
-
+    
           let parent = event.target.parentElement;
           if (!parent.querySelector(".text-success")) {
             parent.appendChild(checkIcon);
           }
         });
       });
-
-      // Función modificada para validar solo inputs visibles o que tengan data-uploaded='true'
+    
+      // Función modificada para validar si al menos un archivo está cargado
       function checkUploads() {
         let inputs = document.querySelectorAll(".file-input");
         let submitButton = document.getElementById("btn-enviar");
-        let allUploaded = true;
-
+        let anyUploaded = false;
+    
         inputs.forEach(input => {
-          // Solo se considera el input si es visible.
-          if (input.offsetParent === null) return;
-          // Si el input tiene atributo data-uploaded igual a "true", lo consideramos subido.
-          if (input.getAttribute("data-uploaded") === "true") return;
-          if (!input.value) {
-            allUploaded = false;
+          // Solo se consideran inputs visibles (no ocultos en un contenedor con display: none)
+          if (input.offsetParent === null) {
+            return; // se omite la validación para este input
+          }
+          if (input.value) {
+            anyUploaded = true;
           }
         });
-
-        submitButton.disabled = !allUploaded;
-      }
-
+        }
+    
       document.querySelectorAll(".file-input").forEach(input => {
         input.addEventListener("change", checkUploads);
       });
-
+    
       checkUploads();
-
+    
       // --- Lógica para mostrar/ocultar los campos del patrocinador ---
       const sponsorshipSelect = document.getElementById("id_necesita_patrocinio");
       const sponsorshipFields = document.getElementById("sponsorshipFields");
+    
+      if (sponsorshipSelect) {
+        sponsorshipSelect.addEventListener("change", function() {
+          // Se asume que el valor "True" (como cadena) indica que sí se necesita patrocinio
+          if (this.value === "True") {
+            sponsorshipFields.style.display = "block";
+          } else {
+            sponsorshipFields.style.display = "none";
+            // Limpiar los inputs de patrocinador cuando se ocultan
+            const sponsorshipInputs = sponsorshipFields.querySelectorAll("input[type='file']");
+            sponsorshipInputs.forEach(input => {
+              input.value = '';
+            });
+          }
+          checkUploads(); // Recheck file uploads
+        });
 
-      sponsorshipSelect.addEventListener("change", function() {
-        // Se asume que el valor "True" (como cadena) indica que sí se necesita patrocinio
-        if (this.value === "True") {
+        // Mostrar/ocultar campos al cargar la página según el valor inicial
+        if (sponsorshipSelect.value === "True") {
           sponsorshipFields.style.display = "block";
         } else {
           sponsorshipFields.style.display = "none";
-          // Limpiar los inputs de patrocinador cuando se ocultan
-          const sponsorshipInputs = sponsorshipFields.querySelectorAll("input[type='file']");
-          sponsorshipInputs.forEach(input => {
-            input.value = '';
-            // Quitar el atributo data-uploaded para que se revalide
-            input.removeAttribute("data-uploaded");
-          });
         }
-        checkUploads(); // Recheck file uploads
-      });
+      }
       // --- Fin lógica para patrocinador ---
+
+      // Función para validar si al menos un archivo está cargado o algún campo tiene información
+      function checkUploadsOrFields() {
+        let fileInputs = document.querySelectorAll(".file-input");
+        let textInputs = document.querySelectorAll("input[type='text'], textarea");
+        let submitButton = document.getElementById("btn-enviar");
+        let isValid = false;
+
+        // Verificar si algún archivo está cargado
+        fileInputs.forEach(input => {
+          if (input.offsetParent !== null && input.value) {
+            isValid = true;
+          }
+        });
+
+        // Verificar si algún campo de texto tiene información
+        textInputs.forEach(input => {
+          if (input.offsetParent !== null && input.value.trim() !== "") {
+            isValid = true;
+          }
+        });
+
+      }
+
+      // Agregar eventos a los inputs de archivo y texto
+      document.querySelectorAll(".file-input, input[type='text'], textarea").forEach(input => {
+        input.addEventListener("change", checkUploadsOrFields);
+        input.addEventListener("input", checkUploadsOrFields);
+      });
+
+      checkUploadsOrFields();
+    });
+
+    // Actualizar los textos de los inputs de archivo
+    document.querySelectorAll(".file-input").forEach(input => {
+        const browseText = input.getAttribute("data-browse-text");
+        const noFileText = input.getAttribute("data-no-file-text");
+
+        // Crear un contenedor para personalizar el input file
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("custom-file");
+
+        // Crear un label para el botón de selección
+        const label = document.createElement("label");
+        label.classList.add("custom-file-label");
+        label.textContent = noFileText || "Ningún archivo seleccionado";
+
+        // Mover el input dentro del contenedor
+        input.classList.add("custom-file-input");
+        input.parentNode.insertBefore(wrapper, input);
+        wrapper.appendChild(input);
+        wrapper.appendChild(label);
+
+        // Actualizar el texto del label al seleccionar un archivo
+        input.addEventListener("change", function () {
+            const fileName = this.files.length > 0 ? this.files[0].name : noFileText;
+            label.textContent = fileName;
+        });
     });
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Personalizar los inputs file
+        document.querySelectorAll(".file-input").forEach(input => {
+            const noFileText = input.getAttribute("data-no-file-text") || "{% trans 'No file selected' %}";
+
+            // Crear un label para mostrar el nombre del archivo
+            const label = document.createElement("span");
+            label.classList.add("custom-file-label");
+            label.textContent = noFileText;
+
+            // Insertar el label después del input
+            input.parentNode.insertBefore(label, input.nextSibling);
+
+            // Manejar el evento de cambio en el input
+            input.addEventListener("change", () => {
+                label.textContent = input.files.length > 0 ? input.files[0].name : noFileText;
+            });
+        });
+    });
+</script>
+  
 
 {% endblock %}

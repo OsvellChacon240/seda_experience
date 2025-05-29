@@ -5,6 +5,13 @@
 {% block Osvell %}
     <div class="main-content">
         <section class="section">
+              {% if messages %}
+              <div class="alert alert-success">
+                  {% for message in messages %}
+                  <p>{{ message }}</p>
+                  {% endfor %}
+              </div>
+              {% endif %}
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <a href="{% url 'lista_estudiantes' %}" style="text-decoration: none;">

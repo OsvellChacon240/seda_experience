@@ -24,7 +24,7 @@
         <div class="section-body">
             <div class="row">
                 <!-- Left column: Form -->
-                {% if perms.users.add_position %}
+                {% if perms.usuarios.add_cargo %}
                 <div class="col-12 col-md-4">
                     <div class="card">
                         <div class="card-header">
@@ -56,7 +56,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">{% trans "Position" %}</th>
-                                        {% if perms.users.change_position or perms.users.delete_position %}
+                                        {% if perms.usuarios.change_cargo or perms.usuarios.delete_cargo %}
                                         <th scope="col">{% trans "Actions" %}</th>
                                         {% endif %}
                                     </tr>
@@ -69,12 +69,12 @@
                                         <td>{{ g.nombre }}</td>
                                         <td>
                                             <div>
-                                                {% if perms.users.change_position %}
+                                                {% if perms.usuarios.change_cargo %}
                                                 <a href="{% url 'actCargos' g.id %}" style="text-decoration: none;">
                                                     <button class="btn btn-outline-warning"><i class="fa fa-undo"></i></button>
                                                 </a>
                                                 {% endif %}
-                                                {% if perms.users.delete_position %}
+                                                {% if perms.usuarios.delete_cargo %}
                                                 <a href="{% url 'dltCargos' g.id %}" style="text-decoration: none;">
                                                     <button class="btn btn-outline-danger btnEliminacion"><i class="fa fa-trash"></i></button>
                                                 </a>
