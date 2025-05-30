@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@=mj$$08w0$^r3nmqf3y#ut8b86^1qxhv=y$r65@4wj+imj$e2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['web-production-47a8.up.railway.app', 'localhost', '*']
+ALLOWED_HOSTS = ['seda-experience.up.railway.app', 'localhost', '*']
 LOGIN_REDIRECT_URL = '/dashboard'
 LOGOUT_REDIRECT_URL = '/'
 
@@ -180,4 +180,4 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://sedaexperience-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://seda-experience.up.railway.app']
