@@ -51,7 +51,7 @@ def estudiantes(request):
         }
     except PermissionDenied:
         # Manejar el caso en que el usuario no tenga permisos
-        messages.error(request, "No tienes permisos para entrar aquí")
+        messages.error(request, _("You do not have permission to view this page."))
         return redirect('E403')  # Redirigir a la página de error 403
 
     # Renderizar la plantilla con el contexto
@@ -108,10 +108,10 @@ def agregarEstudiante(request):
         Douma = EstudiantesRegistroForm(request.POST)
         if Douma.is_valid():
             Douma.save()
-            messages.success(request, "Estudiante Agregado Exitosamente!")
+            messages.success(request, _("Student Successfully Added!"))
             return redirect('lista_estudiantes')
         else:
-            messages.error(request, 'Error al intentar guardar al estudiante')
+            messages.error(request, _("Error while trying to save the student. Please check the form for errors."))
     else:
         Douma = EstudiantesRegistroForm()
         
@@ -135,10 +135,16 @@ def actualizarEstudiante(request, id):
         Zenitsu = EstudiantesActualizacionForm(request.POST, instance=Agatsuma)
         if Zenitsu.is_valid():
             Zenitsu.save()
-            messages.success(request, f"{Agatsuma.nombre} {Agatsuma.apellido} actualizado Exitosamente!")
+            messages.success(
+                            request,
+                            _("We have successfully updated to: %(nombre)s %(apellido)s") % {
+                                "nombre": Agatsuma.nombre,
+                                "apellido": Agatsuma.apellido
+                            }
+                        )
             return redirect('lista_estudiantes')
         else:
-            messages.error(request, 'Error al intentar guardar al estudiante')
+            messages.error(request, _("Error while trying to update the student. Please check the form for errors."))
     else:
         Zenitsu = EstudiantesActualizacionForm(instance=Agatsuma)
         
@@ -159,7 +165,13 @@ def eliminarEstudiante(request, id):
     
     Kanao = get_object_or_404(Estudiantes, id=id)
     Kanao.delete()
-    messages.success(request, f"{Kanao.nombre} {Kanao.apellido} Eliminado Exitosamente")
+    messages.success(
+        request,
+        _("We have successfully deleted to: %(nombre)s %(apellido)s") % {
+            "nombre": Kanao.nombre,
+            "apellido": Kanao.apellido
+        }
+    )
     return redirect('lista_estudiantes')
 
 @login_required
@@ -209,18 +221,18 @@ def subir_documentos(request):
 
                 if errores:
                     for campo in errores:
-                        form.add_error(campo, _("Este campo es obligatorio si necesita patrocinio."))
-                    messages.error(request, _("Por favor, complete todos los campos requeridos de patrocinio."))
+                        form.add_error(campo, _("This field is required if you need sponsorship."))
+                    messages.error(request, _("Please complete all required sponsorship fields.."))
                 else:
                     form.save()
-                    messages.success(request, _("Documentos subidos exitosamente."))
+                    messages.success(request, _("Documents uploaded successfully."))
                     return redirect('estudiante_dashboard')
             else:
                 form.save()
-                messages.success(request, _("Documentos subidos exitosamente."))
+                messages.success(request, _("Documents uploaded successfully."))
                 return redirect('estudiante_dashboard')
         else:
-            messages.error(request, _("Por favor, corrija los errores en el formulario."))
+            messages.error(request, _("Please correct the errors in the form.."))
     else:
         form = DocumentosEstudianteForm(instance=documentos)
 
@@ -239,7 +251,7 @@ def actualizar_documentos(request, id):
     try:
         estudiante = request.user.estudiantes
     except Estudiantes.DoesNotExist:
-        messages.error(request, "No tienes permisos para acceder a esta sección.")
+        messages.error(request, _("You do not have permission to access this section."))
         return redirect('login')
 
     documentos = get_object_or_404(DocumentosEstudiante, id=id, estudiante=estudiante)
@@ -267,18 +279,18 @@ def actualizar_documentos(request, id):
 
                 if errores:
                     for campo in errores:
-                        form.add_error(campo, _("Este campo es obligatorio si necesita patrocinio."))
-                    messages.error(request, _("Por favor, completa todos los campos requeridos para el patrocinio."))
+                        form.add_error(campo, _("This field is required if you need sponsorship."))
+                    messages.error(request, _("Please complete all required fields for sponsorship.."))
                 else:
                     form.save()
-                    messages.success(request, _("Documentos actualizados exitosamente."))
+                    messages.success(request, _("Documents successfully updated."))
                     return redirect('estudiante_dashboard')
             else:
                 form.save()
-                messages.success(request, _("Documentos actualizados exitosamente."))
+                messages.success(request, _("Documents successfully updated."))
                 return redirect('estudiante_dashboard')
         else:
-            messages.error(request, _("Por favor, corrige los errores en el formulario."))
+            messages.error(request, _("Please correct the errors in the form.."))
     else:
         form = DocumentosEstudianteForm(instance=documentos)
 
@@ -409,16 +421,16 @@ def cambiar_estado_inscripcion(request, id):
             # Si el estado es "Rechazado", guardar el mensaje de rechazo
             if nuevo_estado == EstadoInscripcion.RECHAZADO:
                 if not mensaje_rechazo:
-                    messages.error(request, "Debes proporcionar un motivo para el rechazo.")
+                    messages.error(request, _("You must provide a reason for the rejection."))
                     return redirect('visualizarDocumentos', id=id)
                 documentos.mensaje_rechazo = mensaje_rechazo
             else:
                 documentos.mensaje_rechazo = None  # Limpiar el mensaje si no está rechazado
 
             documentos.save()
-            messages.success(request, f"El estado de inscripción se cambió a {nuevo_estado}.")
+            messages.success(request, _(f"Enrollment status changed to {nuevo_estado}."))
         else:
-            messages.error(request, "Estado de inscripción no válido.")
+            messages.error(request, _("Invalid registration status."))
 
     return redirect('estudiantes')
 
@@ -435,10 +447,10 @@ def actualizar_perfil_estudiante(request):
         form = EstudiantesActualizacionForm(request.POST, request.FILES, instance=estudiante)
         if form.is_valid():
             form.save()
-            messages.success(request, "Perfil actualizado exitosamente.")
+            messages.success(request, _("Profile successfully updated."))
             return redirect('estudiante_dashboard')  # Redirigir al dashboard o a otra página
         else:
-            messages.error(request, "Hubo un error al actualizar el perfil.")
+            messages.error(request, _("There was an error updating the profile."))
     else:
         form = EstudiantesActualizacionForm(instance=estudiante)
 
@@ -455,5 +467,11 @@ def actualizar_perfil_estudiante(request):
 def eliminarRegistros(request, id):
     Mai = get_object_or_404(DocumentosEstudiante, id=id)
     Mai.delete()
-    messages.success(request, f"Documentos de {Mai.estudiante.nombre} {Mai.estudiante.apellido} eliminados exitosamente.")
+    messages.success(
+    request,
+    _("Documents of: %(nombre)s %(apellido)s successfully deleted.") % {
+        "nombre": Mai.estudiante.nombre,
+        "apellido": Mai.estudiante.apellido
+    }
+)
     return redirect('estudiantes')

@@ -3,7 +3,7 @@
 
     btnEliminacion.forEach(btn => {
         btn.addEventListener('click',(e) => {
-            const confirmacion = confirm('¿Seguro que desea borrar?');
+            const confirmacion = confirm('Are you sure you want to delete?');
             if (!confirmacion){
                 e.preventDefault();
             }

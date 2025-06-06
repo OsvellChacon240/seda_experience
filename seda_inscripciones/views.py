@@ -14,6 +14,7 @@ from django.contrib import messages
 from django.utils.translation import activate
 from django.conf import settings
 from dashboard.views import *
+from django.utils.translation import gettext as _
 
 def login_view(request):
     
@@ -66,7 +67,7 @@ def registrar_estudiante(request):
         form = EstudiantesRegistroForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, "Estudiante Registrado Exitosamente, Intenta Iniciar Sesion")
+            messages.success(request, _('Registration successful! You can now log in.'))
             return redirect('login')  # Redirige al login tras el registro
     else:
         form = EstudiantesRegistroForm()

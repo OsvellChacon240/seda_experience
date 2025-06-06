@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-24 10:52-0400\n"
+"POT-Creation-Date: 2025-06-06 11:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -172,7 +172,7 @@ msgid "All rights reserved to"
 msgstr "جميع الحقوق محفوظة ل"
 
 #: .\dashboard\templates\dashboard.html:24
-#: .\dashboard\templates\dashboardEstudiantes.html:134
+#: .\dashboard\templates\dashboardEstudiantes.html:136
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:63
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:63
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:63
@@ -185,7 +185,7 @@ msgid "Pending"
 msgstr "قيد الانتظار"
 
 #: .\dashboard\templates\dashboard.html:32
-#: .\dashboard\templates\dashboardEstudiantes.html:132
+#: .\dashboard\templates\dashboardEstudiantes.html:134
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:61
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:61
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:61
@@ -230,53 +230,44 @@ msgstr "لا توجد عمليات معلقة"
 msgid "See all"
 msgstr "شاهد الكل"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:15
+#: .\dashboard\templates\dashboardEstudiantes.html:16
 msgid "Greetings"
 msgstr "تحياتنا"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:18
-#| msgid "Management"
-msgid "Make Payment"
-msgstr "قم بالدفع"
-
-#: .\dashboard\templates\dashboardEstudiantes.html:31
+#: .\dashboard\templates\dashboardEstudiantes.html:34
 #: .\estudiantes\templates\documentos\actualizar_documentos.html:10
 msgid "Update Documents"
 msgstr "تحديث المستندات"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:34
-#: .\dashboard\templates\dashboardEstudiantes.html:50
+#: .\dashboard\templates\dashboardEstudiantes.html:37
+#: .\dashboard\templates\dashboardEstudiantes.html:53
 msgid "Click here"
 msgstr "انقر هنا"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:47
+#: .\dashboard\templates\dashboardEstudiantes.html:50
 #: .\estudiantes\templates\documentos\actualizar_documentos.html:80
 #: .\estudiantes\templates\documentos\subir_documentos.html:10
 #: .\estudiantes\templates\documentos\subir_documentos.html:80
 msgid "Upload Documents"
 msgstr "تحميل المستندات"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:65
+#: .\dashboard\templates\dashboardEstudiantes.html:68
 msgid "Enrollment Progress"
 msgstr "تقدم التسجيل"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:69
+#: .\dashboard\templates\dashboardEstudiantes.html:72
 msgid "Completed"
 msgstr "مكتمل"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:70
-msgid "Realizar Pago"
-msgstr ""
-
-#: .\dashboard\templates\dashboardEstudiantes.html:83
-#: .\dashboard\templates\dashboardEstudiantes.html:97
+#: .\dashboard\templates\dashboardEstudiantes.html:85
+#: .\dashboard\templates\dashboardEstudiantes.html:99
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:69
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:41
 #: .\usuarios\templates\empleados\actualizarPerfil.html:64
 msgid "Account Status"
 msgstr "حالة الحساب"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:86
+#: .\dashboard\templates\dashboardEstudiantes.html:88
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:72
 #: .\estudiantes\templates\estudiantes\estudiantes.html:64
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:43
@@ -286,7 +277,7 @@ msgstr "حالة الحساب"
 msgid "Active"
 msgstr "نشط"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:100
+#: .\dashboard\templates\dashboardEstudiantes.html:102
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:74
 #: .\estudiantes\templates\estudiantes\estudiantes.html:66
 #: .\estudiantes\templates\estudiantes\tarjetaEstudiante.html:45
@@ -296,19 +287,19 @@ msgstr "نشط"
 msgid "Inactive"
 msgstr "غير نشط"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:112
+#: .\dashboard\templates\dashboardEstudiantes.html:114
 msgid "Documents"
 msgstr "المستندات"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:119
+#: .\dashboard\templates\dashboardEstudiantes.html:121
 msgid "Name"
 msgstr "الاسم"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:120
+#: .\dashboard\templates\dashboardEstudiantes.html:122
 msgid "Date"
 msgstr "التاريخ"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:121
+#: .\dashboard\templates\dashboardEstudiantes.html:123
 #: .\estudiantes\templates\estudiantes\estudiantes.html:49
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:46
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:46
@@ -318,11 +309,11 @@ msgstr "التاريخ"
 msgid "Status"
 msgstr "الحالة"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:122
+#: .\dashboard\templates\dashboardEstudiantes.html:124
 msgid "Reference Code"
 msgstr "رمز المرجع"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:130
+#: .\dashboard\templates\dashboardEstudiantes.html:132
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:59
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:59
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:59
@@ -330,11 +321,11 @@ msgstr "رمز المرجع"
 msgid "Under Review"
 msgstr "قيد المراجعة"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:141
+#: .\dashboard\templates\dashboardEstudiantes.html:143
 msgid "Cancellation Message"
 msgstr "رسالة الإلغاء"
 
-#: .\dashboard\templates\dashboardEstudiantes.html:147
+#: .\dashboard\templates\dashboardEstudiantes.html:149
 msgid "No documents uploaded"
 msgstr "لم يتم تحميل أي مستندات"
 
@@ -353,6 +344,11 @@ msgstr "حاول مرة أخرى..."
 #: .\dashboard\templates\error-404.html:65
 msgid "Return to dashboard"
 msgstr "العودة إلى لوحة التحكم"
+
+#: .\dashboard\views.py:75
+#| msgid "Please enter your email"
+msgid "Please enter a valid search term."
+msgstr "الرجاء إدخال مصطلح بحث صحيح"
 
 #: .\estudiantes\forms.py:27 .\estudiantes\forms.py:100 .\usuarios\forms.py:47
 #: .\usuarios\forms.py:163
@@ -563,7 +559,6 @@ msgid "Carta de Patrocinio Adicional"
 msgstr "خطاب رعاية إضافي"
 
 #: .\estudiantes\forms.py:252 .\estudiantes\models.py:269
-#: .\estudiantes\views.py:212 .\estudiantes\views.py:270
 msgid "Este campo es obligatorio si necesita patrocinio."
 msgstr "هذا الحقل إلزامي إذا كنت بحاجة إلى كفالة"
 
@@ -937,29 +932,83 @@ msgstr "اكتب سبب الرفض..."
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: .\estudiantes\views.py:213
-msgid "Por favor, complete todos los campos requeridos de patrocinio."
+#: .\estudiantes\views.py:54
+msgid "You do not have permission to view this page."
+msgstr "ليس لديك إذن لعرض هذه الصفحة"
+
+#: .\estudiantes\views.py:111
+msgid "Student Successfully Added!"
+msgstr "تمت إضافة الطالب بنجاح!"
+
+#: .\estudiantes\views.py:114
+msgid ""
+"Error while trying to save the student. Please check the form for errors."
+msgstr "خطأ أثناء محاولة حفظ الطالب. يرجى التحقق من النموذج بحثاً عن أخطاء."
+
+#: .\estudiantes\views.py:140 .\usuarios\views.py:133
+#, python-format
+msgid "We have successfully updated to: %(nombre)s %(apellido)s"
+msgstr "لقد قمنا بالتحديث بنجاح إلى: %(الاسم) %(الاسم) %(الاسم) %(الاسم) %(الاسم)"
+
+#: .\estudiantes\views.py:147
+msgid ""
+"Error while trying to update the student. Please check the form for errors."
+msgstr "خطأ أثناء محاولة تحديث الطالب. يرجى التحقق من النموذج بحثاً عن الأخطاء."
+
+#: .\estudiantes\views.py:170
+#, python-format
+msgid "We have successfully deleted to: %(nombre)s %(apellido)s"
+msgstr "لقد تم الحذف بنجاح إلى: %(اسم) ق %(اسم) ق %(اسم) ق"
+
+#: .\estudiantes\views.py:224 .\estudiantes\views.py:282
+msgid "This field is required if you need sponsorship."
+msgstr "هذا الحقل مطلوب إذا كنت بحاجة إلى رعاية."
+
+#: .\estudiantes\views.py:225
+msgid "Please complete all required sponsorship fields.."
 msgstr "يرجى استكمال جميع حقول الرعاية المطلوبة."
 
-#: .\estudiantes\views.py:216 .\estudiantes\views.py:220
-msgid "Documentos subidos exitosamente."
-msgstr "تم تحميل المستندات بنجاح"
+#: .\estudiantes\views.py:228 .\estudiantes\views.py:232
+#| msgid "No documents uploaded"
+msgid "Documents uploaded successfully."
+msgstr "تم تحميل المستندات بنجاح."
 
-#: .\estudiantes\views.py:223
-msgid "Por favor, corrija los errores en el formulario."
-msgstr "يرجى تصحيح أي أخطاء في النموذج."
+#: .\estudiantes\views.py:235 .\estudiantes\views.py:293
+msgid "Please correct the errors in the form.."
+msgstr "يرجى تصحيح الأخطاء في النموذج."
 
-#: .\estudiantes\views.py:271
-msgid "Por favor, completa todos los campos requeridos para el patrocinio."
-msgstr "يرجى استكمال جميع الحقول المطلوبة للرعاية."
+#: .\estudiantes\views.py:254
+msgid "You do not have permission to access this section."
+msgstr "ليس لديك إذن للوصول إلى هذا القسم"
 
-#: .\estudiantes\views.py:274 .\estudiantes\views.py:278
-msgid "Documentos actualizados exitosamente."
-msgstr "تم تحديث المستندات بنجاح."
+#: .\estudiantes\views.py:283
+msgid "Please complete all required fields for sponsorship.."
+msgstr "يرجى استكمال جميع الحقول المطلوبة للرعاية"
 
-#: .\estudiantes\views.py:281
-msgid "Por favor, corrige los errores en el formulario."
-msgstr "يرجى تصحيح أي أخطاء في النموذج."
+#: .\estudiantes\views.py:286 .\estudiantes\views.py:290
+msgid "Documents successfully updated."
+msgstr "تم تحديث المستندات بنجاح"
+
+#: .\estudiantes\views.py:424
+msgid "You must provide a reason for the rejection."
+msgstr "يجب عليك تقديم سبب للرفض"
+
+#: .\estudiantes\views.py:433
+msgid "Invalid registration status."
+msgstr "حالة التسجيل غير صالحة"
+
+#: .\estudiantes\views.py:450
+msgid "Profile successfully updated."
+msgstr "تم تحديث الملف الشخصي بنجاح"
+
+#: .\estudiantes\views.py:453
+msgid "There was an error updating the profile."
+msgstr "حدث خطأ في تحديث ملف التعريف"
+
+#: .\estudiantes\views.py:472
+#, python-format
+msgid "Documents of: %(nombre)s %(apellido)s successfully deleted."
+msgstr "تم حذف المستندات الخاصة بـ: "
 
 #: .\seda_inscripciones\templates\registration\login.html:50
 #: .\seda_inscripciones\templates\registration\login.html:86
@@ -1215,6 +1264,10 @@ msgstr "أوافق على الشروط"
 msgid "Your profile is suspended. Contact the administrator"
 msgstr "تم تعليق ملفك الشخصي. اتصل بالمسؤول"
 
+#: .\seda_inscripciones\views.py:70
+msgid "Registration successful! You can now log in."
+msgstr "تم التسجيل بنجاح! يمكنك الآن تسجيل الدخول."
+
 #: .\usuarios\forms.py:15
 msgid "Nombre del Cargo"
 msgstr "اسم الوظيفة"
@@ -1385,6 +1438,97 @@ msgstr "لا توجد بيانات مسجلة"
 #: .\usuarios\templates\usuarios.html:53
 msgid "Recently Registered"
 msgstr "مسجل حديثاً"
+
+#: .\usuarios\views.py:97
+msgid "Employee Successfully Added!"
+msgstr "تمت إضافة الموظف بنجاح!"
+
+#: .\usuarios\views.py:100
+msgid "There was an error adding the employee."
+msgstr "حدث خطأ في إضافة الموظف"
+
+#: .\usuarios\views.py:120
+msgid "To update your own user you can do it from \"Settings\"."
+msgstr "لتحديث المستخدم الخاص بك يمكنك القيام بذلك من الإعدادات."
+
+#: .\usuarios\views.py:140
+msgid "There was an error updating the employee."
+msgstr "حدث خطأ في تحديث الموظف"
+
+#: .\usuarios\views.py:162
+msgid "You can't delete your own user."
+msgstr "لا يمكنك حذف المستخدم الخاص بك"
+
+#: .\usuarios\views.py:166
+#| msgid "Your account is blocked. Contact the administrator"
+msgid "You cannot delete the administrator user."
+msgstr "حسابك محظور. اتصل بالمسؤول"
+
+#: .\usuarios\views.py:189 .\usuarios\views.py:243
+msgid "Permits updated correctly."
+msgstr "تم تحديث التصاريح بشكل صحيح"
+
+#: .\usuarios\views.py:192
+msgid "Request method not allowed."
+msgstr "طريقة الطلب غير مسموح بها"
+
+#: .\usuarios\views.py:203
+msgid "Permit successfully removed."
+msgstr "تمت إزالة التصريح بنجاح"
+
+#: .\usuarios\views.py:205
+msgid "The selected permit does not exist."
+msgstr "التصريح المحدد غير موجود"
+
+#: .\usuarios\views.py:207
+msgid "The selected user does not exist."
+msgstr "المستخدم المحدد غير موجود."
+
+#: .\usuarios\views.py:221
+msgid "You are not allowed to view administrator information."
+msgstr "غير مسموح لك بعرض معلومات المسؤول"
+
+#: .\usuarios\views.py:280
+msgid "Position successfully created!"
+msgstr "تم إنشاء المنصب بنجاح"
+
+#: .\usuarios\views.py:283
+msgid "There was an error in adding the charge."
+msgstr "حدث خطأ في إضافة التكلفة"
+
+#: .\usuarios\views.py:316
+#| msgid "Your account is suspended. Contact the administrator"
+msgid "You cannot update the administrator position."
+msgstr "تم إيقاف حسابك. اتصل بالمسؤول"
+
+#: .\usuarios\views.py:326
+msgid "There was an error updating the charge."
+msgstr "حدث خطأ في تحديث الرسوم"
+
+#: .\usuarios\views.py:349
+#| msgid "Your account is blocked. Contact the administrator"
+msgid "You cannot delete the administrator position."
+msgstr "حسابك محظور. اتصل بالمسؤول"
+
+#: .\usuarios\views.py:359
+msgid "You cannot delete the charge that is assigned to your user."
+msgstr "لا يمكنك حذف الرسوم التي تم تعيينها للمستخدم الخاص بك."
+
+#: .\usuarios\views.py:363
+msgid "Charge Successfully Removed"
+msgstr "تمت إزالة التهمة بنجاح"
+
+#: .\usuarios\views.py:376
+msgid "No employee profile associated with this user was found.."
+msgstr "لم يتم العثور على ملف تعريف موظف مرتبط بهذا المستخدم"
+
+#: .\usuarios\views.py:382
+msgid "Profile updated correctly."
+msgstr "تم تحديث الملف الشخصي بشكل صحيح"
+
+#: .\usuarios\views.py:385
+msgid "Error updating the profile. Please correct the errors."
+msgstr "خطأ في تحديث الملف الشخصي. يرجى تصحيح الأخطاء"
 
 #: .\venv\Lib\site-packages\auditlog\admin.py:35
 #: .\venv\Lib\site-packages\auditlog\mixins.py:57
@@ -3040,6 +3184,29 @@ msgstr ""
 #, python-format
 msgid "Bases: %s"
 msgstr ""
+
+#~| msgid "Documentos actualizados exitosamente."
+#~ msgid "Perfil actualizado exitosamente."
+#~ msgstr "تم تحديث المستندات بنجاح."
+
+#~| msgid "Management"
+#~ msgid "Make Payment"
+#~ msgstr "قم بالدفع"
+
+#~ msgid "Por favor, complete todos los campos requeridos de patrocinio."
+#~ msgstr "يرجى استكمال جميع حقول الرعاية المطلوبة."
+
+#~ msgid "Documentos subidos exitosamente."
+#~ msgstr "تم تحميل المستندات بنجاح"
+
+#~ msgid "Por favor, corrija los errores en el formulario."
+#~ msgstr "يرجى تصحيح أي أخطاء في النموذج."
+
+#~ msgid "Por favor, completa todos los campos requeridos para el patrocinio."
+#~ msgstr "يرجى استكمال جميع الحقول المطلوبة للرعاية."
+
+#~ msgid "Por favor, corrige los errores en el formulario."
+#~ msgstr "يرجى تصحيح أي أخطاء في النموذج."
 
 #~ msgid "Browse"
 #~ msgstr "تصفح"

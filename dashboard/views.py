@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect
 from django.utils.translation import activate
 from django.conf import settings
 from django.utils.translation import get_language
-
+from django.utils.translation import gettext_lazy as _
 # Create your views here.
 
 def change_language(request, lang_code):
@@ -26,7 +26,6 @@ def dashboard(request):
     # Forzar el idioma desde la sesión
     lang_code = request.session.get('django_language', 'en')  # Idioma por defecto: 'es'
     activate(lang_code)
-    print(f"Idioma actual en la vista después de activar: {get_language()}")  # Depuración
 
     # Contar usuarios y estudiantes
     Megumi = Empleado.objects.count()
@@ -73,7 +72,7 @@ def buscar(request):
     
     query = request.GET.get('q', '').strip()
     if not query:
-        messages.error(request, 'Por favor, introduce un criterio de búsqueda.')
+        messages.error(request, _('Please enter a valid search term.'))
         return redirect('dashboard')
 
     # Buscar en Empleados

@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.db.models import Q
 from django.http import Http404
 from dashboard.views import *
+from django.utils.translation import gettext_lazy as _
 
 # Create your views here.
 
@@ -93,10 +94,10 @@ def addUsuarios(request):
         Shinobu = EmpleadosFrm(request.POST, request.FILES)
         if Shinobu.is_valid():
             Shinobu.save()
-            messages.success(request, "Empleado Agregado Exitosamente!")
+            messages.success(request, _("Employee Successfully Added!"))
             return redirect('empleados')
         else:
-            messages.error(request, "Hubo un error al agregar al empleado.")
+            messages.error(request, _("There was an error adding the employee."))
     else:
         Shinobu = EmpleadosFrm()
 
@@ -116,21 +117,27 @@ def actUsuarios(request, id):
     Konan = get_object_or_404(Empleado, id=id)
     
     if Konan == request.user:
-        messages.error(request, 'Para actualizar tu propio usuario puedes hacerlo desde "Configuraciones"')
+        messages.error(request, _('To update your own user you can do it from "Settings".'))
         return redirect('empleados')
     
     if Konan.id == 1:
-        messages.error(request, "No puedes actualizar al usuario administrador.")
+        messages.error(request, "You cannot update the administrator user.")
         return redirect('empleados')
     
     if request.method == 'POST':
         Mikasa = actEmpleadosFrm(request.POST, request.FILES, instance=Konan)
         if Mikasa.is_valid():
             Mikasa.save()
-            messages.success(request, f'Hemos Actualizado Con Exito A: {Konan.nombre} {Konan.apellido}')
+            messages.success(
+                request,
+                _("We have successfully updated to: %(nombre)s %(apellido)s") % {
+                    "nombre": Konan.nombre,
+                    "apellido": Konan.apellido
+                }
+            )
             return redirect('empleados')
         else:
-            messages.error(request, "Hubo un error al actualizar al empleado.")
+            messages.error(request, _("There was an error updating the employee."))
     else:
         Mikasa = actEmpleadosFrm(instance=Konan)
         
@@ -152,15 +159,15 @@ def dltUsuarios(request, id):
     Maki = get_object_or_404(Empleado, id=id)
     
     if Maki == request.user:
-        messages.error(request, "¿Eres tonto?, No puedes eliminar tu propio usuario.")
+        messages.error(request, _("You can't delete your own user."))
         return redirect('empleados')
     
     if Maki.id == 1:
-        messages.error(request, "No puedes eliminar al usuario administrador.")
+        messages.error(request, _("You cannot delete the administrator user."))
         return redirect('empleados')
     
     Maki.delete()
-    messages.success(request, f"{Maki.nombre} {Maki.apellido} ya no pertenece al sistema")
+    messages.success(request, _(f"{Maki.nombre} {Maki.apellido} no longer belongs to the system"))
     return redirect('empleados')
 
 @login_required
@@ -179,10 +186,10 @@ def asignar_permiso(request, user_id, permission_id):
     if request.method == 'POST':
         permisos_seleccionados = request.POST.getlist('permisos')
         user.user_permissions.set(permisos_seleccionados)
-        messages.success(request, "Permisos actualizados correctamente.")
+        messages.success(request, _("Permits updated correctly."))
         return redirect('viewUser', id=user_id)
     
-    messages.error(request, "Método de solicitud no permitido.")
+    messages.error(request, _("Request method not allowed."))
     return redirect('viewUser', id=user_id)
 
 @login_required
@@ -193,11 +200,11 @@ def quitar_permiso(request, user_id, permission_id):
     
     try:
         user.user_permissions.remove(permission)
-        messages.success(request, "Permiso quitado correctamente.")
+        messages.success(request, _("Permit successfully removed."))
     except Permission.DoesNotExist:
-        messages.error(request, "El permiso seleccionado no existe.")
+        messages.error(request, _("The selected permit does not exist."))
     except Empleado.DoesNotExist:
-        messages.error(request, "El usuario seleccionado no existe.")
+        messages.error(request, _("The selected user does not exist."))
 
     return redirect('viewUser', id=user_id)
 
@@ -211,7 +218,7 @@ def tarjetaUsuarios(request, id):
     user = get_object_or_404(Empleado, pk=id)
 
     if user.id == 1 and request.user.id != 1:
-        messages.error(request, "No tienes permitido ver la información del administrador.")
+        messages.error(request, _("You are not allowed to view administrator information."))
         return redirect('empleados')
 
     user_action_logs = LogEntry.objects.filter(actor_id=id)[:3]
@@ -233,7 +240,7 @@ def tarjetaUsuarios(request, id):
     if request.method == 'POST':
         permisos_seleccionados = request.POST.getlist('permisos')
         user.user_permissions.set(permisos_seleccionados)  # Actualizar permisos
-        messages.success(request, "Permisos actualizados correctamente.")
+        messages.success(request, _("Permits updated correctly."))
         return redirect('empleados')
 
     context = {
@@ -270,10 +277,10 @@ def Cargos(request):
         Vegeta = CargosFrm(request.POST)
         if Vegeta.is_valid():
             Vegeta.save()
-            messages.success(request, "Cargo Registrado Con Exito")
+            messages.success(request, _('Position successfully created!'))
             return redirect('cargos')
         else:
-            messages.error(request, 'Hubo un problema al cargar el Cargo')
+            messages.error(request, _('There was an error in adding the charge.'))
     else:
         Vegeta = CargosFrm()
         
@@ -306,17 +313,17 @@ def actCargos(request, id):
     Granola = get_object_or_404(Cargo, id=id)
     
     if Granola.nombre == 'Administrador':
-        messages.error(request, "Olvidalo no puedes cambiar al admin por este medio")
+        messages.error(request, _("You cannot update the administrator position."))
         return redirect('cargos')
     
     if request.method == 'POST':
         Bardock = CargosFrm(request.POST, instance=Granola)
         if Bardock.is_valid():
             Bardock.save()
-            messages.success(request, "Cargo Actualizado Con Exito!")
+            messages.success(request, "Position Successfully Updated!")
             return redirect('cargos')
         else:
-            messages.error(request, "Hubo un problema al actualizar el cargo")
+            messages.error(request, _("There was an error updating the charge."))
     else:
         Bardock = CargosFrm(instance=Granola)
         
@@ -339,15 +346,21 @@ def dltCargos(request, id):
     Jogo = get_object_or_404(Cargo, id=id)
     
     if Jogo.nombre == 'Administrador':
-        messages.error(request, "¿Enserio? Tampoco puedes eliminar al admin por este medio")
+        messages.error(request, _("You cannot delete the administrator position."))
         return redirect('cargos')
     
-    if request.user.cargo == Jogo:
-        messages.error(request, "No puedes eliminar tu propio cargo.")
+    # Obtener el empleado relacionado con el usuario autenticado
+    try:
+        empleado = Empleado.objects.get(id=request.user.id)
+    except Empleado.DoesNotExist:
+        empleado = None
+
+    if empleado and empleado.cargo == Jogo:
+        messages.error(request, _("You cannot delete the charge that is assigned to your user."))
         return redirect('cargos')
     
     Jogo.delete()
-    messages.success(request, "Cargo Eliminado Con Exito")
+    messages.success(request, _("Charge Successfully Removed"))
     return redirect('cargos')
 
 @login_required
@@ -360,16 +373,16 @@ def actualizar_perfil_empleado(request):
         # Verificar si el usuario autenticado es una instancia de Empleado
         empleado = Empleado.objects.get(id=request.user.id)
     except Empleado.DoesNotExist:
-        raise Http404("No se encontró un perfil de empleado asociado con este usuario.")
+        raise Http404(_("No employee profile associated with this user was found.."))
 
     if request.method == 'POST':
         form = actEmpleadosFrm(request.POST, request.FILES, instance=empleado)
         if form.is_valid():
             form.save()
-            messages.success(request, "Perfil actualizado exitosamente.")
+            messages.success(request, _("Profile updated correctly."))
             return redirect('dashboard')  # Redirigir al dashboard
         else:
-            messages.error(request, "Hubo un error al actualizar el perfil.")
+            messages.error(request, _("Error updating the profile. Please correct the errors."))
     else:
         form = actEmpleadosFrm(instance=empleado)
 
