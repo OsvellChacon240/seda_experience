@@ -74,12 +74,38 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
+                                                <!-- Previous Visa Refusal Letters -->
+                                                <tr>
+                                                    <th><i class="fas fa-times"></i> {% trans "Previous Visa Refusal Letters" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.previous_visa_refusal_letters %}
+                                                            <a href="{{ Suguru.previous_visa_refusal_letters.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
                                                 <!-- ID Card -->
                                                 <tr>
                                                     <th><i class="fas fa-id-card"></i> {% trans "ID Card" %}:</th>
                                                     <td>
                                                         {% if Suguru.national_id_copy %}
                                                             <a href="{{ Suguru.national_id_copy.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                <!-- Biometric Photos -->
+                                                <tr>
+                                                    <th><i class="fas fa-camera"></i> {% trans "Biometric Photos" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.biometric_photos %}
+                                                            <a href="{{ Suguru.biometric_photos.url }}" target="_blank" class="btn btn-sm btn-primary">
                                                                 <i class="fas fa-eye"></i> {% trans "Preview" %}
                                                             </a>
                                                         {% else %}
@@ -126,6 +152,19 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
+                                                <!-- Booking Letter -->
+                                                <tr>
+                                                    <th><i class="fas fa-book"></i> {% trans "Booking Letter" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.booking_letter %}
+                                                            <a href="{{ Suguru.booking_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
                                                 <!-- Payment Receipt -->
                                                 <tr>
                                                     <th><i class="fas fa-receipt"></i> {% trans "Payment Receipt" %}:</th>
@@ -139,14 +178,88 @@
                                                         {% endif %}
                                                     </td>
                                                 </tr>
-                                                <!-- Upload Date -->
+                                                <!-- Diploma Translated -->
+                                                <tr>
+                                                    <th><i class="fas fa-certificate"></i> {% trans "Diploma Translated" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.diploma_translated %}
+                                                            <a href="{{ Suguru.diploma_translated.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-certificate"></i> {% trans "Sponsorship Letter" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.sponsorship_letter %}
+                                                            <a href="{{ Suguru.sponsorship_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fas fa-certificate"></i> {% trans "Financial Summary Form" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.financial_summary_form %}
+                                                            <a href="{{ Suguru.financial_summary_form.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                <!-- Transcript Translated -->
+                                                <tr>
+                                                    <th><i class="fas fa-file-alt"></i> {% trans "Transcript Translated" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.transcript_translated %}
+                                                            <a href="{{ Suguru.transcript_translated.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                <!-- Student Letter -->
+                                                <tr>
+                                                    <th><i class="fas fa-user-graduate"></i> {% trans "Student Letter" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.student_letter %}
+                                                            <a href="{{ Suguru.student_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                <!-- Payslips Last 3 Months -->
+                                                <tr>
+                                                    <th><i class="fas fa-money-bill"></i> {% trans "Payslips Last 3 Months" %}:</th>
+                                                    <td>
+                                                        {% if Suguru.payslips_last_3_months %}
+                                                            <a href="{{ Suguru.payslips_last_3_months.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                            </a>
+                                                        {% else %}
+                                                            <span class="text-muted">{% trans "Not available" %}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
                                                 <tr>
                                                     <th><i class="fas fa-clock"></i> {% trans "Upload Date" %}:</th>
                                                     <td>
                                                         <span class="text-muted">{{ Suguru.fecha_subida }}</span>
                                                     </td>
                                                 </tr>
-                                                <!-- Rejection Reason -->
                                                 {% if Suguru.mensaje_rechazo %}
                                                 <tr>
                                                     <th><i class="fas fa-times-circle"></i> {% trans "Rejection Reason" %}:</th>
@@ -155,7 +268,7 @@
                                                     </td>
                                                 </tr>
                                                 {% endif %}
-                                                <!-- Sponsorship Section -->
+                                                <!-- Applicant's Employment History -->
                                                 <tr>
                                                     <th colspan="2">
                                                         {% if Suguru.necesita_patrocinio == True %}
@@ -261,7 +374,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Cancel' %}</button>
-                    <button type="submit" class="btn btn-primary">{% trans 'Save Changes' %}</button>
+                    <button type="submit" class="btn btn-primary" id="saveChangesBtn">{% trans 'Save Changes' %}</button>
                 </div>
             </form>
         </div>
@@ -278,10 +391,29 @@
         } else {
             rejectionMessageGroup.style.display = 'none';
         }
+        toggleSaveButton();
+    }
+
+    // Deshabilita el botón si es rechazado y el textarea está vacío
+    function toggleSaveButton() {
+        const estado = document.getElementById('estado_inscripcion').value;
+        const mensaje = document.getElementById('mensaje_rechazo').value.trim();
+        const saveBtn = document.getElementById('saveChangesBtn');
+        if (estado === 'Rechazado' && mensaje === '') {
+            saveBtn.disabled = true;
+        } else {
+            saveBtn.disabled = false;
+        }
     }
 
     // Run the function on page load to handle the initial state
-    document.addEventListener('DOMContentLoaded', toggleRejectionMessage);
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleRejectionMessage();
+        // Escuchar cambios en el textarea
+        document.getElementById('mensaje_rechazo').addEventListener('input', toggleSaveButton);
+        // Escuchar cambios en el select
+        document.getElementById('estado_inscripcion').addEventListener('change', toggleSaveButton);
+    });
 
     // Function to toggle checkboxes
     function toggleCheckboxes() {

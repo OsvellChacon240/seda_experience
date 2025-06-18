@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-06 11:02-0400\n"
+"POT-Creation-Date: 2025-06-17 17:11-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -176,7 +176,7 @@ msgstr "Todos los derechos reservados para"
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:63
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:63
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:63
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:253
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:366
 msgid "Rejected"
 msgstr "Rechazado"
 
@@ -189,7 +189,7 @@ msgstr "Pendiente"
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:61
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:61
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:61
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:252
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:365
 msgid "Approved"
 msgstr "Aprobado"
 
@@ -247,7 +247,7 @@ msgstr "Click aqui"
 #: .\dashboard\templates\dashboardEstudiantes.html:50
 #: .\estudiantes\templates\documentos\actualizar_documentos.html:80
 #: .\estudiantes\templates\documentos\subir_documentos.html:10
-#: .\estudiantes\templates\documentos\subir_documentos.html:80
+#: .\estudiantes\templates\documentos\subir_documentos.html:92
 msgid "Upload Documents"
 msgstr "Subir documentos"
 
@@ -317,7 +317,7 @@ msgstr "Codigo de referencia"
 #: .\estudiantes\templates\pendientes\documentos_pendientes.html:59
 #: .\estudiantes\templates\pendientes\procesos_aprobados.html:59
 #: .\estudiantes\templates\pendientes\procesos_rechazados.html:59
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:251
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:364
 msgid "Under Review"
 msgstr "En Revision"
 
@@ -347,7 +347,6 @@ msgid "Return to dashboard"
 msgstr "Regresar al dashboard"
 
 #: .\dashboard\views.py:75
-#| msgid "Please enter your email"
 msgid "Please enter a valid search term."
 msgstr "Por favor introduce un termino de busqueda valido"
 
@@ -517,6 +516,7 @@ msgid "Reason for Return to Home Country"
 msgstr "Motivo del regreso al país de origen"
 
 #: .\estudiantes\forms.py:197
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:207
 msgid "Financial Summary Form"
 msgstr "Formulario de resumen financiero"
 
@@ -585,22 +585,33 @@ msgid "Update Document"
 msgstr "Actualizar Documentos"
 
 #: .\estudiantes\templates\documentos\actualizar_documentos.html:48
-#: .\estudiantes\templates\documentos\subir_documentos.html:48
+#: .\estudiantes\templates\documentos\subir_documentos.html:60
 msgid "Download Financial Summary"
 msgstr "Descargar resumen financiero"
 
 #: .\estudiantes\templates\documentos\actualizar_documentos.html:50
-#: .\estudiantes\templates\documentos\subir_documentos.html:50
+#: .\estudiantes\templates\documentos\subir_documentos.html:62
 msgid "Download Sponsorship Letter"
 msgstr "Descargar carta de patrocinio"
 
 #: .\estudiantes\templates\documentos\actualizar_documentos.html:226
-#: .\estudiantes\templates\documentos\subir_documentos.html:182
 #: .\estudiantes\templates\documentos\subir_documentos.html:194
+#: .\estudiantes\templates\documentos\subir_documentos.html:206
 msgid "No file selected"
 msgstr "No hay archivos seleccionados"
 
-#: .\estudiantes\templates\documentos\subir_documentos.html:17
+#: .\estudiantes\templates\documentos\actualizar_documentos.html:274
+#: .\estudiantes\templates\documentos\subir_documentos.html:237
+#| msgid "Documents uploaded successfully."
+msgid "File uploaded successfully"
+msgstr "No hay documentos cargados"
+
+#: .\estudiantes\templates\documentos\actualizar_documentos.html:279
+#: .\estudiantes\templates\documentos\subir_documentos.html:242
+msgid "Invalid file format or size"
+msgstr "Formato o tamaño de archivo no válido"
+
+#: .\estudiantes\templates\documentos\subir_documentos.html:29
 msgid "Upload Document"
 msgstr "Subir documentos"
 
@@ -726,7 +737,7 @@ msgid "Update Information"
 msgstr "Actualizar Informacion"
 
 #: .\estudiantes\templates\estudiantes\actualizarPerfil.html:95
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:264
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:377
 #: .\usuarios\templates\empleados\actualizarPerfil.html:90
 msgid "Save Changes"
 msgstr "Guardar Cambios"
@@ -839,12 +850,21 @@ msgstr "Estatus de inscripción"
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:109
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:122
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:135
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:170
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:178
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:186
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:194
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:202
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:210
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:148
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:161
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:174
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:187
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:199
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:211
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:224
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:237
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:250
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:283
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:291
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:299
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:307
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:315
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:323
 msgid "Preview"
 msgstr "Visualizar"
 
@@ -854,83 +874,131 @@ msgstr "Visualizar"
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:112
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:125
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:138
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:151
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:164
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:177
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:190
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:202
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:214
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:227
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:240
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:253
 msgid "Not available"
 msgstr "No disponible"
 
 #: .\estudiantes\templates\pendientes\visualizarEstudiante.html:79
+#| msgid "Previous Visa Refusal Letters (if applicable)"
+msgid "Previous Visa Refusal Letters"
+msgstr "Cartas anteriores de denegación de visado (si procede)"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:92
 msgid "ID Card"
 msgstr "Identificacion"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:92
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:105
+#| msgid "2 Biometric Photos (35x45 size)"
+msgid "Biometric Photos"
+msgstr "2 fotos biométricas (tamaño 35x45)"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:118
 msgid "Criminal Records"
 msgstr "Historial criminal"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:105
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:131
 msgid "Health Insurance"
 msgstr "Seguro medico"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:118
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:144
 msgid "Enrollment Letter"
 msgstr "Carta de inscripción"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:131
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:157
+#| msgid "Booking Letter from SEDA"
+msgid "Booking Letter"
+msgstr "Carta de reserva de SEDA"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:170
 msgid "Payment Receipt"
 msgstr "Recibo de pago"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:144
-msgid "Upload Date"
-msgstr "Fecha de subida"
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:183
+#| msgid "Recent Diploma Translated into English"
+msgid "Diploma Translated"
+msgstr "Diploma reciente traducido al inglés"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:152
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:258
-msgid "Rejection Reason"
-msgstr "Motivo del rechazo"
-
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:163
-msgid "Sponsorship Details"
-msgstr "Descargar carta de patrocinio"
-
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:167
-msgid "ID Sponsorship"
-msgstr "ID del Patrocinador"
-
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:175
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:195
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:288
 msgid "Sponsorship Letter"
 msgstr "Carta de patrocinio"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:183
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:220
+#| msgid "Recent Transcript Translated into English"
+msgid "Transcript Translated"
+msgstr "Transcripción reciente traducida al inglés"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:233
+#| msgid "Intention Letter"
+msgid "Student Letter"
+msgstr "Carta de intenciones"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:246
+#| msgid "Payslips for Last 3 Months (if employed)"
+msgid "Payslips Last 3 Months"
+msgstr "Nóminas de los últimos 3 meses (si trabaja)"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:258
+msgid "Upload Date"
+msgstr "Fecha de subida"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:265
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:371
+msgid "Rejection Reason"
+msgstr "Motivo del rechazo"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:276
+#| msgid "Sponsorship Letter"
+msgid "Sponsorship Details"
+msgstr "Carta de patrocinio"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:280
+msgid "ID Sponsorship"
+msgstr "ID del Patrocinador"
+
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:296
+#| msgid "Relationship Proof"
 msgid "Relationship Proof"
 msgstr "Prueba de relación"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:191
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:304
 msgid "Sponsor Bank Statement"
 msgstr "Extracto bancario del patrocinador"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:199
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:312
 msgid "Income Proof"
 msgstr "Prueba de ingresos"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:207
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:320
+#| msgid "Company Details"
 msgid "Company Details"
 msgstr "Datos de la empresa"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:218
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:331
 msgid "No sponsorship available"
 msgstr "No hay patrocinador disponible"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:240
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:353
 msgid "Change Enrollment Status"
 msgstr "Cambiar Estatus de inscripción"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:249
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:362
 msgid "Select new status"
 msgstr "Selecciona un nuevo Estatus"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:259
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:372
 msgid "Write the rejection reason..."
 msgstr "Escribe El Motivo del rechazo"
 
-#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:263
+#: .\estudiantes\templates\pendientes\visualizarEstudiante.html:376
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -945,7 +1013,9 @@ msgstr "Estudiante Agregado Correctamente!"
 #: .\estudiantes\views.py:114
 msgid ""
 "Error while trying to save the student. Please check the form for errors."
-msgstr "Error mientras intentaba guardar al estudiante. Compruebe si hay errores en el formulario"
+msgstr ""
+"Error mientras intentaba guardar al estudiante. Compruebe si hay errores en "
+"el formulario"
 
 #: .\estudiantes\views.py:140 .\usuarios\views.py:133
 #, python-format
@@ -955,14 +1025,16 @@ msgstr "Hemos actualizado correctamente a: %(nombre)s %(apellido)s"
 #: .\estudiantes\views.py:147
 msgid ""
 "Error while trying to update the student. Please check the form for errors."
-msgstr "Error al intentar actualizar el estudiante. Compruebe si hay errores en el formulario"
+msgstr ""
+"Error al intentar actualizar el estudiante. Compruebe si hay errores en el "
+"formulario"
 
 #: .\estudiantes\views.py:170
 #, python-format
 msgid "We have successfully deleted to: %(nombre)s %(apellido)s"
 msgstr "Hemos borrado con éxito a: %(nombre)s %(apellido)s"
 
-#: .\estudiantes\views.py:224 .\estudiantes\views.py:282
+#: .\estudiantes\views.py:224 .\estudiantes\views.py:285
 msgid "This field is required if you need sponsorship."
 msgstr "Este campo es obligatorio si necesita patrocinio"
 
@@ -971,11 +1043,10 @@ msgid "Please complete all required sponsorship fields.."
 msgstr "Por favor, rellene todos los campos de patrocinio requeridos."
 
 #: .\estudiantes\views.py:228 .\estudiantes\views.py:232
-#| msgid "No documents uploaded"
 msgid "Documents uploaded successfully."
 msgstr "No hay documentos cargados"
 
-#: .\estudiantes\views.py:235 .\estudiantes\views.py:293
+#: .\estudiantes\views.py:235 .\estudiantes\views.py:296
 msgid "Please correct the errors in the form.."
 msgstr "Por favor, corrija los errores del formulario"
 
@@ -983,31 +1054,31 @@ msgstr "Por favor, corrija los errores del formulario"
 msgid "You do not have permission to access this section."
 msgstr "No tiene permiso para acceder a esta sección"
 
-#: .\estudiantes\views.py:283
+#: .\estudiantes\views.py:286
 msgid "Please complete all required fields for sponsorship.."
 msgstr "Rellene todos los campos obligatorios para el patrocinio"
 
-#: .\estudiantes\views.py:286 .\estudiantes\views.py:290
+#: .\estudiantes\views.py:289 .\estudiantes\views.py:293
 msgid "Documents successfully updated."
 msgstr "Documentos actualizados correctamente"
 
-#: .\estudiantes\views.py:424
+#: .\estudiantes\views.py:427
 msgid "You must provide a reason for the rejection."
 msgstr "Debe justificar el motivo del rechazo"
 
-#: .\estudiantes\views.py:433
+#: .\estudiantes\views.py:436
 msgid "Invalid registration status."
 msgstr "Estado de registro no válido"
 
-#: .\estudiantes\views.py:450
+#: .\estudiantes\views.py:453
 msgid "Profile successfully updated."
 msgstr "Perfil actualizado correctamente"
 
-#: .\estudiantes\views.py:453
+#: .\estudiantes\views.py:456
 msgid "There was an error updating the profile."
 msgstr "Se ha producido un error al actualizar el perfil"
 
-#: .\estudiantes\views.py:472
+#: .\estudiantes\views.py:475
 #, python-format
 msgid "Documents of: %(nombre)s %(apellido)s successfully deleted."
 msgstr "Documentos de: %(nombre)s %(apellido)s eliminados con éxito"
@@ -1465,7 +1536,6 @@ msgid "You can't delete your own user."
 msgstr "No puedes eliminar tu propio usuario"
 
 #: .\usuarios\views.py:166
-#| msgid "Your account is blocked. Contact the administrator"
 msgid "You cannot delete the administrator user."
 msgstr "Su cuenta está bloqueada. Póngase en contacto con el administrador"
 
@@ -1490,8 +1560,9 @@ msgid "The selected user does not exist."
 msgstr "El usuario seleccionado no existe"
 
 #: .\usuarios\views.py:221
-msgid "El usuario seleccionado no existe."
-msgstr "El usuario seleccionado no existe"
+#| msgid "You cannot update the administrator position."
+msgid "You are not allowed to view administrator information."
+msgstr "No se puede actualizar el cargo de administrador"
 
 #: .\usuarios\views.py:280
 msgid "Position successfully created!"
@@ -1502,7 +1573,6 @@ msgid "There was an error in adding the charge."
 msgstr "Se ha producido un error al añadir el cargo"
 
 #: .\usuarios\views.py:316
-#| msgid "Your account is suspended. Contact the administrator"
 msgid "You cannot update the administrator position."
 msgstr "No se puede actualizar el cargo de administrador"
 
@@ -1511,7 +1581,6 @@ msgid "There was an error updating the charge."
 msgstr "Se ha producido un error al actualizar el cargo"
 
 #: .\usuarios\views.py:349
-#| msgid "Your account is blocked. Contact the administrator"
 msgid "You cannot delete the administrator position."
 msgstr "No se puede eliminar el cargo de administrador"
 
@@ -3190,6 +3259,41 @@ msgstr ""
 msgid "Bases: %s"
 msgstr ""
 
+#~| msgid "Documentos subidos exitosamente."
+#~ msgid "Archivo subido correctamente"
+#~ msgstr "Documentos subidos exitosamente."
+
+#~| msgid "Applicant's Translated Work History"
+#~ msgid "Applicant's Employment History"
+#~ msgstr "Historial Laboral Traducido del Solicitante"
+
+#~| msgid "Sponsor Bank Statement"
+#~ msgid "Bank Statement"
+#~ msgstr "Extracto bancario del patrocinador"
+
+#~| msgid "Passport"
+#~ msgid "Passport Copy"
+#~ msgstr "Pasaporte"
+
+#~| msgid "Reason for Return to Home Country"
+#~ msgid "Reason for Return"
+#~ msgstr "Motivo del regreso al país de origen"
+
+#~| msgid "Online Visa Application Form and Its Summary"
+#~ msgid "Visa Application Form"
+#~ msgstr "Formulario de solicitud de visado en línea y su resumen"
+
+#~| msgid "Sponsorship Details"
+#~ msgid "Sponsor ID"
+#~ msgstr "Descargar carta de patrocinio"
+
+#~| msgid "Sponsorship Letter"
+#~ msgid "Sponsorship Certificate"
+#~ msgstr "Carta de patrocinio"
+
+#~ msgid "El usuario seleccionado no existe."
+#~ msgstr "El usuario seleccionado no existe"
+
 #~| msgid "Documentos actualizados exitosamente."
 #~ msgid "Perfil actualizado exitosamente."
 #~ msgstr "Documentos actualizados exitosamente."
@@ -3200,9 +3304,6 @@ msgstr ""
 
 #~ msgid "Por favor, complete todos los campos requeridos de patrocinio."
 #~ msgstr "Por favor, complete todos los campos requeridos de patrocinio."
-
-#~ msgid "Documentos subidos exitosamente."
-#~ msgstr "Documentos subidos exitosamente."
 
 #~ msgid "Por favor, corrija los errores en el formulario."
 #~ msgstr "Por favor, corrija los errores en el formulario."

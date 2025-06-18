@@ -17,4 +17,5 @@ urlpatterns = [
     path('cambiar-estado-inscripcion/<id>/', views.cambiar_estado_inscripcion, name='cambiar_estado_inscripcion'),
     path('actualizar_perfil/', views.actualizar_perfil_estudiante, name='actualizar_perfil_estudiante'),
     path('eliminarDocumentos/<id>/', views.eliminarRegistros, name='eliminarDocumentos'),
+    path('subir_archivo_ajax/', views.subir_archivo_ajax, name='subir_archivo_ajax'),
 ]

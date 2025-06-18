@@ -10,6 +10,18 @@
       <h1>{% trans "Upload Documents" %}</h1>
     </div>
     <div class="section-body">
+      {% if messages %}
+        <div class="alert alert-info">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
       <div class="row">
         <div class="col-12 col-md-12">
           <div class="card">
@@ -17,7 +29,7 @@
               <h4>{% trans "Upload Document" %}</h4>
             </div>
             <div class="card-body">
-              <form method="POST" enctype="multipart/form-data" action="">
+              <form method="POST" id="documentosForm" enctype="multipart/form-data" action="">
                 {% csrf_token %}
                 <div class="row">
                   <!-- Columna izquierda -->
@@ -195,6 +207,43 @@
         });
       });
       // --- FIN CORRECCIÓN DE ESTILOS ---
+    });
+
+    document.querySelectorAll('input[type="file"]').forEach(input => {
+        input.addEventListener('change', function() {
+            const file = this.files[0];
+            if (!file) return;
+            const campo = this.getAttribute('name');
+            const formData = new FormData();
+            formData.append('archivo', file);
+            formData.append('campo', campo);
+
+            fetch("{% url 'subir_archivo_ajax' %}", {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Elimina mensajes previos
+                if (this.nextSibling) this.parentNode.removeChild(this.nextSibling);
+
+                let msg = document.createElement('span');
+                if (data.success) {
+                    this.classList.add('is-valid');
+                    msg.className = 'text-success ml-2';
+                    msg.innerText = "{% trans 'File uploaded successfully' %}";
+                } else {
+                    this.classList.remove('is-valid');
+                    this.value = "";
+                    msg.className = 'text-danger ml-2';
+                    msg.innerText = data.error || "{% trans 'Invalid file format or size' %}";
+                }
+                this.parentNode.appendChild(msg);
+            });
+        });
     });
 </script>
 

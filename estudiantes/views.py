@@ -262,6 +262,9 @@ def actualizar_documentos(request, id):
         if form.is_valid():
             necesita_patrocinio = form.cleaned_data.get('necesita_patrocinio')
 
+            # Cambiar el estado a "En Revisión" antes de guardar
+            documentos.estado_inscripcion = "En Revisión"
+
             if necesita_patrocinio:
                 campos_patrocinio = [
                     'id_patrocinador',
@@ -475,3 +478,23 @@ def eliminarRegistros(request, id):
     }
 )
     return redirect('estudiantes')
+
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+
+@csrf_exempt
+@login_required
+def subir_archivo_ajax(request):
+    if request.method == 'POST' and request.FILES.get('archivo'):
+        archivo = request.FILES['archivo']
+        campo = request.POST.get('campo')
+        # Obtén o crea el registro de documentos para el estudiante
+        documentos, _ = DocumentosEstudiante.objects.get_or_create(estudiante=request.user.estudiantes)
+        # Verifica que el campo exista en el modelo
+        if campo and hasattr(documentos, campo):
+            setattr(documentos, campo, archivo)
+            documentos.save()
+            return JsonResponse({'success': True, 'archivo_url': getattr(documentos, campo).url})
+        else:
+            return JsonResponse({'success': False, 'error': 'Campo inválido'}, status=400)
+    return JsonResponse({'success': False}, status=400)
