@@ -271,7 +271,6 @@ document.querySelectorAll('input[type="file"]').forEach(input => {
             if (data.success) {
                 this.classList.add('is-valid');
                 msg.classList.add('text-success');
-                msg.innerText = "{% trans 'File uploaded successfully' %}";
             } else {
                 this.classList.remove('is-valid');
                 this.value = "";
