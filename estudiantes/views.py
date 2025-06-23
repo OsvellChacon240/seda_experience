@@ -406,7 +406,7 @@ def documentos_rechazados(request):
     return render(request, "pendientes/procesos_rechazados.html", context)
 
 @login_required
-@permission_required('estudiantes.change_documentos_estudiante')
+@permission_required('estudiantes.view_documentos_pendientes', raise_exception=True)
 def cambiar_estado_inscripcion(request, id):
     
     lang_code = request.session.get('django_language', 'en')  # Idioma por defecto: 'es'
