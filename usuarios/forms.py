@@ -12,8 +12,8 @@ class CargosFrm(forms.ModelForm):
         model = Cargo
         fields = '__all__'
         labels = {
-            'nombre': _("Nombre del Cargo"),
-            'descripcion': _("Descripción"),
+            'nombre': _("Position Name"),
+            'descripcion': _("Description"),
         }
 
 
@@ -43,30 +43,30 @@ class EmpleadosFrm(forms.ModelForm):
             'password': forms.PasswordInput(attrs={'class': 'form-control'}),
         }
         labels = {
-            'username': _("Nombre de Usuario"),
-            'nombre': _("Nombre"),
-            'apellido': _("Apellido"),
-            'email': _("Correo Electrónico"),
-            'password': _("Contraseña"),
-            'pasaporte': _("Número de Pasaporte"),
-            'telefono': _("Teléfono"),
-            'direccion': _("Dirección"),
-            'genero': _("Género"),
-            'cargo': _("Cargo"),
-            'fecha_nacimiento': _("Fecha de Nacimiento"),
-            'status': _("Estado"),
-            'foto_perfil': _("Foto de Perfil"),
+            'username': _("User Name"),
+            'nombre': _("Name"),
+            'apellido': _("Lastname"),
+            'email': _("E-mail address"),
+            'password': _("Password"),
+            'pasaporte': _("Passport Number"),
+            'telefono': _("Phone"),
+            'direccion': _("Address"),
+            'genero': _("Gender"),
+            'cargo': _("Position"),
+            'fecha_nacimiento': _("Date of Birth"),
+            'status': _("Status"),
+            'foto_perfil': _("Profile Photo"),
         }
         error_messages = {
-            'pasaporte': {'unique': _("Este pasaporte ya está registrado.")},
-            'email': {'invalid': _("Introduce un correo electrónico válido.")},
+            'pasaporte': {'unique': _("This passport is already registered.")},
+            'email': {'invalid': _("Enter a valid email address.")},
         }
 
     # Validación personalizada para pasaporte
     def clean_pasaporte(self):
         pasaporte = self.cleaned_data.get('pasaporte')
         if CustomUser.objects.filter(pasaporte=pasaporte).exclude(id=self.instance.id).exists():
-            raise ValidationError(_("Ya existe una persona con este pasaporte."))
+            raise ValidationError(_("A person with this passport already exists."))
         return pasaporte
 
     # Validación personalizada para teléfono
@@ -76,7 +76,7 @@ class EmpleadosFrm(forms.ModelForm):
             # Validar formato internacional con prefijo de país, permitiendo espacios, guiones y paréntesis
             if not re.match(r'^\+\d{1,4}[\s\d\-\(\)]{7,20}$', telefono):
                 raise ValidationError(_(
-                    "El número de teléfono debe estar en formato internacional, comenzando con '+' seguido del prefijo del país y el número. Ejemplo: +56 9 5027 1381 o +1 (123) 456-7890."
+                    "The phone number must be in international format, starting with ‘+’ followed by the country code and the number. Example: +56 9 5027 1381 or +1 (123) 456-7890."
                 ))
         return telefono
 
@@ -88,7 +88,7 @@ class EmpleadosFrm(forms.ModelForm):
         hoy = date.today()
         edad = hoy.year - fecha_nacimiento.year - ((hoy.month, hoy.day) < (fecha_nacimiento.month, fecha_nacimiento.day))
         if edad < 18:
-            raise ValidationError(_("El empleado debe tener al menos 18 años."))
+            raise ValidationError(_("The employee must be at least 18 years old."))
         
         # Convertir la fecha a un formato adecuado si llega como cadena
         if isinstance(fecha_nacimiento, str):
@@ -172,6 +172,6 @@ class actEmpleadosFrm(forms.ModelForm):
             'foto_perfil': _("Foto de Perfil"),
         }
         error_messages = {
-            'pasaporte': {'unique': _("Este pasaporte ya está registrado.")},
-            'email': {'invalid': _("Introduce un correo electrónico válido.")},
+            'pasaporte': {'unique': _("This passport is already registered.")},
+            'email': {'invalid': _("Enter a valid email address.")},
         }

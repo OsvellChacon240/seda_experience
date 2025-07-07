@@ -17,8 +17,8 @@ class Cargo(models.Model):
 
 # Opciones para género
 class GeneroChoices(models.TextChoices):
-    MASCULINO = 'M', _('Masculino')
-    FEMENINO = 'F', _('Femenino')
+    MASCULINO = 'M', _('Male')
+    FEMENINO = 'F', _('Female')
 
 # Validaciones
 # ... (Mantenemos las mismas funciones de validación)
@@ -27,19 +27,19 @@ def validar_nombre(value):
     regex = r"^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$"
     pattern = re.compile(regex)
     if not pattern.match(value):
-        raise ValidationError("El nombre no tiene el formato correcto. Asegúrate de usar solo letras y espacios.")
+        raise ValidationError(_("The name is not formatted correctly. Be sure to use only letters and spaces."))
 
 def validar_fecha_nacimiento(value):
     if value > date.today():
-        raise ValidationError("La fecha de nacimiento no puede ser futura.")
+        raise ValidationError(_("Date of birth cannot be in the future."))
 
 def validar_foto_perfil(value):
     try:
         img = Image.open(value)
         if img.format not in ['JPEG', 'PNG']:
-            raise ValidationError("La imagen debe ser en formato JPEG o PNG.")
+            raise ValidationError(_("The image must be in JPEG or PNG format."))
     except IOError:
-        raise ValidationError("El archivo no es una imagen válida.")
+        raise ValidationError(_("The file is not a valid image"))
 
 def validar_pasaporte(value):
     """
@@ -49,7 +49,7 @@ def validar_pasaporte(value):
     regex = r"^[a-zA-Z0-9]{6,9}$"
     pattern = re.compile(regex)
     if not pattern.match(value):
-        raise ValidationError("El pasaporte debe contener entre 6 y 9 caracteres alfanuméricos.")
+        raise ValidationError(_("The passport must contain between 6 and 9 alphanumeric characters."))
     
 # Modelo base abstracto
 class CustomUser(AbstractUser):
@@ -58,7 +58,7 @@ class CustomUser(AbstractUser):
     pasaporte = models.CharField(
         max_length=9,
         unique=True,
-        verbose_name=_('Pasaporte'),
+        verbose_name=_('Passport'),
         validators=[validar_pasaporte],
         blank=True
     )
@@ -72,12 +72,12 @@ class CustomUser(AbstractUser):
             max_length=1,
             choices=GeneroChoices.choices,
             default=GeneroChoices.MASCULINO,
-            verbose_name=_('Género'),
+            verbose_name=_('Gender'),
             blank=True
         )
-    direccion = models.TextField(blank=True, null=True, verbose_name=_('Dirección'))
+    direccion = models.TextField(blank=True, null=True, verbose_name=_('Addres'))
     fecha_nacimiento = models.DateField(
-        verbose_name=_('Fecha de nacimiento'),
+        verbose_name=_('Date of birth'),
         validators=[validar_fecha_nacimiento],
         null=True,
         blank=True
@@ -89,7 +89,7 @@ class CustomUser(AbstractUser):
         blank=True
     )
 
-    status = models.BooleanField(default=True, verbose_name=_('Estado de Cuenta'))
+    status = models.BooleanField(default=True, verbose_name=_('Statement of Account'))
 
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 

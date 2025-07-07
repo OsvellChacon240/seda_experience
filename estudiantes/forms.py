@@ -40,24 +40,24 @@ class EstudiantesRegistroForm(UserCreationForm):
     def clean_fecha_nacimiento(self):
         fecha_nacimiento = self.cleaned_data.get('fecha_nacimiento')
         if not fecha_nacimiento:
-            raise ValidationError(_("La fecha de nacimiento es obligatoria."))
+            raise ValidationError(_("Date of birth is required."))
         hoy = date.today()
         edad = hoy.year - fecha_nacimiento.year - ((hoy.month, hoy.day) < (fecha_nacimiento.month, fecha_nacimiento.day))
         if edad < 16:
-            raise ValidationError(_("El estudiante debe tener al menos 16 años."))
+            raise ValidationError(_("Student must be at least 16 years old."))
         return fecha_nacimiento
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if CustomUser.objects.filter(email=email).exists():
-            raise forms.ValidationError(_("Este correo electrónico ya está registrado."))
+            raise forms.ValidationError(_("This e-mail address is already registered."))
         return email
     
     # Validación personalizada para el pasaporte
     def clean_pasaporte(self):
         pasaporte = self.cleaned_data.get('pasaporte')
         if Estudiantes.objects.filter(pasaporte=pasaporte).exists():
-            raise ValidationError(_("Ya existe un estudiante con este pasaporte."))
+            raise ValidationError(_("There is already a student with this passport."))
         return pasaporte
 
     # Validación personalizada para el teléfono
@@ -67,7 +67,7 @@ class EstudiantesRegistroForm(UserCreationForm):
             # Validar formato internacional con prefijo de país, sin espacios, guiones o paréntesis
             if not re.match(r'^\+\d{1,4}\d{7,15}$', telefono):
                 raise ValidationError(_(
-                    "El número de teléfono debe estar en formato internacional, comenzando con '+' seguido del prefijo del país y el número, sin espacios, guiones o paréntesis. Ejemplo: +584147080725 o +14155552671."
+                    "The phone number must be in international format, starting with ‘+’ followed by the country prefix and the number, without spaces, hyphens or parentheses. Example: +584147080725 or +14155552671."
                 ))
         return telefono
 
@@ -119,7 +119,7 @@ class EstudiantesActualizacionForm(forms.ModelForm):
     def clean_pasaporte(self):
         pasaporte = self.cleaned_data.get('pasaporte')
         if Estudiantes.objects.filter(pasaporte=pasaporte).exclude(id=self.instance.id).exists():
-            raise ValidationError(_("Ya existe un estudiante con este pasaporte."))
+            raise ValidationError(_("There is already a student with this passport."))
         return pasaporte
 
     # Validación personalizada para el teléfono
@@ -129,7 +129,7 @@ class EstudiantesActualizacionForm(forms.ModelForm):
             # Validar formato internacional con prefijo de país, sin espacios, guiones o paréntesis
             if not re.match(r'^\+\d{1,4}\d{7,15}$', telefono):
                 raise ValidationError(_(
-                    "El número de teléfono debe estar en formato internacional, comenzando con '+' seguido del prefijo del país y el número, sin espacios, guiones o paréntesis. Ejemplo: +584147080725 o +14155552671."
+                    "The phone number must be in international format, starting with ‘+’ followed by the country prefix and the number, without spaces, hyphens or parentheses. Example: +584147080725 or +14155552671."
                 ))
         return telefono
 
@@ -229,8 +229,8 @@ class DocumentosEstudianteForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean() or {}
-        # Convertir a booleano si se pasa como string
         necesita_raw = cleaned_data.get('necesita_patrocinio')
+
         if isinstance(necesita_raw, str):
             necesita_patrocinio = necesita_raw == "True"
             cleaned_data['necesita_patrocinio'] = necesita_patrocinio
@@ -238,18 +238,23 @@ class DocumentosEstudianteForm(forms.ModelForm):
             necesita_patrocinio = necesita_raw
 
         if necesita_patrocinio:
-            campos_requeridos = [
-                'id_patrocinador',
-                'carta_patrocinio',
-                'prueba_relacion',
-                'estados_bancarios_patrocinador',
-                'prueba_ingresos',
-                'detalles_empresa',
-                'sponsorship_letter',
+            campos = [
+                'id_patrocinador', 'carta_patrocinio', 'prueba_relacion',
+                'estados_bancarios_patrocinador', 'prueba_ingresos',
+                'detalles_empresa', 'sponsorship_letter'
             ]
-            for campo in campos_requeridos:
-                if not cleaned_data.get(campo):
-                    self.add_error(campo, _("Este campo es obligatorio si necesita patrocinio."))
+
+            # Comprobar si todos los campos están vacíos (nuevos y existentes)
+            todos_vacios = all(
+                not cleaned_data.get(campo) and not getattr(self.instance, campo, None)
+                for campo in campos
+            )
+
+            if todos_vacios:
+                raise forms.ValidationError(
+                    _("Please upload at least one document from the sponsor if you indicated that you need sponsorship.")
+                )
+
         return cleaned_data
 
     def mostrar_info_patrocinio(self):
@@ -262,3 +267,49 @@ class DocumentosEstudianteForm(forms.ModelForm):
         if not instance.tiene_patrocinio:
             return (False, None)
         return (True, instance.detalles_patrocinio())
+    
+from django import forms
+from .models import DocumentosEstudiante
+
+class EstadoDocumentosForm(forms.ModelForm):
+    class Meta:
+        model = DocumentosEstudiante
+        fields = [
+            # Campos con estado y mensaje
+            'passport_copy_estado', 'passport_copy_mensaje',
+            'previous_visa_refusal_letters_estado', 'previous_visa_refusal_letters_mensaje',
+            'national_id_copy_estado', 'national_id_copy_mensaje',
+            'biometric_photos_estado', 'biometric_photos_mensaje',
+            'police_clearance_certificates_estado', 'police_clearance_certificates_mensaje',
+            'travel_health_insurance_estado', 'travel_health_insurance_mensaje',
+            'enrollment_letter_estado', 'enrollment_letter_mensaje',
+            'booking_letter_estado', 'booking_letter_mensaje',
+            'payment_receipt_estado', 'payment_receipt_mensaje',
+            'diploma_translated_estado', 'diploma_translated_mensaje',
+            'transcript_translated_estado', 'transcript_translated_mensaje',
+            'student_letter_estado', 'student_letter_mensaje',
+            'payslips_last_3_months_estado', 'payslips_last_3_months_mensaje',
+            'Applicants_translated_work_history_estado', 'Applicants_translated_work_history_mensaje',
+            'supportive_certificate_estado', 'supportive_certificate_mensaje',
+            'intention_letter_estado', 'intention_letter_mensaje',
+            'reason_for_return_estado', 'reason_for_return_mensaje',
+            'financial_summary_form_estado', 'financial_summary_form_mensaje',
+            'sponsorship_letter_estado', 'sponsorship_letter_mensaje',
+            'visa_application_form_estado', 'visa_application_form_mensaje',
+            'bank_statement_estado', 'bank_statement_mensaje',
+
+            # Campos de patrocinio: solo archivos (sin estado ni mensaje)
+            'id_patrocinador_estado', 'id_patrocinador_mensaje',
+            'carta_patrocinio_estado', 'carta_patrocinio_mensaje',
+            'prueba_relacion_estado', 'prueba_relacion_mensaje',
+            'estados_bancarios_patrocinador_estado', 'estados_bancarios_patrocinador_mensaje',
+            'prueba_ingresos_estado', 'prueba_ingresos_mensaje',
+            'detalles_empresa_estado', 'detalles_empresa_mensaje',
+
+        ]
+        widgets = {
+            # Por ejemplo, textarea para mensajes
+            'passport_copy_mensaje': forms.Textarea(attrs={'rows': 2}),
+            'previous_visa_refusal_letters_mensaje': forms.Textarea(attrs={'rows': 2}),
+            # ...y así para todos los campos de mensaje que quieras
+        }

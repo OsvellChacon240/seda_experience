@@ -61,199 +61,1064 @@
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <tbody>
-                                                <!-- Passport -->
-                                                <tr>
-                                                    <th><i class="fas fa-passport"></i> {% trans "Passport" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.passport_copy %}
-                                                            <a href="{{ Suguru.passport_copy.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Previous Visa Refusal Letters -->
-                                                <tr>
-                                                    <th><i class="fas fa-times"></i> {% trans "Previous Visa Refusal Letters" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.previous_visa_refusal_letters %}
-                                                            <a href="{{ Suguru.previous_visa_refusal_letters.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- ID Card -->
-                                                <tr>
-                                                    <th><i class="fas fa-id-card"></i> {% trans "ID Card" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.national_id_copy %}
-                                                            <a href="{{ Suguru.national_id_copy.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Biometric Photos -->
-                                                <tr>
-                                                    <th><i class="fas fa-camera"></i> {% trans "Biometric Photos" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.biometric_photos %}
-                                                            <a href="{{ Suguru.biometric_photos.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Criminal Records -->
-                                                <tr>
-                                                    <th><i class="fas fa-file-alt"></i> {% trans "Criminal Records" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.police_clearance_certificates %}
-                                                            <a href="{{ Suguru.police_clearance_certificates.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Health Insurance -->
-                                                <tr>
-                                                    <th><i class="fas fa-file-medical"></i> {% trans "Health Insurance" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.travel_health_insurance %}
-                                                            <a href="{{ Suguru.travel_health_insurance.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Enrollment Letter -->
-                                                <tr>
-                                                    <th><i class="fas fa-envelope"></i> {% trans "Enrollment Letter" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.enrollment_letter %}
-                                                            <a href="{{ Suguru.enrollment_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Booking Letter -->
-                                                <tr>
-                                                    <th><i class="fas fa-book"></i> {% trans "Booking Letter" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.booking_letter %}
-                                                            <a href="{{ Suguru.booking_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Payment Receipt -->
-                                                <tr>
-                                                    <th><i class="fas fa-receipt"></i> {% trans "Payment Receipt" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.payment_receipt %}
-                                                            <a href="{{ Suguru.payment_receipt.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Diploma Translated -->
-                                                <tr>
-                                                    <th><i class="fas fa-certificate"></i> {% trans "Diploma Translated" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.diploma_translated %}
-                                                            <a href="{{ Suguru.diploma_translated.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fas fa-certificate"></i> {% trans "Sponsorship Letter" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.sponsorship_letter %}
-                                                            <a href="{{ Suguru.sponsorship_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fas fa-certificate"></i> {% trans "Financial Summary Form" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.financial_summary_form %}
-                                                            <a href="{{ Suguru.financial_summary_form.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Transcript Translated -->
-                                                <tr>
-                                                    <th><i class="fas fa-file-alt"></i> {% trans "Transcript Translated" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.transcript_translated %}
-                                                            <a href="{{ Suguru.transcript_translated.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Passport" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.passport_copy %}
+                                                                <a href="{{ Suguru.passport_copy.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                {% if Suguru.passport_status == 'Rechazado' %}
+                                                                    <span class="badge bg-danger ms-2">{% trans "Rejected" %}</span>
+                                                                {% elif Suguru.passport_status == 'Aprobado' %}
+                                                                    <span class="badge bg-success ms-2">{% trans "Accepted" %}</span>
+                                                                {% else %}
+                                                                    <!-- Botón de Rechazar -->
+                                                                    <button id="btn-reject-passport_copy-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                        <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                    </button>
+
+                                                                    <!-- Formulario oculto inicialmente -->
+                                                                    <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'passport_copy' %}" id="form-reject-passport_copy-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                        {% csrf_token %}
+                                                                        <input type="hidden" name="estado" value="Rechazado">
+                                                                        <div class="mb-2">
+                                                                            <label for="mensaje_rechazo_{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                            <textarea name="mensaje" id="mensaje_rechazo_{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                        </div>
+                                                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                                            <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                        </button>
+                                                                    </form>
+
+                                                                    <!-- Botón para aprobar (inicialmente oculto) -->
+                                                                    <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'passport_copy' %}" id="form-approve-passport_copy-{{ Suguru.pk }}" class="d-inline" style="display:none;">
+                                                                        {% csrf_token %}
+                                                                        <input type="hidden" name="estado" value="Aprobado">
+                                                                        <button type="submit" class="btn btn-sm btn-success">
+                                                                            <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                        </button>
+                                                                    </form>
+                                                                {% endif %}
+
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Previous Visa Refusal Letters" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.previous_visa_refusal_letters %}
+                                                                <a href="{{ Suguru.previous_visa_refusal_letters.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-previous_visa_refusal_letters-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'previous_visa_refusal_letters' %}" id="form-reject-previous_visa_refusal_letters-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="mensaje_rechazo_previous_visa_refusal_letters_{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="mensaje_rechazo_previous_visa_refusal_letters_{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'previous_visa_refusal_letters' %}" id="form-approve-previous_visa_refusal_letters-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-previous_visa_refusal_letters-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-previous_visa_refusal_letters-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "ID Card" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.national_id_copy %}
+                                                                <a href="{{ Suguru.national_id_copy.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-national_id_copy-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'national_id_copy' %}" id="form-reject-national_id_copy-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="national_id_copy{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="national_id_copy{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'national_id_copy' %}" id="form-approve-national_id_copy-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-national_id_copy-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-national_id_copy-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Biometric Photos" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.biometric_photos %}
+                                                                <a href="{{ Suguru.biometric_photos.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-biometric_photos-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'biometric_photos' %}" id="form-reject-biometric_photos-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="biometric_photos{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="biometric_photos{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'biometric_photos' %}" id="form-approve-biometric_photos-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-biometric_photos-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-biometric_photos-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Criminal Records" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.police_clearance_certificates %}
+                                                                <a href="{{ Suguru.police_clearance_certificates.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-police_clearance_certificates-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'police_clearance_certificates' %}" id="form-reject-police_clearance_certificates-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="police_clearance_certificates{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="police_clearance_certificates{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'police_clearance_certificates' %}" id="form-approve-police_clearance_certificates-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-police_clearance_certificates-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-police_clearance_certificates-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Criminal Records" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.travel_health_insurance %}
+                                                                <a href="{{ Suguru.travel_health_insurance.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-travel_health_insurance-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'travel_health_insurance' %}" id="form-reject-travel_health_insurance-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="travel_health_insurance{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="travel_health_insurance{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'travel_health_insurance' %}" id="form-approve-travel_health_insurance-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-travel_health_insurance-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-travel_health_insurance-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Enrollment Letter" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.enrollment_letter %}
+                                                                <a href="{{ Suguru.enrollment_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-enrollment_letter-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'enrollment_letter' %}" id="form-reject-enrollment_letter-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="enrollment_letter{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="enrollment_letter{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'enrollment_letter' %}" id="form-approve-enrollment_letter-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-enrollment_letter-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-enrollment_letter-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Booking Letter" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.booking_letter %}
+                                                                <a href="{{ Suguru.booking_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-booking_letter-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'booking_letter' %}" id="form-reject-booking_letter-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="booking_letter{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="booking_letter{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'booking_letter' %}" id="form-approve-booking_letter-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-booking_letter-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-booking_letter-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Payment Receipt" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.payment_receipt %}
+                                                                <a href="{{ Suguru.payment_receipt.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-payment_receipt-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'payment_receipt' %}" id="form-reject-payment_receipt-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="payment_receipt{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="payment_receipt{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'payment_receipt' %}" id="form-approve-payment_receipt-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-payment_receipt-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-payment_receipt-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Diploma Translated" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.diploma_translated %}
+                                                                <a href="{{ Suguru.diploma_translated.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-diploma_translated-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'diploma_translated' %}" id="form-reject-diploma_translated-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="diploma_translated{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="diploma_translated{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) NO CONFUNDIR -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'diploma_translated' %}" id="form-approve-diploma_translated-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-diploma_translated-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-diploma_translated-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Sponsorship Letter" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.sponsorship_letter %}
+                                                                <a href="{{ Suguru.sponsorship_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-sponsorship_letter-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'sponsorship_letter' %}" id="form-reject-sponsorship_letter-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="sponsorship_letter{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="sponsorship_letter{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'sponsorship_letter' %}" id="form-approve-sponsorship_letter-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-diploma_translated-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-diploma_translated-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Financial Summary Form" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.financial_summary_form %}
+                                                                <a href="{{ Suguru.financial_summary_form.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-financial_summary_form-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'financial_summary_form' %}" id="form-reject-financial_summary_form-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="financial_summary_form{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="financial_summary_form{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'financial_summary_form' %}" id="form-approve-financial_summary_form-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-financial_summary_form-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-financial_summary_form-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Transcript Translated" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.transcript_translated %}
+                                                                <a href="{{ Suguru.transcript_translated.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-transcript_translated-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'transcript_translated' %}" id="form-reject-transcript_translated-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="transcript_translated{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="transcript_translated{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'transcript_translated' %}" id="form-approve-transcript_translated-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-transcript_translated-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-transcript_translated-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
                                                 <!-- Student Letter -->
-                                                <tr>
-                                                    <th><i class="fas fa-user-graduate"></i> {% trans "Student Letter" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.student_letter %}
-                                                            <a href="{{ Suguru.student_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                <!-- Payslips Last 3 Months -->
-                                                <tr>
-                                                    <th><i class="fas fa-money-bill"></i> {% trans "Payslips Last 3 Months" %}:</th>
-                                                    <td>
-                                                        {% if Suguru.payslips_last_3_months %}
-                                                            <a href="{{ Suguru.payslips_last_3_months.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                            </a>
-                                                        {% else %}
-                                                            <span class="text-muted">{% trans "Not available" %}</span>
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Student Letter" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.student_letter %}
+                                                                <a href="{{ Suguru.student_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-student_letter-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'student_letter' %}" id="form-reject-student_letter-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="student_letter{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="student_letter{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'student_letter' %}" id="form-approve-student_letter-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-student_letter-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-student_letter-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Payslips Last 3 Months" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.payslips_last_3_months %}
+                                                                <a href="{{ Suguru.payslips_last_3_months.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-payslips_last_3_months-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'payslips_last_3_months' %}" id="form-reject-payslips_last_3_months-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="payslips_last_3_months{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="payslips_last_3_months{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'payslips_last_3_months' %}" id="form-approve-payslips_last_3_months-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-payslips_last_3_months-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-payslips_last_3_months-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+
+                                                    <!-- Continuacion -->
+
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Reason for return" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.reason_for_return %}
+                                                                <a href="{{ Suguru.reason_for_return.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-reason_for_return-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'reason_for_return' %}" id="form-reject-reason_for_return-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="reason_for_return{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="reason_for_return{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'reason_for_return' %}" id="form-approve-reason_for_return-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-reason_for_return-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-reason_for_return-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "6 Months Bank Statement" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.bank_statement %}
+                                                                <a href="{{ Suguru.bank_statement.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-bank_statement-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'bank_statement' %}" id="form-reject-bank_statement-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="bank_statement{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="bank_statement{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'bank_statement' %}" id="form-approve-bank_statement-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-bank_statement-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-bank_statement-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Online Visa Application" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.visa_application_form %}
+                                                                <a href="{{ Suguru.visa_application_form.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-visa_application_form-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'visa_application_form' %}" id="form-reject-visa_application_form-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="visa_application_form{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="visa_application_form{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'visa_application_form' %}" id="form-approve-visa_application_form-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-visa_application_form-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-visa_application_form-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Applicant Employment History" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.Applicants_translated_work_history %}
+                                                                <a href="{{ Suguru.Applicants_translated_work_history.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-Applicants_translated_work_history-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'Applicants_translated_work_history' %}" id="form-reject-Applicants_translated_work_history-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="Applicants_translated_work_history{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="Applicants_translated_work_history{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'Applicants_translated_work_history' %}" id="form-approve-Applicants_translated_work_history-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-Applicants_translated_work_history-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-Applicants_translated_work_history-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Supportive Certificate or Reason to Study English Aboard" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.supportive_certificate %}
+                                                                <a href="{{ Suguru.supportive_certificate.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-supportive_certificate-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'supportive_certificate' %}" id="form-reject-supportive_certificate-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="supportive_certificate{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="supportive_certificate{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'supportive_certificate' %}" id="form-approve-supportive_certificate-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-supportive_certificate-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-supportive_certificate-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+
+                                                    <tr>
+                                                        <th><i class="fas fa-passport"></i> {% trans "Intention Letter" %}:</th>
+                                                        <td>
+                                                            {% if Suguru.intention_letter %}
+                                                                <a href="{{ Suguru.intention_letter.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                </a>
+
+                                                                <!-- Botón de Rechazar (siempre visible) -->
+                                                                <button id="btn-reject-intention_letter-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                </button>
+
+                                                                <!-- Formulario oculto inicialmente -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'intention_letter' %}" id="form-reject-intention_letter-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Rechazado">
+                                                                    <div class="mb-2">
+                                                                        <label for="intention_letter{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                        <textarea name="mensaje" id="intention_letter{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                    </button>
+                                                                </form>
+
+                                                                <!-- Botón para aprobar (siempre visible) -->
+                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'intention_letter' %}" id="form-approve-intention_letter-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="estado" value="Aprobado">
+                                                                    <button type="submit" class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                    </button>
+                                                                </form>
+                                                            {% else %}
+                                                                <span class="text-muted">{% trans "Not available" %}</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <script>
+                                                    document.addEventListener('DOMContentLoaded', () => {
+                                                        const btnReject = document.getElementById('btn-reject-intention_letter-{{ Suguru.pk }}');
+                                                        const formReject = document.getElementById('form-reject-intention_letter-{{ Suguru.pk }}');
+
+                                                        btnReject?.addEventListener('click', () => {
+                                                            formReject.style.display = 'block';
+                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                        });
+                                                    });
+                                                    </script>
+
+                                                    <!-- Fin -->
+
                                                 <tr>
                                                     <th><i class="fas fa-clock"></i> {% trans "Upload Date" %}:</th>
                                                     <td>
@@ -276,54 +1141,306 @@
                                                                 <strong>{% trans "Sponsorship Details" %}:</strong>
                                                                 <table class="table table-borderless mb-0">
                                                                     <tbody>
-                                                                        <tr>
-                                                                            <th><i class="fas fa-id-badge"></i> {% trans 'ID Sponsorship' %}:</th>
-                                                                            <td>
-                                                                                <a href="{{ Suguru.id_patrocinador.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th><i class="fas fa-file-signature"></i> {% trans 'Sponsorship Letter' %}:</th>
-                                                                            <td>
-                                                                                <a href="{{ Suguru.carta_patrocinio.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th><i class="fas fa-users"></i> {% trans 'Relationship Proof' %}:</th>
-                                                                            <td>
-                                                                                <a href="{{ Suguru.prueba_relacion.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th><i class="fas fa-university"></i> {% trans 'Sponsor Bank Statement' %}:</th>
-                                                                            <td>
-                                                                                <a href="{{ Suguru.estados_bancarios_patrocinador.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th><i class="fas fa-money-check-alt"></i> {% trans 'Income Proof' %}:</th>
-                                                                            <td>
-                                                                                <a href="{{ Suguru.prueba_ingresos.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th><i class="fas fa-building"></i> {% trans 'Company Details' %}:</th>
-                                                                            <td>
-                                                                                <a href="{{ Suguru.detalles_empresa.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
+                                                            <tr>
+                                                                <th><i class="fas fa-passport"></i> {% trans "ID Sponsorship" %}:</th>
+                                                                <td>
+                                                                    {% if Suguru.id_patrocinador %}
+                                                                        <a href="{{ Suguru.id_patrocinador.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                            <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                        </a>
+
+                                                                        <!-- Botón de Rechazar (siempre visible) -->
+                                                                        <button id="btn-reject-id_patrocinador-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                            <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                        </button>
+
+                                                                        <!-- Formulario oculto inicialmente -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'id_patrocinador' %}" id="form-reject-id_patrocinador-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Rechazado">
+                                                                            <div class="mb-2">
+                                                                                <label for="id_patrocinador{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                                <textarea name="mensaje" id="id_patrocinador{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                            </div>
+                                                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                                                <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                            </button>
+                                                                        </form>
+
+                                                                        <!-- Botón para aprobar (siempre visible) -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'id_patrocinador' %}" id="form-approve-id_patrocinador-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Aprobado">
+                                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                                <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                            </button>
+                                                                        </form>
+                                                                    {% else %}
+                                                                        <span class="text-muted">{% trans "Not available" %}</span>
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                            <script>
+                                                            document.addEventListener('DOMContentLoaded', () => {
+                                                                const btnReject = document.getElementById('btn-reject-id_patrocinador-{{ Suguru.pk }}');
+                                                                const formReject = document.getElementById('form-reject-id_patrocinador-{{ Suguru.pk }}');
+
+                                                                btnReject?.addEventListener('click', () => {
+                                                                    formReject.style.display = 'block';
+                                                                    btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                                });
+                                                            });
+                                                            </script>
+                                                            <tr>
+                                                                <th><i class="fas fa-passport"></i> {% trans "Sponsorship Letter" %}:</th>
+                                                                <td>
+                                                                    {% if Suguru.carta_patrocinio %}
+                                                                        <a href="{{ Suguru.carta_patrocinio.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                            <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                        </a>
+
+                                                                        <!-- Botón de Rechazar (siempre visible) -->
+                                                                        <button id="btn-reject-carta_patrocinio-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                            <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                        </button>
+
+                                                                        <!-- Formulario oculto inicialmente -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'carta_patrocinio' %}" id="form-reject-carta_patrocinio-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Rechazado">
+                                                                            <div class="mb-2">
+                                                                                <label for="carta_patrocinio{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                                <textarea name="mensaje" id="carta_patrocinio{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                            </div>
+                                                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                                                <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                            </button>
+                                                                        </form>
+
+                                                                        <!-- Botón para aprobar (siempre visible) -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'carta_patrocinio' %}" id="form-approve-carta_patrocinio-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Aprobado">
+                                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                                <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                            </button>
+                                                                        </form>
+                                                                    {% else %}
+                                                                        <span class="text-muted">{% trans "Not available" %}</span>
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                            <script>
+                                                            document.addEventListener('DOMContentLoaded', () => {
+                                                                const btnReject = document.getElementById('btn-reject-carta_patrocinio-{{ Suguru.pk }}');
+                                                                const formReject = document.getElementById('form-reject-carta_patrocinio-{{ Suguru.pk }}');
+
+                                                                btnReject?.addEventListener('click', () => {
+                                                                    formReject.style.display = 'block';
+                                                                    btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                                });
+                                                            });
+                                                            </script>
+                                                            <tr>
+                                                                <th><i class="fas fa-passport"></i> {% trans "Relationship Proof" %}:</th>
+                                                                <td>
+                                                                    {% if Suguru.prueba_relacion %}
+                                                                        <a href="{{ Suguru.prueba_relacion.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                            <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                        </a>
+
+                                                                        <!-- Botón de Rechazar (siempre visible) -->
+                                                                        <button id="btn-reject-prueba_relacion-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                            <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                        </button>
+
+                                                                        <!-- Formulario oculto inicialmente -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'prueba_relacion' %}" id="form-reject-prueba_relacion-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Rechazado">
+                                                                            <div class="mb-2">
+                                                                                <label for="prueba_relacion{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                                <textarea name="mensaje" id="prueba_relacion{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                            </div>
+                                                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                                                <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                            </button>
+                                                                        </form>
+
+                                                                        <!-- Botón para aprobar (siempre visible) -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'prueba_relacion' %}" id="form-approve-prueba_relacion-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Aprobado">
+                                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                                <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                            </button>
+                                                                        </form>
+                                                                    {% else %}
+                                                                        <span class="text-muted">{% trans "Not available" %}</span>
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                            <script>
+                                                            document.addEventListener('DOMContentLoaded', () => {
+                                                                const btnReject = document.getElementById('btn-reject-prueba_relacion-{{ Suguru.pk }}');
+                                                                const formReject = document.getElementById('form-reject-prueba_relacion-{{ Suguru.pk }}');
+
+                                                                btnReject?.addEventListener('click', () => {
+                                                                    formReject.style.display = 'block';
+                                                                    btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                                });
+                                                            });
+                                                            </script>
+                                                            <tr>
+                                                                <th><i class="fas fa-passport"></i> {% trans "Sponsor Bank Statement" %}:</th>
+                                                                <td>
+                                                                    {% if Suguru.estados_bancarios_patrocinador %}
+                                                                        <a href="{{ Suguru.estados_bancarios_patrocinador.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                            <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                        </a>
+
+                                                                        <!-- Botón de Rechazar (siempre visible) -->
+                                                                        <button id="btn-reject-estados_bancarios_patrocinador-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                            <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                        </button>
+
+                                                                        <!-- Formulario oculto inicialmente -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'estados_bancarios_patrocinador' %}" id="form-reject-estados_bancarios_patrocinador-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Rechazado">
+                                                                            <div class="mb-2">
+                                                                                <label for="estados_bancarios_patrocinador{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                                <textarea name="mensaje" id="estados_bancarios_patrocinador{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                            </div>
+                                                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                                                <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                            </button>
+                                                                        </form>
+
+                                                                        <!-- Botón para aprobar (siempre visible) -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'estados_bancarios_patrocinador' %}" id="form-approve-prueestados_bancarios_patrocinadorba_relacion-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Aprobado">
+                                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                                <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                            </button>
+                                                                        </form>
+                                                                    {% else %}
+                                                                        <span class="text-muted">{% trans "Not available" %}</span>
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                            <script>
+                                                            document.addEventListener('DOMContentLoaded', () => {
+                                                                const btnReject = document.getElementById('btn-reject-estados_bancarios_patrocinador-{{ Suguru.pk }}');
+                                                                const formReject = document.getElementById('form-reject-estados_bancarios_patrocinador-{{ Suguru.pk }}');
+
+                                                                btnReject?.addEventListener('click', () => {
+                                                                    formReject.style.display = 'block';
+                                                                    btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                                });
+                                                            });
+                                                            </script>
+                                                            <tr>
+                                                                <th><i class="fas fa-passport"></i> {% trans "Income Proof" %}:</th>
+                                                                <td>
+                                                                    {% if Suguru.prueba_ingresos %}
+                                                                        <a href="{{ Suguru.prueba_ingresos.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                            <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                        </a>
+
+                                                                        <!-- Botón de Rechazar (siempre visible) -->
+                                                                        <button id="btn-reject-prueba_ingresos-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                            <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                        </button>
+
+                                                                        <!-- Formulario oculto inicialmente -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'prueba_ingresos' %}" id="form-reject-prueba_ingresos-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Rechazado">
+                                                                            <div class="mb-2">
+                                                                                <label for="prueba_ingresos{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                                <textarea name="mensaje" id="prueba_ingresos{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                            </div>
+                                                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                                                <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                            </button>
+                                                                        </form>
+
+                                                                        <!-- Botón para aprobar (siempre visible) -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'prueba_ingresos' %}" id="form-approve-prueba_ingresos-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Aprobado">
+                                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                                <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                            </button>
+                                                                        </form>
+                                                                    {% else %}
+                                                                        <span class="text-muted">{% trans "Not available" %}</span>
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                            <script>
+                                                            document.addEventListener('DOMContentLoaded', () => {
+                                                                const btnReject = document.getElementById('btn-reject-prueba_ingresos-{{ Suguru.pk }}');
+                                                                const formReject = document.getElementById('form-reject-prueba_ingresos-{{ Suguru.pk }}');
+
+                                                                btnReject?.addEventListener('click', () => {
+                                                                    formReject.style.display = 'block';
+                                                                    btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                                });
+                                                            });
+                                                            </script>
+                                                            <tr>
+                                                                <th><i class="fas fa-passport"></i> {% trans "Company Details" %}:</th>
+                                                                <td>
+                                                                    {% if Suguru.detalles_empresa %}
+                                                                        <a href="{{ Suguru.detalles_empresa.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                                                            <i class="fas fa-eye"></i> {% trans "Preview" %}
+                                                                        </a>
+
+                                                                        <!-- Botón de Rechazar (siempre visible) -->
+                                                                        <button id="btn-reject-detalles_empresa-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
+                                                                            <i class="fas fa-times"></i> {% trans "Reject" %}
+                                                                        </button>
+
+                                                                        <!-- Formulario oculto inicialmente -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'detalles_empresa' %}" id="form-reject-detalles_empresa-{{ Suguru.pk }}" class="mt-2" style="display:none;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Rechazado">
+                                                                            <div class="mb-2">
+                                                                                <label for="detalles_empresa{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
+                                                                                <textarea name="mensaje" id="detalles_empresa{{ Suguru.pk }}" class="form-control" required></textarea>
+                                                                            </div>
+                                                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                                                <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
+                                                                            </button>
+                                                                        </form>
+
+                                                                        <!-- Botón para aprobar (siempre visible) -->
+                                                                        <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'detalles_empresa' %}" id="form-approve-detalles_empresa-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
+                                                                            {% csrf_token %}
+                                                                            <input type="hidden" name="estado" value="Aprobado">
+                                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                                <i class="fas fa-check"></i> {% trans "Approve" %}
+                                                                            </button>
+                                                                        </form>
+                                                                    {% else %}
+                                                                        <span class="text-muted">{% trans "Not available" %}</span>
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                            <script>
+                                                            document.addEventListener('DOMContentLoaded', () => {
+                                                                const btnReject = document.getElementById('btn-reject-detalles_empresa-{{ Suguru.pk }}');
+                                                                const formReject = document.getElementById('form-reject-detalles_empresa-{{ Suguru.pk }}');
+
+                                                                btnReject?.addEventListener('click', () => {
+                                                                    formReject.style.display = 'block';
+                                                                    btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
+                                                                });
+                                                            });
+                                                            </script>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -422,4 +1539,25 @@
         checkboxes.forEach(checkbox => checkbox.checked = !allChecked);
     }
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("button[id^='btn-reject-']").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            const id = this.id.replace('btn-reject-', '');
+            const rejectForm = document.getElementById('form-reject-' + id);
+            const approveForm = document.getElementById('form-approve-' + id);
+
+            if (confirm("{% trans 'Are you sure you want to reject this document?' %}")) {
+                rejectForm.style.display = 'block';
+                approveForm.style.display = 'inline-block';
+                this.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+
+
 {% endblock %}

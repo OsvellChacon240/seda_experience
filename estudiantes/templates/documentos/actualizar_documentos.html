@@ -7,6 +7,13 @@
 <div class="main-content">
   <section class="section">
     <div class="section-header">
+          {% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
       <h1>{% trans "Update Documents" %}</h1>
     </div>
     <div class="section-body">

@@ -123,32 +123,235 @@
                   <th>{% trans "Status" %}</th>
                   <th>{% trans "Reference Code" %}</th>
                 </tr>
-                {% for documento in Zenin %}
-                  <tr>
-                    <td>{{ documento.estudiante.nombre }} {{ documento.estudiante.apellido }}</td>
-                    <td>{{ documento.fecha_subida }}</td>
-                    <td>
-                      {% if documento.estado_inscripcion == "En Revisión" %}
-                          <span class="badge badge-warning">{% trans "Under Review" %}</span>
-                      {% elif documento.estado_inscripcion == "Aprobado" %}
-                          <span class="badge badge-success">{% trans "Approved" %}</span>
-                      {% else %}
-                          <span class="badge badge-danger">{% trans "Rejected" %}</span>
-                      {% endif %}
-                  </td>                  
-                    <td>{{documento.codigo_inscripcion}}</td>
-                  </tr>
-                  <tr>
-                    {% if documento.mensaje_rechazo %}
-                      <th>{% trans "Cancellation Message" %}</th>
-                      <td colspan="4" class="alert alert-danger">{{documento.mensaje_rechazo}}</td>
+                  {% for documento in Zenin %}
+                    <tr>
+                      <td>{{ documento.estudiante.nombre }} {{ documento.estudiante.apellido }}</td>
+                      <td>{{ documento.fecha_subida }}</td>
+                      <td>
+                        {% if documento.estado_inscripcion == "En Revisión" %}
+                            <span class="badge badge-warning">{% trans "Under Review" %}</span>
+                        {% elif documento.estado_inscripcion == "Aprobado" %}
+                            <span class="badge badge-success">{% trans "Approved" %}</span>
+                        {% else %}
+                            <span class="badge badge-danger">{% trans "Rejected" %}</span>
+                        {% endif %}
+                    </td> 
+                      <td>{{ documento.codigo_inscripcion }}</td>
+                    </tr>
+
+                    {% if documento.passport_copy_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Passport rejection reason:" %}</strong> {{ documento.passport_copy_mensaje }}
+                        </td>
+                      </tr>
                     {% endif %}
-                  </tr>
-                {% empty %}
-                  <tr>
-                    <td colspan="4">{% trans "No documents uploaded" %}.</td>
-                  </tr>
-                {% endfor %}
+
+                    {% if documento.previous_visa_refusal_letters_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Passport rejection reason:" %}</strong> {{ documento.previous_visa_refusal_letters_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    {% if documento.national_id_copy_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "ID Card:" %}</strong> {{ documento.national_id_copy_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    {% if documento.biometric_photos_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Biometric Photos:" %}</strong> {{ documento.biometric_photos_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    {% if documento.police_clearance_certificates_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Criminal Records:" %}</strong> {{ documento.police_clearance_certificates_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    
+                    {% if documento.travel_health_insurance_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Health Insurance:" %}</strong> {{ documento.travel_health_insurance_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                                        
+                    {% if documento.enrollment_letter_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Enrollment Letter:" %}</strong> {{ documento.enrollment_letter_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.booking_letter_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Booking Letter:" %}</strong> {{ documento.booking_letter_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.payment_receipt_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Payment Receipt:" %}</strong> {{ documento.payment_receipt_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.diploma_translated_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Diploma Translated:" %}</strong> {{ documento.diploma_translated_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.sponsorship_letter_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Sponsorship Letter:" %}</strong> {{ documento.sponsorship_letter_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.sponsorship_letter_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Sponsorship Letter:" %}</strong> {{ documento.sponsorship_letter_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.financial_summary_form_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Financial Summary Form:" %}</strong> {{ documento.financial_summary_form_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.transcript_translated_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Transcript Translated:" %}</strong> {{ documento.transcript_translated_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.student_letter_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Student Letter:" %}</strong> {{ documento.student_letter_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.payslips_last_3_months_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Payslips Last 3 Months:" %}</strong> {{ documento.payslips_last_3_months_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                      {% if documento.reason_for_return_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Reason for return:" %}</strong> {{ documento.reason_for_return_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.bank_statement_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "6 Months Bank Statement:" %}</strong> {{ documento.bank_statement_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.visa_application_form_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Online Visa Application:" %}</strong> {{ documento.visa_application_form_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.Applicants_translated_work_history_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Applicant Employment History:" %}</strong> {{ documento.Applicants_translated_work_history_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.supportive_certificate_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Supportive Certificate or Reason to Study English Aboard:" %}</strong> {{ documento.supportive_certificate_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.intention_letter_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Intention Letter:" %}</strong> {{ documento.intention_letter_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    
+                    <!-- Patrocinio -->
+                    {% if documento.id_patrocinador_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "ID Sponsorship:" %}</strong> {{ documento.id_patrocinador_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.carta_patrocinio_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Sponsorship Letter:" %}</strong> {{ documento.carta_patrocinio_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.prueba_relacion_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Relationship Proof:" %}</strong> {{ documento.prueba_relacion_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.estados_bancarios_patrocinador_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Sponsor Bank Statement:" %}</strong> {{ documento.estados_bancarios_patrocinador_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.prueba_ingresos_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Income Proof:" %}</strong> {{ documento.prueba_ingresos_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if documento.detalles_empresa_mensaje %}
+                      <tr>
+                        <td colspan="4" class="alert alert-danger">
+                          <strong>{% trans "Company Details:" %}</strong> {{ documento.detalles_empresa_mensaje }}
+                        </td>
+                      </tr>
+                    {% endif %}
+                    <!-- Igual para otros documentos -->
+
+                    <tr>
+                      <td colspan="4"><hr></td>
+                    </tr>
+
+                  {% endfor %}
+
               </tbody>
             </table>
           </div>

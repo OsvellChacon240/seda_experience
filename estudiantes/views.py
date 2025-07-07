@@ -431,11 +431,44 @@ def cambiar_estado_inscripcion(request, id):
                 documentos.mensaje_rechazo = None  # Limpiar el mensaje si no está rechazado
 
             documentos.save()
-            messages.success(request, _(f"Enrollment status changed to {nuevo_estado}."))
+            messages.success(request, _(f"Status successfully modified."))
         else:
             messages.error(request, _("Invalid registration status."))
 
     return redirect('estudiantes')
+
+@login_required
+def cambiar_estado_documento(request, id, campo):
+    documentos = get_object_or_404(DocumentosEstudiante, id=id)
+
+    if request.method == 'POST':
+        nuevo_estado = request.POST.get('estado')
+        mensaje = request.POST.get('mensaje', '').strip()
+
+        # Validar que el campo exista en el modelo y que sea un campo de estado
+        estados_validos = dict(EstadoDocumento.choices)
+        if not hasattr(documentos, campo + '_estado'):
+            messages.error(request, "Invalid field.")
+            return redirect('visualizarDocumento', id=id)
+
+        if nuevo_estado not in estados_validos:
+            messages.error(request, "Invalid field.")
+            return redirect('visualizarDocumento', id=id)
+
+        setattr(documentos, campo + '_estado', nuevo_estado)
+
+        if nuevo_estado == EstadoDocumento.RECHAZADO:
+            if not mensaje:
+                messages.error(request, "Must provide a reason for rejection.")
+                return redirect('visualizarDocumento', id=id)
+            setattr(documentos, campo + '_mensaje', mensaje)
+        else:
+            setattr(documentos, campo + '_mensaje', None)
+
+        documentos.save()
+        messages.success(request, f"Document successfully modified.")
+    
+    return redirect('visualizarDocumento', id=id)
 
 @login_required
 def actualizar_perfil_estudiante(request):
