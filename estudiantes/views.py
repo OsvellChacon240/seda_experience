@@ -316,11 +316,11 @@ def documentos_pendientes(request):
 
     if query:
         Maki = DocumentosEstudiante.objects.filter(
-            Q(estudiante__nombre__icontains=query) |
-            Q(estudiante__apellido__icontains=query) |
-            Q(email__icontains=query) |
-            Q(codigo_inscripcion__icontains=query)
-        ).filter(estado_inscripcion="En Revisión").order_by('-id')
+                Q(estudiante__nombre__icontains=query) |
+                Q(estudiante__apellido__icontains=query) |
+                Q(estudiante__email__icontains=query) |
+                Q(codigo_inscripcion__icontains=query)
+            ).filter(estado_inscripcion="En Revisión").order_by('-id')
     else:
         Maki = DocumentosEstudiante.objects.filter(estado_inscripcion="En Revisión").order_by('-id')
 
@@ -364,11 +364,11 @@ def documentos_aprobados(request):
 
     if query:
         Maki = DocumentosEstudiante.objects.filter(
-            Q(estudiante__nombre__icontains=query) |
-            Q(estudiante__apellido__icontains=query) |
-            Q(email__icontains=query) | 
-            Q(codigo_inscripcion__icontains=query)
-        ).filter(estado_inscripcion="Aprobado").order_by('-id')
+                Q(estudiante__nombre__icontains=query) |
+                Q(estudiante__apellido__icontains=query) |
+                Q(estudiante__email__icontains=query) |
+                Q(codigo_inscripcion__icontains=query)
+            ).filter(estado_inscripcion="En Revisión").order_by('-id')
     else:
         Maki = DocumentosEstudiante.objects.filter(estado_inscripcion="Aprobado").order_by('-id')
     
@@ -390,11 +390,11 @@ def documentos_rechazados(request):
 
     if query:
         Maki = DocumentosEstudiante.objects.filter(
-            Q(estudiante__nombre__icontains=query) |
-            Q(estudiante__apellido__icontains=query) |
-            Q(email__icontains=query) | 
-            Q(codigo_inscripcion__icontains=query)
-        ).filter(estado_inscripcion="Rechazado").order_by('-id')
+                Q(estudiante__nombre__icontains=query) |
+                Q(estudiante__apellido__icontains=query) |
+                Q(estudiante__email__icontains=query) |
+                Q(codigo_inscripcion__icontains=query)
+            ).filter(estado_inscripcion="En Revisión").order_by('-id')
     else:
         Maki = DocumentosEstudiante.objects.filter(estado_inscripcion="Rechazado").order_by('-id')
 

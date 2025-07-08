@@ -46,12 +46,25 @@
                                 </div>
                                 <div class="profile-widget-item">
                                     <div class="profile-widget-item-label">{% trans "Enrollment Status" %}</div>
-                                    <div class="profile-widget-item-value">
-                                        <button class="btn btn-sm {% if Suguru.estado_inscripcion == 'Aprobado' %}btn-success{% elif Suguru.estado_inscripcion == 'Rechazado' %}btn-danger{% else %}btn-warning{% endif %}" 
+                                        <div class="profile-widget-item-value">
+                                            <button class="btn btn-sm 
+                                                {% if Suguru.estado_inscripcion == 'Aprobado' %}
+                                                    btn-success
+                                                {% elif Suguru.estado_inscripcion == 'Rechazado' %}
+                                                    btn-danger
+                                                {% else %}
+                                                    btn-warning
+                                                {% endif %}"
                                                 data-toggle="modal" data-target="#estadoInscripcionModal">
-                                            {{ Suguru.estado_inscripcion }}
-                                        </button>
-                                    </div>
+                                                {% if Suguru.estado_inscripcion == 'Aprobado' %}
+                                                    {% trans "Approved" %}
+                                                {% elif Suguru.estado_inscripcion == 'Rechazado' %}
+                                                    {% trans "Rejected" %}
+                                                {% else %}
+                                                    {% trans "Under Review" %}
+                                                {% endif %}
+                                            </button>
+                                        </div>
                                 </div>
                             </div>
                         </div>
