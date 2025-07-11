@@ -248,16 +248,6 @@ class DocumentosEstudiante(models.Model):
     sponsorship_letter_estado = documento_estado_field()
     sponsorship_letter_mensaje = documento_mensaje_field()
 
-    visa_application_form = models.FileField(
-        upload_to='documentos_estudiantes/visa_application/', 
-        blank=True, 
-        null=True, 
-        validators=[validar_archivo],
-        verbose_name=_("Online Visa Application Form and Its Summary")
-    )
-    visa_application_form_estado = documento_estado_field()
-    visa_application_form_mensaje = documento_mensaje_field()
-
     bank_statement = models.FileField(
         upload_to='documentos_estudiantes/bank_statement/', 
         blank=True, 
@@ -427,7 +417,6 @@ class DocumentosEstudiante(models.Model):
             self.intention_letter,
             self.reason_for_return,
             self.financial_summary_form,
-            self.visa_application_form,
             self.bank_statement,
         ]
         

@@ -56,7 +56,8 @@
                       {{ form.financial_summary_form|as_crispy_field }}
                       <a href="{% static 'docs/Sponsorhip Letter.docx' %}" target="_blank" style="text-decoration: underline; color: green;">{% trans 'Download Sponsorship Letter' %}</a>
                       {{ form.sponsorship_letter|as_crispy_field }}
-                      {{ form.visa_application_form|as_crispy_field }}
+                      <a href="https://www.visas.inis.gov.ie/AVATS/OnlineHome.aspx" target="_blank" style="text-decoration: underline; color: blue;">{% trans 'Online Visa Application Form and Its Summary' %}</a>
+                      <hr>
                       {{ form.bank_statement|as_crispy_field }}
                       {{ form.necesita_patrocinio|as_crispy_field }} <!-- Campo movido aquí -->
                     </div>

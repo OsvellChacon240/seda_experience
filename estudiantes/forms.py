@@ -148,7 +148,7 @@ class DocumentosEstudianteForm(forms.ModelForm):
             'police_clearance_certificates', 'travel_health_insurance', 'enrollment_letter', 'booking_letter',
             'payment_receipt', 'diploma_translated', 'transcript_translated', 'student_letter',
             'payslips_last_3_months', 'Applicants_translated_work_history', 'supportive_certificate', 'intention_letter',
-            'reason_for_return', 'financial_summary_form', 'visa_application_form', 'bank_statement',
+            'reason_for_return', 'financial_summary_form', 'bank_statement',
             'necesita_patrocinio', 'id_patrocinador', 'carta_patrocinio', 'prueba_relacion',
             'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa', 'sponsorship_letter',
         ]
@@ -164,7 +164,7 @@ class DocumentosEstudianteForm(forms.ModelForm):
                 'police_clearance_certificates', 'travel_health_insurance', 'enrollment_letter', 'booking_letter',
                 'payment_receipt', 'diploma_translated', 'transcript_translated', 'student_letter',
                 'payslips_last_3_months', 'Applicants_translated_work_history', 'supportive_certificate', 'intention_letter',
-                'reason_for_return', 'financial_summary_form', 'visa_application_form', 'bank_statement',
+                'reason_for_return', 'financial_summary_form', 'bank_statement',
                 'id_patrocinador', 'carta_patrocinio', 'prueba_relacion',
                 'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa', 'sponsorship_letter',
             ]
@@ -195,7 +195,6 @@ class DocumentosEstudianteForm(forms.ModelForm):
             'intention_letter': _("Intention Letter"),
             'reason_for_return': _("Reason for Return to Home Country"),
             'financial_summary_form': _("Financial Summary Form"),
-            'visa_application_form': _("Online Visa Application Form and Its Summary"),
             'bank_statement': _("6 Months Bank Statement (Proof of 10,000 Euros)"),
             'necesita_patrocinio': _("¿Necesita patrocinio?"),
             'id_patrocinador': _("ID o Pasaporte del Patrocinador"),
@@ -216,7 +215,7 @@ class DocumentosEstudianteForm(forms.ModelForm):
                 'police_clearance_certificates', 'travel_health_insurance', 'enrollment_letter', 'booking_letter',
                 'payment_receipt', 'diploma_translated', 'transcript_translated', 'student_letter',
                 'payslips_last_3_months', 'Applicants_translated_work_history', 'supportive_certificate', 'intention_letter',
-                'financial_summary_form', 'visa_application_form', 'bank_statement',
+                'financial_summary_form', 'bank_statement',
                 'id_patrocinador', 'carta_patrocinio', 'prueba_relacion',
                 'estados_bancarios_patrocinador', 'prueba_ingresos', 'detalles_empresa', 'sponsorship_letter',
             ]
@@ -295,7 +294,6 @@ class EstadoDocumentosForm(forms.ModelForm):
             'reason_for_return_estado', 'reason_for_return_mensaje',
             'financial_summary_form_estado', 'financial_summary_form_mensaje',
             'sponsorship_letter_estado', 'sponsorship_letter_mensaje',
-            'visa_application_form_estado', 'visa_application_form_mensaje',
             'bank_statement_estado', 'bank_statement_mensaje',
 
             # Campos de patrocinio: solo archivos (sin estado ni mensaje)

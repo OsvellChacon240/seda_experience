@@ -925,58 +925,6 @@
                                                         });
                                                     });
                                                     </script>
-
-                                                    <tr>
-                                                        <th><i class="fas fa-passport"></i> {% trans "Online Visa Application" %}:</th>
-                                                        <td>
-                                                            {% if Suguru.visa_application_form %}
-                                                                <a href="{{ Suguru.visa_application_form.url }}" target="_blank" class="btn btn-sm btn-primary">
-                                                                    <i class="fas fa-eye"></i> {% trans "Preview" %}
-                                                                </a>
-
-                                                                <!-- Botón de Rechazar (siempre visible) -->
-                                                                <button id="btn-reject-visa_application_form-{{ Suguru.pk }}" class="btn btn-sm btn-danger" type="button">
-                                                                    <i class="fas fa-times"></i> {% trans "Reject" %}
-                                                                </button>
-
-                                                                <!-- Formulario oculto inicialmente -->
-                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'visa_application_form' %}" id="form-reject-visa_application_form-{{ Suguru.pk }}" class="mt-2" style="display:none;">
-                                                                    {% csrf_token %}
-                                                                    <input type="hidden" name="estado" value="Rechazado">
-                                                                    <div class="mb-2">
-                                                                        <label for="visa_application_form{{ Suguru.pk }}">{% trans "Rejection Reason" %}:</label>
-                                                                        <textarea name="mensaje" id="visa_application_form{{ Suguru.pk }}" class="form-control" required></textarea>
-                                                                    </div>
-                                                                    <button type="submit" class="btn btn-sm btn-danger">
-                                                                        <i class="fas fa-times"></i> {% trans "Confirm Reject" %}
-                                                                    </button>
-                                                                </form>
-
-                                                                <!-- Botón para aprobar (siempre visible) -->
-                                                                <form method="post" action="{% url 'cambiar_estado_documento' Suguru.pk 'visa_application_form' %}" id="form-approve-visa_application_form-{{ Suguru.pk }}" class="d-inline" style="display:inline-block;">
-                                                                    {% csrf_token %}
-                                                                    <input type="hidden" name="estado" value="Aprobado">
-                                                                    <button type="submit" class="btn btn-sm btn-success">
-                                                                        <i class="fas fa-check"></i> {% trans "Approve" %}
-                                                                    </button>
-                                                                </form>
-                                                            {% else %}
-                                                                <span class="text-muted">{% trans "Not available" %}</span>
-                                                            {% endif %}
-                                                        </td>
-                                                    </tr>
-                                                    <script>
-                                                    document.addEventListener('DOMContentLoaded', () => {
-                                                        const btnReject = document.getElementById('btn-reject-visa_application_form-{{ Suguru.pk }}');
-                                                        const formReject = document.getElementById('form-reject-visa_application_form-{{ Suguru.pk }}');
-
-                                                        btnReject?.addEventListener('click', () => {
-                                                            formReject.style.display = 'block';
-                                                            btnReject.style.display = 'none'; // opcional: oculta el botón Reject al mostrar el formulario
-                                                        });
-                                                    });
-                                                    </script>
-
                                                     <tr>
                                                         <th><i class="fas fa-passport"></i> {% trans "Applicant Employment History" %}:</th>
                                                         <td>

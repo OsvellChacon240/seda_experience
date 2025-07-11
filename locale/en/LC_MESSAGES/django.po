@@ -1688,7 +1688,7 @@ msgstr "Email Address"
 #: .\usuarios\forms.py:50
 #| msgid "Passport"
 msgid "Password"
-msgstr "Passport"
+msgstr "Password"
 
 #: .\usuarios\forms.py:51
 #| msgid "Passport"
